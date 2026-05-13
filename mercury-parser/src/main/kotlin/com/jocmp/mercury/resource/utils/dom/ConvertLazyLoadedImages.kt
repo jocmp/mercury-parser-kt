@@ -1,7 +1,7 @@
 package com.jocmp.mercury.resource.utils.dom
 
 import com.jocmp.mercury.dsl.Doc
-import com.jocmp.mercury.dsl.getAttrs
+import com.jocmp.mercury.utils.dom.getAttrs
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.jsonObject
@@ -13,7 +13,7 @@ import kotlinx.serialization.json.jsonObject
 // the src attribute so the images are no longer lazy loaded.
 fun convertLazyLoadedImages(doc: Doc): Doc {
     doc("img").each { _, img ->
-        val attrs = img.getAttrs()
+        val attrs = getAttrs(img)
         attrs.keys.forEach { attr ->
             val value = attrs[attr] ?: return@forEach
             if (attr != "srcset" && IS_LINK.containsMatchIn(value) && IS_SRCSET.containsMatchIn(value)) {

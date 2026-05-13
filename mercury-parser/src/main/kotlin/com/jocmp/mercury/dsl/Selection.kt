@@ -15,7 +15,28 @@ class Selection internal constructor(
 
     fun get(index: Int): Element? = elements.getOrNull(index)
 
-    fun text(): String = elements.text()
+    // Cheerio's .text() concatenates descendant text nodes with no separator (unlike
+    // Jsoup's text() which inserts spaces between block elements). Faithful port matters
+    // for linkDensity/text-length comparisons.
+    fun text(): String =
+        buildString {
+            elements.forEach { el ->
+                collectText(el, this)
+            }
+        }
+
+    private fun collectText(
+        el: Element,
+        out: StringBuilder,
+    ) {
+        el.childNodes().forEach { node ->
+            when (node) {
+                is org.jsoup.nodes.TextNode -> out.append(node.wholeText)
+                is Element -> collectText(node, out)
+                else -> Unit
+            }
+        }
+    }
 
     fun html(): String = elements.html()
 
@@ -55,5 +76,3 @@ class Selection internal constructor(
             }
         }
 }
-
-fun Element.getAttrs(): Map<String, String> = attributes().associate { it.key to it.value }
