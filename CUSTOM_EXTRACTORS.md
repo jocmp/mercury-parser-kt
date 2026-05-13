@@ -155,11 +155,11 @@
 - [x] www.lifehacker.jp
 - [x] www.linkedin.com
 - [x] www.littlethings.com
-- [ ] www.macrumors.com
-- [ ] www.mentalfloss.com
-- [ ] www.miamiherald.com
-- [ ] www.moongift.jp
-- [ ] www.msn.com
+- [x] www.macrumors.com
+- [x] www.mentalfloss.com
+- [x] www.miamiherald.com
+- [x] www.moongift.jp
+- [x] www.msn.com
 - [ ] www.msnbc.com
 - [ ] www.n-tv.de
 - [ ] www.nationalgeographic.com

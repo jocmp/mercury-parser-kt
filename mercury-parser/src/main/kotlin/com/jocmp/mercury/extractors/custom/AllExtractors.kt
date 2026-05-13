@@ -122,6 +122,11 @@ import com.jocmp.mercury.extractors.custom.www.lemonde.fr.WwwLemondeFrExtractor
 import com.jocmp.mercury.extractors.custom.www.lifehacker.jp.WwwLifehackerJpExtractor
 import com.jocmp.mercury.extractors.custom.www.linkedin.com.WwwLinkedinComExtractor
 import com.jocmp.mercury.extractors.custom.www.littlethings.com.LittleThingsExtractor
+import com.jocmp.mercury.extractors.custom.www.macrumors.com.WwwMacrumorsComExtractor
+import com.jocmp.mercury.extractors.custom.www.mentalfloss.com.WwwMentalflossComExtractor
+import com.jocmp.mercury.extractors.custom.www.miamiherald.com.WwwMiamiheraldComExtractor
+import com.jocmp.mercury.extractors.custom.www.moongift.jp.WwwMoongiftJpExtractor
+import com.jocmp.mercury.extractors.custom.www.msn.com.MSNExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
@@ -260,6 +265,11 @@ object AllExtractors {
             WwwLifehackerJpExtractor,
             WwwLinkedinComExtractor,
             LittleThingsExtractor,
+            WwwMacrumorsComExtractor,
+            WwwMentalflossComExtractor,
+            WwwMiamiheraldComExtractor,
+            WwwMoongiftJpExtractor,
+            MSNExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
