@@ -38,7 +38,12 @@ import com.jocmp.mercury.extractors.custom.mobilesyrup.com.MobilesyrupComExtract
 import com.jocmp.mercury.extractors.custom.money.cnn.com.MoneyCnnComExtractor
 import com.jocmp.mercury.extractors.custom.newrepublic.com.NewrepublicComExtractor
 import com.jocmp.mercury.extractors.custom.news.mynavi.jp.NewsMynaviJpExtractor
+import com.jocmp.mercury.extractors.custom.news.nationalgeographic.com.NewsNationalgeographicComExtractor
+import com.jocmp.mercury.extractors.custom.news.pts.org.tw.NewsPtsOrgTwExtractor
 import com.jocmp.mercury.extractors.custom.nymag.com.NYMagExtractor
+import com.jocmp.mercury.extractors.custom.obamawhitehouse.archives.gov.ObamawhitehouseArchivesGovExtractor
+import com.jocmp.mercury.extractors.custom.observer.com.ObserverComExtractor
+import com.jocmp.mercury.extractors.custom.orf.at.OrfAtExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -92,11 +97,16 @@ object AllExtractors {
             MoneyCnnComExtractor,
             NewrepublicComExtractor,
             NewsMynaviJpExtractor,
+            NewsNationalgeographicComExtractor,
+            NewsPtsOrgTwExtractor,
             NineToFiveGoogleComExtractor,
             NineToFiveLinuxComExtractor,
             NineToFiveMacComExtractor,
             NYMagExtractor,
             NYTimesExtractor,
+            ObamawhitehouseArchivesGovExtractor,
+            ObserverComExtractor,
+            OrfAtExtractor,
             TheAtlanticExtractor,
             TheGuardianExtractor,
             TwoFortySevenSportsComExtractor,

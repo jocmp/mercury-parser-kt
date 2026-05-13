@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 49**
-- **Additional domains via supportedDomains: ~27** (deadspin 13, gothamist 5, www.se.pl 9)
-- **Effective domain coverage: ~76**
+- **Primary extractors registered: 54**
+- **Additional domains via supportedDomains: ~28** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1)
+- **Effective domain coverage: ~82**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -57,7 +57,12 @@
 - [x] money.cnn.com
 - [x] newrepublic.com
 - [x] news.mynavi.jp
+- [x] news.nationalgeographic.com
+- [x] news.pts.org.tw
 - [x] nymag.com
+- [x] obamawhitehouse.archives.gov (+ 1 supportedDomain: whitehouse.gov)
+- [x] observer.com
+- [x] orf.at
 - [x] wired.jp
 - [x] www.bloomberg.com
 - [x] www.cnn.com
@@ -70,17 +75,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (150 — primary domains only; some are deferred per above)
+## Todo (145 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] news.nationalgeographic.com
-- [ ] news.pts.org.tw
-- [ ] obamawhitehouse.archives.gov
-- [ ] observer.com
-- [ ] orf.at
 - [ ] otrs.com
 - [ ] pagesix.com
 - [ ] pastebin.com
