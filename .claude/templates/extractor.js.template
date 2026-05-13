@@ -1,0 +1,49 @@
+// Template for the JS back-port. Fill the {{TOKENS}} below; drop any field
+// block that has no selectors (don't leave empty `selectors: []`).
+//
+// Selector mapping reminders:
+//   Kotlin `selectors("a")`       → JS `'a'`
+//   Kotlin `attr("a", "v")`       → JS `['a', 'v']`
+//   Kotlin `compound("a", "b")`   → JS `['a', 'b']`        (nested in selectors array → `[['a', 'b']]`)
+//   Kotlin `transform("h2", renameTo="h3")` → JS `transforms: { h2: 'h3' }`
+//   Kotlin `transform("sel") { node, doc -> ... }` → translate the closure
+//     to a cheerio function: `transforms: { sel: ($node, $) => { ... } }`.
+//
+// Remove this whole header block before saving.
+
+export const {{EXTRACTOR_NAME}} = {
+  domain: '{{DOMAIN}}',
+
+  title: {
+    selectors: [{{TITLE_SELECTORS}}],
+  },
+
+  author: {
+    selectors: [{{AUTHOR_SELECTORS}}],
+  },
+
+  date_published: {
+    selectors: [{{DATE_PUBLISHED_SELECTORS}}],
+    // Drop these two lines if not set on the Kotlin side.
+    timezone: '{{TIMEZONE}}',
+    format: '{{FORMAT}}',
+  },
+
+  dek: {
+    selectors: [{{DEK_SELECTORS}}],
+  },
+
+  lead_image_url: {
+    selectors: [{{LEAD_IMAGE_URL_SELECTORS}}],
+  },
+
+  content: {
+    selectors: [{{CONTENT_SELECTORS}}],
+
+    // defaultCleaner: false,   // uncomment if the Kotlin DSL sets it
+    transforms: {
+      {{CONTENT_TRANSFORMS}}
+    },
+    clean: [{{CONTENT_CLEAN}}],
+  },
+};

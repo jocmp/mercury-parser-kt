@@ -1,0 +1,47 @@
+import assert from 'assert';
+import URL from 'url';
+
+import Parser from 'mercury';
+import getExtractor from 'extractors/get-extractor';
+
+const fs = require('fs');
+
+describe('{{EXTRACTOR_NAME}}', () => {
+  describe('initial test case', () => {
+    let result;
+    let url;
+    beforeAll(() => {
+      url = '{{ARTICLE_URL}}';
+      const html = fs.readFileSync(
+        './fixtures/{{FIXTURE_PATH}}',
+        'utf-8'
+      );
+      result = Parser.parse(url, { html, fallback: false });
+    });
+
+    it('is selected properly', () => {
+      const extractor = getExtractor(url);
+      assert.strictEqual(extractor.domain, URL.parse(url).hostname);
+    });
+
+    it('returns the title', async () => {
+      const { title } = await result;
+      assert.strictEqual(title, `{{EXPECTED_TITLE}}`);
+    });
+
+    it('returns the author', async () => {
+      const { author } = await result;
+      assert.strictEqual(author, `{{EXPECTED_AUTHOR}}`);
+    });
+
+    it('returns the date_published', async () => {
+      const { date_published } = await result;
+      assert.strictEqual(date_published, `{{EXPECTED_DATE_PUBLISHED}}`);
+    });
+
+    it('returns the lead_image_url', async () => {
+      const { lead_image_url } = await result;
+      assert.strictEqual(lead_image_url, `{{EXPECTED_LEAD_IMAGE_URL}}`);
+    });
+  });
+});
