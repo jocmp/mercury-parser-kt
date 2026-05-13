@@ -223,11 +223,14 @@ val NEGATIVE_SCORE_HINTS: List<String> =
         "infotext", // newscientist.com copyright
         "instapaper_ignore", "jump", "linebreak", "link", "masthead", "media",
         "meta", "modal",
-        "outbrain", // slate.com junk
+        // slate.com junk
+        "outbrain",
         "promo",
-        "pr_", // autoblog - press release
+        // autoblog - press release
+        "pr_",
         "related", "respond",
-        "roundcontent", // lifehacker restricted content warning
+        // lifehacker restricted content warning
+        "roundcontent",
         "scroll", "secondary", "share", "shopping", "shoutbox", "side", "sidebar",
         "sponsor", "stamp", "sub", "summary", "tags", "tools", "widget",
     )
