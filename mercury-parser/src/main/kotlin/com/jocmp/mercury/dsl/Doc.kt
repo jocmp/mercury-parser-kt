@@ -4,7 +4,10 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 
-class Doc internal constructor(val document: Document) {
+class Doc internal constructor(
+    val document: Document,
+    private val isFragment: Boolean = false,
+) {
     init {
         document.outputSettings().prettyPrint(false)
     }
@@ -13,7 +16,7 @@ class Doc internal constructor(val document: Document) {
 
     fun root(): Selection = Selection(this, document.children())
 
-    fun html(): String = document.outerHtml()
+    fun html(): String = if (isFragment) document.body().html() else document.outerHtml()
 
     internal fun wrap(elements: org.jsoup.select.Elements): Selection = Selection(this, elements)
 
@@ -23,6 +26,12 @@ class Doc internal constructor(val document: Document) {
         fun load(
             html: String,
             baseUri: String? = null,
-        ): Doc = Doc(Jsoup.parse(html, baseUri ?: ""))
+            isDocument: Boolean = true,
+        ): Doc =
+            if (isDocument) {
+                Doc(Jsoup.parse(html, baseUri ?: ""))
+            } else {
+                Doc(Jsoup.parseBodyFragment(html, baseUri ?: ""), isFragment = true)
+            }
     }
 }
