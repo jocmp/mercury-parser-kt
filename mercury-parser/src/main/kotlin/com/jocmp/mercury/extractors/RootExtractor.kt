@@ -109,9 +109,12 @@ internal fun selectField(
 
     if (extractHtml) {
         val content = doc(matching.css)
-        // Wrap in a div so transformations can act on the root.
+        // Wrap CLONES (not the live nodes) in a div so transformations can act
+        // on the root without mutating the source document — otherwise later
+        // field extractors (dek, leadImageUrl, etc.) lose access to descendants
+        // of the original selector.
         val wrapper = doc.document.createElement("div")
-        content.elements.toList().forEach { wrapper.appendChild(it) }
+        content.elements.forEach { wrapper.appendChild(it.clone()) }
         val wrapped = doc.wrap(wrapper)
         val transformed = transformAndClean(wrapped)
 
@@ -200,26 +203,22 @@ object RootExtractor {
         url: String,
         html: String?,
         metaCache: List<String>,
+        fallback: Boolean = true,
     ): ParseResult {
         // No custom extractor → straight to generic.
         if (extractor == null) {
             return GenericExtractor.extract(html = html, docIn = doc, url = url)
         }
 
-        val title = extractField(extractor, doc, url, html, metaCache, "title").orEmpty()
-        val datePublished = extractField(extractor, doc, url, html, metaCache, "date_published")
-        val author = extractField(extractor, doc, url, html, metaCache, "author")
-        val nextPageUrl = extractField(extractor, doc, url, html, metaCache, "next_page_url")
+        val title = extractField(extractor, doc, url, html, metaCache, "title", fallback = fallback).orEmpty()
+        val datePublished = extractField(extractor, doc, url, html, metaCache, "date_published", fallback = fallback)
+        val author = extractField(extractor, doc, url, html, metaCache, "author", fallback = fallback)
+        val nextPageUrl = extractField(extractor, doc, url, html, metaCache, "next_page_url", fallback = fallback)
         val content =
             extractField(
-                extractor,
-                doc,
-                url,
-                html,
-                metaCache,
-                "content",
-                extractHtml = true,
-                title = title,
+                extractor, doc, url, html, metaCache,
+                "content", fallback = fallback,
+                extractHtml = true, title = title,
             )
         val leadImageUrl =
             extractField(
@@ -229,10 +228,25 @@ object RootExtractor {
                 html,
                 metaCache,
                 "lead_image_url",
+                fallback = fallback,
                 content = content,
             )
-        val excerpt = extractField(extractor, doc, url, html, metaCache, "excerpt", content = content)
-        val dek = extractField(extractor, doc, url, html, metaCache, "dek", content = content, excerpt = excerpt)
+        val excerpt =
+            extractField(
+                extractor,
+                doc,
+                url,
+                html,
+                metaCache,
+                "excerpt",
+                fallback = fallback,
+                content = content,
+            )
+        val dek =
+            extractField(
+                extractor, doc, url, html, metaCache,
+                "dek", fallback = fallback, content = content, excerpt = excerpt,
+            )
         val wordCount = content?.let { extractGenericWordCount(it) } ?: 0
         val direction = getDirection(title)
         val urlAndDomain = extractGenericUrl(doc, url, metaCache)

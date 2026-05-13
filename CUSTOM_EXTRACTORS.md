@@ -1,0 +1,212 @@
+# Custom extractor port progress
+
+199 upstream extractors total. Kept alphabetical; mark `[x]` when ported and
+registered in `AllExtractors.kt`. Authoritative list:
+`ls ~/dev/jocmp/mercury-parser/src/extractors/custom | grep -v -E '^(index\.js|README\.md)$' | sort`
+
+## Status
+
+- Ported: 13
+- Todo: 186
+
+## All (alphabetical)
+
+- [ ] 247sports.com
+- [ ] 9to5google.com
+- [ ] 9to5linux.com
+- [ ] 9to5mac.com
+- [x] abcnews.go.com
+- [x] arstechnica.com
+- [ ] balloon-juice.com
+- [ ] bialystok.se.pl
+- [ ] biorxiv.org
+- [ ] blisterreview.com
+- [ ] blogspot.com
+- [ ] bookwalker.jp
+- [ ] bsky.app
+- [ ] buzzap.jp
+- [ ] chicagoyimby.com
+- [ ] clinicaltrials.gov
+- [ ] deadline.com
+- [ ] deadspin.com
+- [ ] economictimes.indiatimes.com
+- [ ] epaper.zeit.de
+- [ ] factorio.com
+- [ ] fandom.wikia.com
+- [ ] fortune.com
+- [ ] forward.com
+- [ ] genius.com
+- [ ] getnews.jp
+- [ ] github.com
+- [ ] gonintendo.com
+- [ ] gothamist.com
+- [ ] gr.euronews.com
+- [ ] hellogiggles.com
+- [ ] ici.radio-canada.ca
+- [ ] japan.cnet.com
+- [ ] japan.zdnet.com
+- [ ] jvndb.jvn.jp
+- [ ] lodz.se.pl
+- [ ] lublin.se.pl
+- [ ] ma.ttias.be
+- [ ] mashable.com
+- [ ] medium.com
+- [ ] mobilesyrup.com
+- [x] money.cnn.com
+- [ ] newrepublic.com
+- [ ] news.mynavi.jp
+- [ ] news.nationalgeographic.com
+- [ ] news.pts.org.tw
+- [x] nymag.com
+- [ ] obamawhitehouse.archives.gov
+- [ ] observer.com
+- [ ] orf.at
+- [ ] otrs.com
+- [ ] pagesix.com
+- [ ] pastebin.com
+- [ ] people.com
+- [ ] phpspot.org
+- [ ] pitchfork.com
+- [ ] polityka.se.pl
+- [ ] polskisamorzad.se.pl
+- [ ] portalobronny.se.pl
+- [ ] qz.com
+- [ ] scan.netsecurity.ne.jp
+- [ ] sciencefly.com
+- [ ] sect.iij.ad.jp
+- [ ] sg.news.yahoo.com
+- [ ] sport.se.pl
+- [ ] superbiz.se.pl
+- [ ] superseriale.se.pl
+- [ ] szczecin.se.pl
+- [ ] takagi-hiromitsu.jp
+- [ ] tarnkappe.info
+- [ ] techcrunch.com
+- [ ] techlog.iij.ad.jp
+- [ ] terminaltrove.com
+- [ ] thefederalistpapers.org
+- [ ] thoughtcatalog.com
+- [ ] timesofindia.indiatimes.com
+- [ ] tldr.tech
+- [ ] twitter.com
+- [ ] uproxx.com
+- [ ] wccftech.com
+- [ ] weekly.ascii.jp
+- [ ] wikipedia.org
+- [x] wired.jp
+- [ ] wroclaw.se.pl
+- [ ] www.1pezeshk.com
+- [ ] www.abendblatt.de
+- [ ] www.al.com
+- [ ] www.americanow.com
+- [ ] www.androidauthority.com
+- [ ] www.androidcentral.com
+- [ ] www.aol.com
+- [ ] www.apartmenttherapy.com
+- [ ] www.asahi.com
+- [ ] www.blick.de
+- [x] www.bloomberg.com
+- [ ] www.broadwayworld.com
+- [ ] www.bustle.com
+- [ ] www.buzzfeed.com
+- [ ] www.cbc.ca
+- [ ] www.cbssports.com
+- [ ] www.channelnewsasia.com
+- [ ] www.chicagotribune.com
+- [ ] www.cnbc.com
+- [ ] www.cnet.com
+- [x] www.cnn.com
+- [ ] www.dmagazine.com
+- [ ] www.elecom.co.jp
+- [ ] www.engadget.com
+- [ ] www.eonline.com
+- [ ] www.euronews.com
+- [ ] www.fastcompany.com
+- [ ] www.flatpanelshd.com
+- [ ] www.fool.com
+- [ ] www.fortinet.com
+- [ ] www.futura-sciences.com
+- [ ] www.gizmodo.jp
+- [ ] www.gruene.de
+- [ ] www.hardwarezone.com.sg
+- [ ] www.heise.de
+- [ ] www.huffingtonpost.com
+- [ ] www.ilfattoquotidiano.it
+- [ ] www.infoq.com
+- [ ] www.inquisitr.com
+- [ ] www.investmentexecutive.com
+- [ ] www.ipa.go.jp
+- [ ] www.itmedia.co.jp
+- [ ] www.jalopnik.com
+- [ ] www.jnsa.org
+- [ ] www.ladbible.com
+- [ ] www.latimes.com
+- [ ] www.lebensmittelwarnung.de
+- [ ] www.lemonde.fr
+- [ ] www.lifehacker.jp
+- [ ] www.linkedin.com
+- [ ] www.littlethings.com
+- [ ] www.macrumors.com
+- [ ] www.mentalfloss.com
+- [ ] www.miamiherald.com
+- [ ] www.moongift.jp
+- [ ] www.msn.com
+- [ ] www.msnbc.com
+- [ ] www.n-tv.de
+- [ ] www.nationalgeographic.com
+- [ ] www.nbcnews.com
+- [ ] www.ndtv.com
+- [ ] www.newyorker.com
+- [ ] www.ninefornews.nl
+- [ ] www.notebookcheck.net
+- [ ] www.npr.org
+- [ ] www.numerama.com
+- [ ] www.nydailynews.com
+- [x] www.nytimes.com
+- [ ] www.opposingviews.com
+- [ ] www.oreilly.co.jp
+- [ ] www.ossnews.jp
+- [ ] www.phoronix.com
+- [ ] www.politico.com
+- [ ] www.polygon.com
+- [ ] www.popsugar.com
+- [ ] www.prospectmagazine.co.uk
+- [ ] www.publickey1.jp
+- [ ] www.qbitai.com
+- [ ] www.qdaily.com
+- [ ] www.rawstory.com
+- [ ] www.rbbtoday.com
+- [ ] www.recode.net
+- [ ] www.reddit.com
+- [ ] www.refinery29.com
+- [ ] www.reuters.com
+- [ ] www.rollingstone.com
+- [ ] www.sanwa.co.jp
+- [ ] www.sbnation.com
+- [ ] www.se.pl
+- [ ] www.si.com
+- [ ] www.slate.com
+- [ ] www.spektrum.de
+- [ ] www.spiegel.de
+- [ ] www.tagesschau.de
+- [ ] www.techpowerup.com
+- [x] www.theatlantic.com
+- [ ] www.thedrive.com
+- [x] www.theguardian.com
+- [ ] www.thepennyhoarder.com
+- [ ] www.thepoliticalinsider.com
+- [x] www.theverge.com
+- [ ] www.tmz.com
+- [ ] www.today.com
+- [ ] www.transfermarkt.de
+- [ ] www.usmagazine.com
+- [ ] www.versants.com
+- [ ] www.videogameschronicle.com
+- [ ] www.vortez.net
+- [ ] www.vox.com
+- [x] www.washingtonpost.com
+- [ ] www.westernjournalism.com
+- [x] www.wired.com
+- [ ] www.yahoo.com
+- [ ] www.yomiuri.co.jp
+- [ ] www.youtube.com

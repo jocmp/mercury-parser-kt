@@ -46,7 +46,9 @@ class SnapshotParityTest {
                             runBlocking {
                                 Mercury.parse(
                                     "https://$domain/",
-                                    ParseOptions(html = html),
+                                    // Match the snapshot dump's invocation: fallback=false so the
+                                    // generic extractor doesn't paper over custom-extractor misses.
+                                    ParseOptions(html = html, fallback = false),
                                 )
                             }
                         compareParity(expected, result)
@@ -95,15 +97,12 @@ class SnapshotParityTest {
         expected.string("author")?.let { assertEquals(it, actual.author, "author") }
         expected.string("lead_image_url")?.let { assertEquals(it, actual.leadImageUrl, "lead_image_url") }
         expected.string("direction")?.let { assertEquals(it, actual.direction, "direction") }
+        expected.string("dek")?.let { assertEquals(it, actual.dek, "dek") }
+        expected.string("excerpt")?.let { assertEquals(it, actual.excerpt, "excerpt") }
         // Intentionally not compared in the first parity pass:
         // - content / word_count → cheerio vs Jsoup serialization drift
-        // - dek / excerpt → upstream's dek/excerpt interaction (cleanDek nulls
-        //   the dek when excerpt extracted to the same text) is order- and
-        //   fallback-sensitive; our port produces different excerpt fallbacks
-        //   so the dek can null where JS keeps it
         // - date_published → cleanDatePublished's timezone/format handling has
         //   gaps vs JS Date's permissive parsing (see commit history)
-        // These all need targeted fixes before they go back in the comparison.
     }
 
     @Suppress("unused")

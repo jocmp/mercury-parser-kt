@@ -41,7 +41,7 @@ object Mercury {
         val html = options.html ?: doc.html()
         val metaCache = collectMetaNames(doc)
         val extractor = Extractors.get(url)
-        return RootExtractor.extract(extractor, doc, url, html, metaCache)
+        return RootExtractor.extract(extractor, doc, url, html, metaCache, fallback = options.fallback)
     }
 }
 
