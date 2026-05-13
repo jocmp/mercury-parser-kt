@@ -75,6 +75,11 @@ import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www._1pezeshk.com.Www1pezeshkComExtractor
 import com.jocmp.mercury.extractors.custom.www.abendblatt.de.WwwAbendblattDeExtractor
 import com.jocmp.mercury.extractors.custom.www.al.com.WwwAlComExtractor
+import com.jocmp.mercury.extractors.custom.www.americanow.com.WwwAmericanowComExtractor
+import com.jocmp.mercury.extractors.custom.www.androidauthority.com.WwwAndroidauthorityComExtractor
+import com.jocmp.mercury.extractors.custom.www.androidcentral.com.WwwAndroidcentralComExtractor
+import com.jocmp.mercury.extractors.custom.www.aol.com.WwwAolComExtractor
+import com.jocmp.mercury.extractors.custom.www.apartmenttherapy.com.ApartmentTherapyExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
@@ -170,8 +175,13 @@ object AllExtractors {
             WikiaExtractor,
             WikipediaOrgExtractor,
             Www1pezeshkComExtractor,
+            ApartmentTherapyExtractor,
             WwwAbendblattDeExtractor,
             WwwAlComExtractor,
+            WwwAmericanowComExtractor,
+            WwwAndroidauthorityComExtractor,
+            WwwAndroidcentralComExtractor,
+            WwwAolComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
