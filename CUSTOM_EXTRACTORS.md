@@ -189,11 +189,11 @@
 - [x] www.reuters.com
 - [x] www.rollingstone.com
 - [x] www.sanwa.co.jp
-- [ ] www.sbnation.com
-- [ ] www.si.com
-- [ ] www.slate.com
-- [ ] www.spektrum.de
-- [ ] www.spiegel.de
+- [x] www.sbnation.com
+- [x] www.si.com
+- [x] www.slate.com
+- [x] www.spektrum.de
+- [x] www.spiegel.de
 - [ ] www.tagesschau.de
 - [ ] www.techpowerup.com
 - [ ] www.thedrive.com

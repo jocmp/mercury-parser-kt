@@ -157,7 +157,12 @@ import com.jocmp.mercury.extractors.custom.www.refinery29.com.WwwRefinery29ComEx
 import com.jocmp.mercury.extractors.custom.www.reuters.com.WwwReutersComExtractor
 import com.jocmp.mercury.extractors.custom.www.rollingstone.com.WwwRollingstoneComExtractor
 import com.jocmp.mercury.extractors.custom.www.sanwa.co.jp.WwwSanwaCoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.sbnation.com.WwwSbnationComExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
+import com.jocmp.mercury.extractors.custom.www.si.com.WwwSiComExtractor
+import com.jocmp.mercury.extractors.custom.www.slate.com.WwwSlateComExtractor
+import com.jocmp.mercury.extractors.custom.www.spektrum.de.SpektrumExtractor
+import com.jocmp.mercury.extractors.custom.www.spiegel.de.WwwSpiegelDeExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
 import com.jocmp.mercury.extractors.custom.www.theverge.com.WwwThevergeComExtractor
@@ -328,6 +333,11 @@ object AllExtractors {
             WwwReutersComExtractor,
             WwwRollingstoneComExtractor,
             WwwSanwaCoJpExtractor,
+            WwwSbnationComExtractor,
+            WwwSiComExtractor,
+            WwwSlateComExtractor,
+            SpektrumExtractor,
+            WwwSpiegelDeExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
