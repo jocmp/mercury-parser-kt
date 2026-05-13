@@ -145,11 +145,11 @@
 - [x] www.infoq.com
 - [x] www.inquisitr.com
 - [x] www.investmentexecutive.com
-- [ ] www.ipa.go.jp
-- [ ] www.itmedia.co.jp
-- [ ] www.jnsa.org
-- [ ] www.ladbible.com
-- [ ] www.latimes.com
+- [x] www.ipa.go.jp
+- [x] www.itmedia.co.jp
+- [ ] www.jnsa.org  (deferred: title contains `<br>`; Jsoup `.text()` collapses to space, JS cheerio preserves `\n` — library-level parity gap)
+- [x] www.ladbible.com
+- [x] www.latimes.com
 - [ ] www.lebensmittelwarnung.de
 - [ ] www.lemonde.fr
 - [ ] www.lifehacker.jp

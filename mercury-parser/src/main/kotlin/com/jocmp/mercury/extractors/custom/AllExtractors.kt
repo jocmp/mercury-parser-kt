@@ -112,7 +112,11 @@ import com.jocmp.mercury.extractors.custom.www.ilfattoquotidiano.it.WwwIlfattoqu
 import com.jocmp.mercury.extractors.custom.www.infoq.com.WwwInfoqComExtractor
 import com.jocmp.mercury.extractors.custom.www.inquisitr.com.WwwInquisitrComExtractor
 import com.jocmp.mercury.extractors.custom.www.investmentexecutive.com.WwwInvestmentexecutiveComExtractor
+import com.jocmp.mercury.extractors.custom.www.ipa.go.jp.WwwIpaGoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.itmedia.co.jp.WwwItmediaCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
+import com.jocmp.mercury.extractors.custom.www.ladbible.com.WwwLadbibleComExtractor
+import com.jocmp.mercury.extractors.custom.www.latimes.com.WwwLatimesComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
@@ -242,6 +246,10 @@ object AllExtractors {
             WwwInfoqComExtractor,
             WwwInquisitrComExtractor,
             WwwInvestmentexecutiveComExtractor,
+            WwwIpaGoJpExtractor,
+            WwwItmediaCoJpExtractor,
+            WwwLadbibleComExtractor,
+            WwwLatimesComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
