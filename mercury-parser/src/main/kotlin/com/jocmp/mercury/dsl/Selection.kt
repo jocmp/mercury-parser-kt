@@ -82,6 +82,20 @@ class Selection internal constructor(
             }
         }
 
+    /** Insert [html] right after the current element(s), like cheerio's `$node.after(html)`. */
+    fun after(html: String): Selection =
+        apply {
+            elements.forEach { el ->
+                val parsed = org.jsoup.parser.Parser.parseBodyFragment(html, el.ownerDocument()?.baseUri() ?: "")
+                val children = parsed.body().children().toList()
+                var prev: Element = el
+                children.forEach { child ->
+                    prev.after(child)
+                    prev = child
+                }
+            }
+        }
+
     fun replaceWith(html: String): Selection =
         apply {
             elements.forEach { el ->

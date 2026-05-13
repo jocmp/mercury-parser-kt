@@ -27,6 +27,11 @@ import com.jocmp.mercury.extractors.custom.github.com.GithubComExtractor
 import com.jocmp.mercury.extractors.custom.gonintendo.com.GonintendoComExtractor
 import com.jocmp.mercury.extractors.custom.gothamist.com.GothamistComExtractor
 import com.jocmp.mercury.extractors.custom.hellogiggles.com.HellogigglesComExtractor
+import com.jocmp.mercury.extractors.custom.ici.radio_canada.ca.IciRadioCanadaCaExtractor
+import com.jocmp.mercury.extractors.custom.japan.cnet.com.JapanCnetComExtractor
+import com.jocmp.mercury.extractors.custom.japan.zdnet.com.JapanZdnetComExtractor
+import com.jocmp.mercury.extractors.custom.jvndb.jvn.jp.JvndbJvnJpExtractor
+import com.jocmp.mercury.extractors.custom.ma.ttias.be.MaTtiasBeExtractor
 import com.jocmp.mercury.extractors.custom.money.cnn.com.MoneyCnnComExtractor
 import com.jocmp.mercury.extractors.custom.nymag.com.NYMagExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
@@ -71,6 +76,11 @@ object AllExtractors {
             GonintendoComExtractor,
             GothamistComExtractor,
             HellogigglesComExtractor,
+            IciRadioCanadaCaExtractor,
+            JapanCnetComExtractor,
+            JapanZdnetComExtractor,
+            JvndbJvnJpExtractor,
+            MaTtiasBeExtractor,
             MoneyCnnComExtractor,
             NineToFiveGoogleComExtractor,
             NineToFiveLinuxComExtractor,
