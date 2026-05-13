@@ -27,6 +27,7 @@ import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
+import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
 import com.jocmp.mercury.extractors.custom.www.theverge.com.WwwThevergeComExtractor
@@ -67,6 +68,7 @@ object AllExtractors {
             TwoFortySevenSportsComExtractor,
             WashingtonPostExtractor,
             WikiaExtractor,
+            WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
             WwwCnnComExtractor,
