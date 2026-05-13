@@ -170,11 +170,11 @@
 - [x] www.notebookcheck.net
 - [x] www.npr.org
 - [x] www.numerama.com
-- [ ] www.nydailynews.com
-- [ ] www.opposingviews.com
-- [ ] www.oreilly.co.jp
-- [ ] www.ossnews.jp
-- [ ] www.phoronix.com
+- [x] www.nydailynews.com
+- [x] www.opposingviews.com
+- [x] www.oreilly.co.jp
+- [x] www.ossnews.jp
+- [x] www.phoronix.com
 - [ ] www.politico.com
 - [ ] www.polygon.com
 - [ ] www.popsugar.com

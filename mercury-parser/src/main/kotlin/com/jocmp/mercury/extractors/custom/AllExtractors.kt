@@ -136,7 +136,12 @@ import com.jocmp.mercury.extractors.custom.www.newyorker.com.NewYorkerExtractor
 import com.jocmp.mercury.extractors.custom.www.notebookcheck.net.WwwNotebookcheckNetExtractor
 import com.jocmp.mercury.extractors.custom.www.npr.org.WwwNprOrgExtractor
 import com.jocmp.mercury.extractors.custom.www.numerama.com.WwwNumeramaComExtractor
+import com.jocmp.mercury.extractors.custom.www.nydailynews.com.WwwNydailynewsComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
+import com.jocmp.mercury.extractors.custom.www.opposingviews.com.WwwOpposingviewsComExtractor
+import com.jocmp.mercury.extractors.custom.www.oreilly.co.jp.WwwOreillyCoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.ossnews.jp.WwwOssnewsJpExtractor
+import com.jocmp.mercury.extractors.custom.www.phoronix.com.WwwPhoronixComExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
@@ -288,6 +293,11 @@ object AllExtractors {
             WwwNotebookcheckNetExtractor,
             WwwNprOrgExtractor,
             WwwNumeramaComExtractor,
+            WwwNydailynewsComExtractor,
+            WwwOpposingviewsComExtractor,
+            WwwOreillyCoJpExtractor,
+            WwwOssnewsJpExtractor,
+            WwwPhoronixComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
