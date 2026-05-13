@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 69**
+- **Primary extractors registered: 74**
 - **Additional domains via supportedDomains: ~29** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1)
-- **Effective domain coverage: ~98**
+- **Effective domain coverage: ~103**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -78,6 +78,11 @@
 - [x] superseriale.se.pl
 - [x] takagi-hiromitsu.jp
 - [x] tarnkappe.info
+- [x] techcrunch.com
+- [x] techlog.iij.ad.jp
+- [x] terminaltrove.com
+- [x] thefederalistpapers.org
+- [x] thoughtcatalog.com
 - [x] wired.jp
 - [x] www.bloomberg.com
 - [x] www.cnn.com
@@ -90,17 +95,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (130 — primary domains only; some are deferred per above)
+## Todo (125 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] techcrunch.com
-- [ ] techlog.iij.ad.jp
-- [ ] terminaltrove.com
-- [ ] thefederalistpapers.org
-- [ ] thoughtcatalog.com
 - [ ] timesofindia.indiatimes.com
 - [ ] tldr.tech
 - [ ] twitter.com

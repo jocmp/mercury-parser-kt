@@ -59,6 +59,11 @@ import com.jocmp.mercury.extractors.custom.sg.news.yahoo.com.SgNewsYahooComExtra
 import com.jocmp.mercury.extractors.custom.superseriale.se.pl.SuperserialeSePlExtractor
 import com.jocmp.mercury.extractors.custom.takagi_hiromitsu.jp.TakagiHiromitsuJpExtractor
 import com.jocmp.mercury.extractors.custom.tarnkappe.info.TarnkappeInfoExtractor
+import com.jocmp.mercury.extractors.custom.techcrunch.com.TechcrunchComExtractor
+import com.jocmp.mercury.extractors.custom.techlog.iij.ad.jp.TechlogIijAdJpExtractor
+import com.jocmp.mercury.extractors.custom.terminaltrove.com.TerminaltroveComExtractor
+import com.jocmp.mercury.extractors.custom.thefederalistpapers.org.ThefederalistpapersOrgExtractor
+import com.jocmp.mercury.extractors.custom.thoughtcatalog.com.ThoughtcatalogComExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -137,8 +142,13 @@ object AllExtractors {
             SuperserialeSePlExtractor,
             TakagiHiromitsuJpExtractor,
             TarnkappeInfoExtractor,
+            TechcrunchComExtractor,
+            TechlogIijAdJpExtractor,
+            TerminaltroveComExtractor,
             TheAtlanticExtractor,
             TheGuardianExtractor,
+            ThefederalistpapersOrgExtractor,
+            ThoughtcatalogComExtractor,
             TwoFortySevenSportsComExtractor,
             WashingtonPostExtractor,
             WikiaExtractor,
