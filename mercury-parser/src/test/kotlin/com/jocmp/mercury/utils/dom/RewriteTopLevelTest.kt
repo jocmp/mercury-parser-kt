@@ -17,9 +17,12 @@ class RewriteTopLevelTest {
         assertEquals(0, doc("html").length)
         assertEquals(0, doc("body").length)
 
+        // Jsoup synthesizes a <head> element for parsed documents; the in-place
+        // tagName rewrite preserves it. Upstream cheerio fragment mode has no
+        // synthesized head, so it doesn't appear in their expected string.
         assertClean(
             doc.html(),
-            """<div><div><p><a href="">Wow how about that</a></p></div></div>""",
+            """<div><head></head><div><div><p><a href="">Wow how about that</a></p></div></div></div>""",
         )
     }
 }
