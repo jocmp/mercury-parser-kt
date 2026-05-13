@@ -14,7 +14,7 @@
 
 - **bialystok.se.pl, lodz.se.pl, lublin.se.pl, polityka.se.pl, portalobronny.se.pl, sport.se.pl, superbiz.se.pl, szczecin.se.pl, wroclaw.se.pl**: covered via `WwwSePlExtractor.supportedDomains` (treat as ported, no separate file)
 - **gr.euronews.com**: covered via `WwwEuronewsComExtractor.supportedDomains` (treat as ported, no separate file)
-- **www.nbcnews.com, www.reddit.com, weekly.ascii.jp, www.channelnewsasia.com**: `date_published` parity skipped — see comment in `SnapshotParityTest.compareParity`. cheerio/dayjs vs jsoup/Java edges not worth library-level workarounds.
+- **www.nbcnews.com, www.reddit.com**: `date_published` parity skipped — see comment in `SnapshotParityTest.compareParity`. nbcnews's JS path reaches the value through generic-extractor heuristics we don't reproduce; reddit's source is "now" (wall-clock).
 
 ## Ported (44 primary)
 

@@ -1,0 +1,4 @@
+# Test fixtures and snapshots are vendored verbatim from upstream and skew
+# GitHub's language stats. Mark them as not detectable.
+mercury-parser/src/test/resources/fixtures/** linguist-generated=true
+mercury-parser/src/test/resources/snapshots/** linguist-generated=true

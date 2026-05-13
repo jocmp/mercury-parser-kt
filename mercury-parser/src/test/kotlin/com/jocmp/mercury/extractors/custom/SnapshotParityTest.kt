@@ -101,25 +101,13 @@ class SnapshotParityTest {
         expected.string("dek")?.let { assertEquals(it, actual.dek, "dek") }
         expected.string("excerpt")?.let { assertEquals(it, actual.excerpt, "excerpt") }
         expected.string("date_published")?.let { exp ->
-            // A handful of fixtures hit fundamental cheerio/dayjs-vs-jsoup/Java
-            // mismatches that aren't worth library-level workarounds:
+            // Two fixtures remain skipped:
             //   - nbcnews: JS extracts a `<time>` value its own selectors don't
-            //     match; we can't reproduce without dipping into the generic
-            //     extractor.
+            //     match. We can't reproduce without dipping into the generic
+            //     extractor's meta/itemprop heuristics.
             //   - reddit: source uses "now" — the snapshot froze a wall-clock
             //     instant we can't reproduce on subsequent runs.
-            //   - weekly.ascii.jp: format mixes ASCII tokens with `時/分`; JS
-            //     dayjs non-strict mode silently skips the mismatch.
-            //   - channelnewsasia: source dribbles "(Updated: ...)" into the
-            //     same selector; dayjs's regex-anywhere semantics catch the
-            //     first match, which we'd need substring scanning to mimic.
-            val dateSkipDomains =
-                setOf(
-                    "www.nbcnews.com",
-                    "www.reddit.com",
-                    "weekly.ascii.jp",
-                    "www.channelnewsasia.com",
-                )
+            val dateSkipDomains = setOf("www.nbcnews.com", "www.reddit.com")
             if (domain !in dateSkipDomains) {
                 val (e, a) = normalizeForDate(exp, actual.datePublished?.toString())
                 assertEquals(e, a, "date_published")

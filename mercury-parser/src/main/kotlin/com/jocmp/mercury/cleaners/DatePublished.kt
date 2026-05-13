@@ -104,21 +104,45 @@ private fun parseWithFormat(
     val cleaned = stripTimezoneFromFormat(format)
     val javaPattern = dayjsToJavaPattern(cleaned)
     val fmt = DateTimeFormatter.ofPattern(javaPattern, Locale.ENGLISH)
+    val normalized = normalizeForFormat(input, format)
     // Scan positions so leading text (e.g. "Written by ... on ") doesn't
     // prevent a match — mirrors dayjs's regex-anywhere semantics.
-    for (start in 0..input.length) {
+    for (start in 0..normalized.length) {
         val pos = java.text.ParsePosition(start)
-        val accessor = runCatching { fmt.parse(input, pos) }.getOrNull() ?: continue
+        val accessor = runCatching { fmt.parse(normalized, pos) }.getOrNull() ?: continue
         // Prefer a full LocalDateTime (date + time). Only fall back to
         // start-of-day when the format didn't include time at all.
         runCatching { return LocalDateTime.from(accessor) }
     }
-    for (start in 0..input.length) {
+    for (start in 0..normalized.length) {
         val pos = java.text.ParsePosition(start)
-        val accessor = runCatching { fmt.parse(input, pos) }.getOrNull() ?: continue
+        val accessor = runCatching { fmt.parse(normalized, pos) }.getOrNull() ?: continue
         runCatching { return java.time.LocalDate.from(accessor).atStartOfDay() }
     }
     return null
+}
+
+// Pre-format normalizations that smooth over places where the upstream
+// format string and the source HTML don't agree exactly:
+//   - Insert a space before AM/PM so `mma` patterns can match "06PM"
+//     (channelnewsasia: "09:06PM"). Java's `a` token wants a non-letter
+//     boundary; cheerio/dayjs's regex matcher doesn't.
+//   - Map Japanese time delimiters to ASCII so "12時00分" satisfies an
+//     `HH:mm` format (weekly.ascii.jp).
+private val MERIDIAN_NO_SPACE_RE = Regex("""(\d)([AaPp][Mm])""")
+
+private fun normalizeForFormat(
+    input: String,
+    format: String,
+): String {
+    var s = MERIDIAN_NO_SPACE_RE.replace(input) { m -> "${m.groupValues[1]} ${m.groupValues[2]}" }
+    // Only swap a Japanese time delimiter when the format doesn't expect it as
+    // a literal — japan.cnet's format is "YYYY年M月D日 HH時mm分", weekly.ascii's
+    // is "YYYY年M月D日 HH:mm". Keep the literal match for the former.
+    if ('時' !in format) s = s.replace('時', ':')
+    if ('分' !in format) s = s.replace('分', ' ')
+    if ('秒' !in format) s = s.replace('秒', ' ')
+    return s
 }
 
 // Take a date published string, and hopefully return a date out of
@@ -289,7 +313,17 @@ internal fun dayjsToJavaPattern(format: String): String {
     // AM/PM token from dayjs (which already became Java's `a`). If absent,
     // promote `hh`/`h` to 24-hour so the clock-hour-of-am-pm field doesn't
     // get stranded without a marker.
-    return if (hasUnquotedAmPm(converted)) converted else converted.replace("hh", "HH").replace("h", "H")
+    val result =
+        if (hasUnquotedAmPm(converted)) {
+            // Ensure a space separates the minute token from `a` — Java's
+            // formatter wants the boundary even though dayjs's regex doesn't.
+            // `normalizeForFormat` matches by injecting the same space on the
+            // input side.
+            converted.replace("mma", "mm a").replace("ssa", "ss a").replace("Ha", "H a")
+        } else {
+            converted.replace("hh", "HH").replace("h", "H")
+        }
+    return result
 }
 
 private fun hasUnquotedAmPm(pattern: String): Boolean {
@@ -342,14 +376,14 @@ private fun convertTokens(format: String): String {
     while (i < format.length) {
         val c = format[i]
         if (isAsciiLetter(c)) {
-            // Take the full ASCII-letter run, then try to match it against
-            // the token map as a whole. If no exact match, the whole run is
-            // a literal (e.g. "at" in "D MMMM YYYY at hh:mm").
+            // Take the full ASCII-letter run, then walk it greedy-token-first.
+            // Within a run, prefer the longest token; mixed case like "mmA"
+            // splits into "mm" + "A". Any subsequence that doesn't match a
+            // token becomes a quoted literal (e.g. "at").
             var j = i
             while (j < format.length && isAsciiLetter(format[j])) j++
             val run = format.substring(i, j)
-            val matched = tokens.firstOrNull { (from, _) -> from == run }
-            if (matched != null) out.append(matched.second) else out.append(quote(run))
+            consumeLetterRun(run, tokens, out)
             i = j
         } else if (c.isLetter()) {
             // Non-ASCII letter (CJK, etc.) — Java treats unreserved letters
@@ -362,4 +396,50 @@ private fun convertTokens(format: String): String {
         }
     }
     return out.toString()
+}
+
+private fun consumeLetterRun(
+    run: String,
+    tokens: List<Pair<String, String>>,
+    out: StringBuilder,
+) {
+    // Prefer matching the whole run as one token ("MMMM"). Failing that,
+    // single-char runs that match a token ("M"). Otherwise, if the run is
+    // single-case (e.g. "at"), treat the whole thing as a literal — dayjs
+    // does the same. Mixed-case runs (e.g. "mmA" from "hh:mmA") get split
+    // greedily so each token gets its translation.
+    fun emit(s: String) {
+        val match = tokens.firstOrNull { (from, _) -> from == s }
+        if (match != null) {
+            out.append(match.second)
+        } else {
+            out.append('\'').append(s.replace("'", "''")).append('\'')
+        }
+    }
+    val singleCase = run.all { it.isLowerCase() } || run.all { it.isUpperCase() }
+    if (singleCase) {
+        emit(run)
+        return
+    }
+    // Mixed case — walk greedy.
+    var i = 0
+    val literal = StringBuilder()
+
+    fun flushLiteral() {
+        if (literal.isEmpty()) return
+        emit(literal.toString())
+        literal.clear()
+    }
+    while (i < run.length) {
+        val match = tokens.firstOrNull { (from, _) -> run.startsWith(from, i) }
+        if (match != null) {
+            flushLiteral()
+            out.append(match.second)
+            i += match.first.length
+        } else {
+            literal.append(run[i])
+            i++
+        }
+    }
+    flushLiteral()
 }
