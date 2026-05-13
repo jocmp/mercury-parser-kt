@@ -64,6 +64,11 @@ import com.jocmp.mercury.extractors.custom.techlog.iij.ad.jp.TechlogIijAdJpExtra
 import com.jocmp.mercury.extractors.custom.terminaltrove.com.TerminaltroveComExtractor
 import com.jocmp.mercury.extractors.custom.thefederalistpapers.org.ThefederalistpapersOrgExtractor
 import com.jocmp.mercury.extractors.custom.thoughtcatalog.com.ThoughtcatalogComExtractor
+import com.jocmp.mercury.extractors.custom.timesofindia.indiatimes.com.TimesofindiaIndiatimesComExtractor
+import com.jocmp.mercury.extractors.custom.tldr.tech.TldrTechExtractor
+import com.jocmp.mercury.extractors.custom.twitter.com.TwitterComExtractor
+import com.jocmp.mercury.extractors.custom.uproxx.com.UproxxComExtractor
+import com.jocmp.mercury.extractors.custom.wccftech.com.WccftechComExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -149,8 +154,13 @@ object AllExtractors {
             TheGuardianExtractor,
             ThefederalistpapersOrgExtractor,
             ThoughtcatalogComExtractor,
+            TimesofindiaIndiatimesComExtractor,
+            TldrTechExtractor,
+            TwitterComExtractor,
             TwoFortySevenSportsComExtractor,
+            UproxxComExtractor,
             WashingtonPostExtractor,
+            WccftechComExtractor,
             WikiaExtractor,
             WwwSePlExtractor,
             WiredExtractor,
