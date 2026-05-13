@@ -1,3 +1,5 @@
+@file:Suppress("ktlint:standard:max-line-length")
+
 package com.jocmp.mercury.extractors.generic.content.scoring
 
 import com.jocmp.mercury.dsl.Doc
