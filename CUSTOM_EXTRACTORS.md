@@ -179,11 +179,11 @@
 - [x] www.popsugar.com
 - [x] www.prospectmagazine.co.uk
 - [x] www.publickey1.jp
-- [ ] www.qbitai.com
-- [ ] www.qdaily.com
-- [ ] www.rawstory.com
-- [ ] www.rbbtoday.com
-- [ ] www.recode.net
+- [x] www.qbitai.com
+- [x] www.qdaily.com
+- [x] www.rawstory.com
+- [x] www.rbbtoday.com
+- [x] www.recode.net
 - [ ] www.reddit.com
 - [ ] www.refinery29.com
 - [ ] www.reuters.com

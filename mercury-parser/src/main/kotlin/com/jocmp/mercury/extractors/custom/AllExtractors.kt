@@ -147,6 +147,11 @@ import com.jocmp.mercury.extractors.custom.www.polygon.com.WwwPolygonComExtracto
 import com.jocmp.mercury.extractors.custom.www.popsugar.com.WwwPopsugarComExtractor
 import com.jocmp.mercury.extractors.custom.www.prospectmagazine.co.uk.WwwProspectmagazineCoUkExtractor
 import com.jocmp.mercury.extractors.custom.www.publickey1.jp.WwwPublickey1JpExtractor
+import com.jocmp.mercury.extractors.custom.www.qbitai.com.WwwQbitaiComExtractor
+import com.jocmp.mercury.extractors.custom.www.qdaily.com.WwwQdailyComExtractor
+import com.jocmp.mercury.extractors.custom.www.rawstory.com.WwwRawstoryComExtractor
+import com.jocmp.mercury.extractors.custom.www.rbbtoday.com.WwwRbbtodayComExtractor
+import com.jocmp.mercury.extractors.custom.www.recode.net.WwwRecodeNetExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
@@ -308,6 +313,11 @@ object AllExtractors {
             WwwPopsugarComExtractor,
             WwwProspectmagazineCoUkExtractor,
             WwwPublickey1JpExtractor,
+            WwwQbitaiComExtractor,
+            WwwQdailyComExtractor,
+            WwwRawstoryComExtractor,
+            WwwRbbtodayComExtractor,
+            WwwRecodeNetExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
