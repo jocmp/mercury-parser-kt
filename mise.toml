@@ -1,2 +1,0 @@
-[tools]
-kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
