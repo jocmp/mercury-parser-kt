@@ -54,6 +54,11 @@ import com.jocmp.mercury.extractors.custom.polskisamorzad.se.pl.PolskisamorzadSe
 import com.jocmp.mercury.extractors.custom.qz.com.QzComExtractor
 import com.jocmp.mercury.extractors.custom.scan.netsecurity.ne.jp.ScanNetsecurityNeJpExtractor
 import com.jocmp.mercury.extractors.custom.sciencefly.com.ScienceflyComExtractor
+import com.jocmp.mercury.extractors.custom.sect.iij.ad.jp.SectIijAdJpExtractor
+import com.jocmp.mercury.extractors.custom.sg.news.yahoo.com.SgNewsYahooComExtractor
+import com.jocmp.mercury.extractors.custom.superseriale.se.pl.SuperserialeSePlExtractor
+import com.jocmp.mercury.extractors.custom.takagi_hiromitsu.jp.TakagiHiromitsuJpExtractor
+import com.jocmp.mercury.extractors.custom.tarnkappe.info.TarnkappeInfoExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -127,6 +132,11 @@ object AllExtractors {
             QzComExtractor,
             ScanNetsecurityNeJpExtractor,
             ScienceflyComExtractor,
+            SectIijAdJpExtractor,
+            SgNewsYahooComExtractor,
+            SuperserialeSePlExtractor,
+            TakagiHiromitsuJpExtractor,
+            TarnkappeInfoExtractor,
             TheAtlanticExtractor,
             TheGuardianExtractor,
             TwoFortySevenSportsComExtractor,
