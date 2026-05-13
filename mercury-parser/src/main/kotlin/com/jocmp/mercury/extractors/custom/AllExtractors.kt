@@ -32,7 +32,12 @@ import com.jocmp.mercury.extractors.custom.japan.cnet.com.JapanCnetComExtractor
 import com.jocmp.mercury.extractors.custom.japan.zdnet.com.JapanZdnetComExtractor
 import com.jocmp.mercury.extractors.custom.jvndb.jvn.jp.JvndbJvnJpExtractor
 import com.jocmp.mercury.extractors.custom.ma.ttias.be.MaTtiasBeExtractor
+import com.jocmp.mercury.extractors.custom.mashable.com.MashableComExtractor
+import com.jocmp.mercury.extractors.custom.medium.com.MediumComExtractor
+import com.jocmp.mercury.extractors.custom.mobilesyrup.com.MobilesyrupComExtractor
 import com.jocmp.mercury.extractors.custom.money.cnn.com.MoneyCnnComExtractor
+import com.jocmp.mercury.extractors.custom.newrepublic.com.NewrepublicComExtractor
+import com.jocmp.mercury.extractors.custom.news.mynavi.jp.NewsMynaviJpExtractor
 import com.jocmp.mercury.extractors.custom.nymag.com.NYMagExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
@@ -81,7 +86,12 @@ object AllExtractors {
             JapanZdnetComExtractor,
             JvndbJvnJpExtractor,
             MaTtiasBeExtractor,
+            MashableComExtractor,
+            MediumComExtractor,
+            MobilesyrupComExtractor,
             MoneyCnnComExtractor,
+            NewrepublicComExtractor,
+            NewsMynaviJpExtractor,
             NineToFiveGoogleComExtractor,
             NineToFiveLinuxComExtractor,
             NineToFiveMacComExtractor,

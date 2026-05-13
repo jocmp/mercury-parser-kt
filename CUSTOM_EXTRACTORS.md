@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 44**
+- **Primary extractors registered: 49**
 - **Additional domains via supportedDomains: ~27** (deadspin 13, gothamist 5, www.se.pl 9)
-- **Effective domain coverage: ~71**
+- **Effective domain coverage: ~76**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -51,7 +51,12 @@
 - [x] japan.zdnet.com
 - [x] jvndb.jvn.jp
 - [x] ma.ttias.be
+- [x] mashable.com
+- [x] medium.com
+- [x] mobilesyrup.com
 - [x] money.cnn.com
+- [x] newrepublic.com
+- [x] news.mynavi.jp
 - [x] nymag.com
 - [x] wired.jp
 - [x] www.bloomberg.com
@@ -65,17 +70,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (155 — primary domains only; some are deferred per above)
+## Todo (150 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] mashable.com
-- [ ] medium.com
-- [ ] mobilesyrup.com
-- [ ] newrepublic.com
-- [ ] news.mynavi.jp
 - [ ] news.nationalgeographic.com
 - [ ] news.pts.org.tw
 - [ ] obamawhitehouse.archives.gov
