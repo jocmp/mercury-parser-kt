@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 89**
-- **Additional domains via supportedDomains: ~29** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1)
-- **Effective domain coverage: ~118**
+- **Primary extractors registered: 94**
+- **Additional domains via supportedDomains: ~30** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1)
+- **Effective domain coverage: ~124**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -99,6 +99,11 @@
 - [x] www.androidcentral.com
 - [x] www.aol.com
 - [x] www.apartmenttherapy.com
+- [x] www.asahi.com
+- [x] www.blick.de
+- [x] www.broadwayworld.com
+- [x] www.bustle.com
+- [x] www.buzzfeed.com (+ 1 supportedDomain: www.buzzfeednews.com)
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -110,17 +115,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (110 — primary domains only; some are deferred per above)
+## Todo (105 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] www.asahi.com
-- [ ] www.blick.de
-- [ ] www.broadwayworld.com
-- [ ] www.bustle.com
-- [ ] www.buzzfeed.com
 - [ ] www.cbc.ca
 - [ ] www.cbssports.com
 - [ ] www.channelnewsasia.com
