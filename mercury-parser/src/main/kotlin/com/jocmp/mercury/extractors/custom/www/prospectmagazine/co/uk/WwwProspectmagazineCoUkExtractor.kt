@@ -11,7 +11,7 @@ val WwwProspectmagazineCoUkExtractor =
         datePublished {
             attr("meta[name=\"article:published_time\"]", "value")
             selector(".post-info")
-            // timezone: 'Europe/London' (per-field timezone option not plumbed through DSL yet)
+            timezone = "Europe/London"
         }
 
         dek { selectors(".blog-header__description", ".page-subtitle") }

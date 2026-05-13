@@ -9,9 +9,8 @@ val SectIijAdJpExtractor =
         author { selectors("p.post-author a", "dl.entrydate dd") }
 
         datePublished {
-            // Upstream also specifies `format: 'YYYY年M月D日'` and
-            // `timezone: 'Asia/Tokyo'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL (see mercury-deferred-fixes memory).
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日"
             selectors("time")
         }
 

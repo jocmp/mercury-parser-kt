@@ -13,9 +13,8 @@ val WwwChannelnewsasiaComExtractor =
         }
 
         datePublished {
-            // Upstream also specifies `format: 'D MMM YYYY hh:mmA'` and
-            // `timezone: 'Asia/Singapore'`. Per-field date format/timezone is
-            // not yet plumbed through the DSL.
+            timezone = "Asia/Singapore"
+            format = "D MMM YYYY hh:mmA"
             selectors(".article-publish:not(span)")
         }
 

@@ -9,8 +9,8 @@ val WwwLebensmittelwarnungDeExtractor =
 
         datePublished {
             attr(".lmw-intro__meta > time", "datetime")
-            // format: 'DD.MM.YYYY', timezone: 'Europe/Berlin'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Europe/Berlin"
+            format = "DD.MM.YYYY"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

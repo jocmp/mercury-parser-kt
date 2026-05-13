@@ -10,8 +10,8 @@ val WwwPublickey1JpExtractor =
 
         datePublished {
             selectors("div.pubdate")
-            // format: 'YYYY年MM月DD日', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY年MM月DD日"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

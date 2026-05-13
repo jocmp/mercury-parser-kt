@@ -8,9 +8,8 @@ val WwwElecomCoJpExtractor =
         title { selectors("title") }
 
         datePublished {
-            // Upstream also specifies `format: 'YYYY.M.D'` and
-            // `timezone: 'Asia/Tokyo'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL.
+            timezone = "Asia/Tokyo"
+            format = "YYYY.M.D"
             selectors("p.section-last")
         }
 

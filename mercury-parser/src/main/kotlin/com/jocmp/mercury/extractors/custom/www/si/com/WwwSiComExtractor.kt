@@ -11,7 +11,7 @@ val WwwSiComExtractor =
 
         datePublished {
             attr("meta[name=\"published\"]", "value")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         dek { selectors(".m-detail-header--dek") }

@@ -11,7 +11,11 @@ val AbcnewsGoComExtractor =
             clean(".author-overlay", ".by-text")
         }
 
-        datePublished { selectors(".ShareByline", ".timestamp") }
+        datePublished {
+            selectors(".ShareByline", ".timestamp")
+            timezone = "America/New_York"
+            format = "MMMM D, YYYY h:mm a"
+        }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 

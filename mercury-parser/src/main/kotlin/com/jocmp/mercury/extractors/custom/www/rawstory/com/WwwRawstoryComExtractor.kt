@@ -19,7 +19,7 @@ val WwwRawstoryComExtractor =
         datePublished {
             attr("meta[name=\"article:published_time\"]", "value")
             selector(".blog-author a:last-of-type")
-            // timezone: 'EST' (per-field timezone option not plumbed through DSL yet)
+            timezone = "EST"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

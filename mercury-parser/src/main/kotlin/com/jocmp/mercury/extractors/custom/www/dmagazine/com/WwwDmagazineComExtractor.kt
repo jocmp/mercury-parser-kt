@@ -9,9 +9,8 @@ val WwwDmagazineComExtractor =
         author { selectors(".story__info .story__info__item:first-child") }
 
         datePublished {
-            // Upstream also specifies `format: 'MMMM D, YYYY h:mm a'` and
-            // `timezone: 'America/Chicago'`. Per-field date format/timezone is
-            // not yet plumbed through the DSL.
+            timezone = "America/Chicago"
+            format = "MMMM D, YYYY h:mm a"
             selectors(".story__info")
         }
 

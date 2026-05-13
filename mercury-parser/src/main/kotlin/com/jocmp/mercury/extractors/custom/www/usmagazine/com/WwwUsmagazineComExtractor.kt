@@ -10,7 +10,7 @@ val WwwUsmagazineComExtractor =
 
         datePublished {
             attr("meta[name=\"article:published_time\"]", "value")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

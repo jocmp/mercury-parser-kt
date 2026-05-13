@@ -10,7 +10,7 @@ val WwwLadbibleComExtractor =
 
         datePublished {
             selectors("time")
-            // timezone: 'Europe/London' (per-field timezone option not plumbed through DSL yet)
+            timezone = "Europe/London"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

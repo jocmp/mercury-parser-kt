@@ -10,8 +10,7 @@ val WwwHardwarezoneComSgExtractor =
         author { selectors(".article-view-author-name a") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'UTC'`. Per-field timezone is
-            // not yet plumbed through the DSL.
+            timezone = "UTC"
             selectors(".article-view-timestamp")
         }
 

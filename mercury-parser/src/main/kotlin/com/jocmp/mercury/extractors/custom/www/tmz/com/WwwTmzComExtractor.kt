@@ -10,7 +10,7 @@ val WwwTmzComExtractor =
 
         datePublished {
             selectors(".article__published-at", ".article-posted-date")
-            // timezone: 'America/Los_Angeles' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/Los_Angeles"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

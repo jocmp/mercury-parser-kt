@@ -21,7 +21,7 @@ val WwwMentalflossComExtractor =
         datePublished {
             attr("meta[name=\"article:published_time\"]", "value")
             selector(".date-display-single")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

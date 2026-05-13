@@ -10,8 +10,8 @@ val SpektrumExtractor =
 
         datePublished {
             selectors(".content__meta__date")
-            // format: 'D.M.YYYY', timezone: 'Europe/Berlin'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Europe/Berlin"
+            format = "D.M.YYYY"
         }
 
         dek { selectors(".content__intro") }

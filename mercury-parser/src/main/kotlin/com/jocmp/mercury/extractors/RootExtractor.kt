@@ -148,7 +148,7 @@ internal fun selectField(
     return when (type) {
         "title" -> cleanTitle(raw, doc, url)
         "author" -> cleanAuthor(raw)
-        "date_published" -> cleanDatePublished(raw)
+        "date_published" -> cleanDatePublished(raw, extractionOpts.timezone, extractionOpts.format)
         "lead_image_url" -> cleanLeadImageUrl(raw)
         "dek" -> cleanDek(raw, doc, excerpt)
         else -> raw

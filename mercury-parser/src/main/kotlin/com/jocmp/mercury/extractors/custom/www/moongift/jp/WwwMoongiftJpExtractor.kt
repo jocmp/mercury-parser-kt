@@ -8,7 +8,7 @@ val WwwMoongiftJpExtractor =
 
         datePublished {
             selectors("ul.meta li:not(.social):first-of-type")
-            // timezone: 'Asia/Tokyo' (per-field timezone option not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
         }
 
         dek { attr("meta[name=\"og:description\"]", "value") }

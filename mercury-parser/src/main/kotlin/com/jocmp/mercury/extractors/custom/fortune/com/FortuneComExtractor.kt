@@ -10,7 +10,7 @@ val FortuneComExtractor =
 
         datePublished {
             selectors(".MblGHNMJ")
-            // timezone: 'UTC' (per-field timezone option not plumbed through DSL yet)
+            timezone = "UTC"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

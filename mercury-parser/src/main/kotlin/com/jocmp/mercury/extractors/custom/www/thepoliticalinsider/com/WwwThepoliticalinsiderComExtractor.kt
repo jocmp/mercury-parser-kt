@@ -10,7 +10,7 @@ val WwwThepoliticalinsiderComExtractor =
 
         datePublished {
             attr("meta[name=\"sailthru.date\"]", "value")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

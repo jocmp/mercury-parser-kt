@@ -15,7 +15,7 @@ val WwwLinkedinComExtractor =
         datePublished {
             selectors(".base-main-card__metadata")
             attr("time[itemprop=\"datePublished\"]", "datetime")
-            // timezone: 'America/Los_Angeles' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/Los_Angeles"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

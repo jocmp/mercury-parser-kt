@@ -15,8 +15,7 @@ val SgNewsYahooComExtractor =
         }
 
         datePublished {
-            // Upstream also specifies `timezone: 'UTC'`. Per-field timezone is
-            // not yet plumbed through the DSL (see mercury-deferred-fixes memory).
+            timezone = "UTC"
             selector("time[datetime]")
             selector("meta[property=\"article:published_time\"]")
         }

@@ -28,7 +28,7 @@ val WwwSePlExtractor =
 
         datePublished {
             selectors("#timezone")
-            // timezone: 'Europe/Warsaw' (per-field timezone option not plumbed through DSL yet)
+            timezone = "Europe/Warsaw"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

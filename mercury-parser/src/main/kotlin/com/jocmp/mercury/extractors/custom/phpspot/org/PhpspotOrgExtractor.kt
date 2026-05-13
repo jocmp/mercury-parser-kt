@@ -7,9 +7,8 @@ val PhpspotOrgExtractor =
         title { selectors("h3.hl") }
 
         datePublished {
-            // Upstream also specifies `format: 'YYYY年M月D日'` and
-            // `timezone: 'Asia/Tokyo'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL (see mercury-deferred-fixes memory).
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日"
             selectors("h4.hl")
         }
 

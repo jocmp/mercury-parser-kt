@@ -16,7 +16,8 @@
 - **blisterreview.com, factorio.com**: 2-element compound content selectors `[['a', 'b']]` not yet supported by DSL
 - **genius.com**: 3-tuple attribute extraction with JSON-parsing transform — needs `Selector` post-transform fn
 - **gr.euronews.com**: covered via `WwwEuronewsComExtractor.supportedDomains` (treat as ported, no separate file)
-- **bookwalker.jp, japan.cnet.com, jvndb.jvn.jp, gothamist.com, www.se.pl, fortune.com, news.nationalgeographic.com, pastebin.com, phpspot.org** ported but their `date_published` `timezone`/`format` per-field options aren't plumbed through the DSL yet — see `~/.claude/projects/-Users-jocmp-dev-jocmp-ReadabilityKt/memory/mercury_deferred_fixes.md`
+- ~~per-field `timezone` / `format` plumbed through the DSL~~ — done.
+- **www.nbcnews.com, www.reddit.com, weekly.ascii.jp, www.channelnewsasia.com**: `date_published` parity skipped — see comment in `SnapshotParityTest.compareParity`. cheerio/dayjs vs jsoup/Java edges not worth library-level workarounds.
 
 ## Ported (44 primary)
 

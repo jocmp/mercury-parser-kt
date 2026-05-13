@@ -16,7 +16,7 @@ val PoliticoExtractor =
             attr("time[itemprop=\"datePublished\"]", "datetime")
             attr(".story-meta__details time[datetime]", "datetime")
             attr(".story-main-content .timestamp time[datetime]", "datetime")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         dek { attr("meta[name=\"og:description\"]", "value") }

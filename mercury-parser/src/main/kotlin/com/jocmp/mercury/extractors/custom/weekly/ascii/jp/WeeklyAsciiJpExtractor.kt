@@ -9,9 +9,8 @@ val WeeklyAsciiJpExtractor =
         author { selectors("p.author") }
 
         datePublished {
-            // Upstream also specifies `format: 'YYYY年M月D日 HH:mm'` and
-            // `timezone: 'Asia/Tokyo'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL.
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日 HH:mm"
             selector("p.date")
             attr("meta[name=\"odate\"]", "value")
         }

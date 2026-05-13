@@ -9,9 +9,8 @@ val PastebinComExtractor =
         author { selectors(".username", ".paste_box_line2 .t_us + a") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'America/New_York'` and
-            // `format: 'MMMM D, YYYY'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL (see mercury-deferred-fixes memory).
+            timezone = "America/New_York"
+            format = "MMMM D, YYYY"
             selectors(".date", ".paste_box_line2 .t_da + span")
         }
 

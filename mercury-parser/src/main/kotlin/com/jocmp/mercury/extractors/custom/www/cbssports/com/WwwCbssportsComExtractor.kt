@@ -9,8 +9,7 @@ val WwwCbssportsComExtractor =
         author { selectors(".ArticleAuthor-nameText", ".author-name") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'UTC'`. Per-field timezone is
-            // not yet plumbed through the DSL.
+            timezone = "UTC"
             attr("meta[itemprop=\"datePublished\"]", "value")
         }
 

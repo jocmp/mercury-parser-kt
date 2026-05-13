@@ -9,8 +9,8 @@ val WwwTransfermarktDeExtractor =
 
         datePublished {
             selectors(".news-header span:first-child")
-            // format: 'DD.MM.YYYY - HH:mm', timezone: 'Europe/Berlin'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Europe/Berlin"
+            format = "DD.MM.YYYY - HH:mm"
         }
 
         dek { attr("meta[name=\"og:description\"]", "value") }

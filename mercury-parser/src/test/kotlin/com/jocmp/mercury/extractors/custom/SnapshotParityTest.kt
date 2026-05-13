@@ -51,7 +51,7 @@ class SnapshotParityTest {
                                     ParseOptions(html = html, fallback = false),
                                 )
                             }
-                        compareParity(expected, result)
+                        compareParity(expected, result, domain)
                     }
             }
         }
@@ -91,6 +91,7 @@ class SnapshotParityTest {
     private fun compareParity(
         expected: JsonObject,
         actual: ParseResult,
+        domain: String,
     ) {
         // Title is the easiest signal of "correct extractor matched". Insist on it.
         expected.string("title")?.let { assertEquals(it, actual.title, "title") }
@@ -99,10 +100,33 @@ class SnapshotParityTest {
         expected.string("direction")?.let { assertEquals(it, actual.direction, "direction") }
         expected.string("dek")?.let { assertEquals(it, actual.dek, "dek") }
         expected.string("excerpt")?.let { assertEquals(it, actual.excerpt, "excerpt") }
+        expected.string("date_published")?.let { exp ->
+            // A handful of fixtures hit fundamental cheerio/dayjs-vs-jsoup/Java
+            // mismatches that aren't worth library-level workarounds:
+            //   - nbcnews: JS extracts a `<time>` value its own selectors don't
+            //     match; we can't reproduce without dipping into the generic
+            //     extractor.
+            //   - reddit: source uses "now" — the snapshot froze a wall-clock
+            //     instant we can't reproduce on subsequent runs.
+            //   - weekly.ascii.jp: format mixes ASCII tokens with `時/分`; JS
+            //     dayjs non-strict mode silently skips the mismatch.
+            //   - channelnewsasia: source dribbles "(Updated: ...)" into the
+            //     same selector; dayjs's regex-anywhere semantics catch the
+            //     first match, which we'd need substring scanning to mimic.
+            val dateSkipDomains =
+                setOf(
+                    "www.nbcnews.com",
+                    "www.reddit.com",
+                    "weekly.ascii.jp",
+                    "www.channelnewsasia.com",
+                )
+            if (domain !in dateSkipDomains) {
+                val (e, a) = normalizeForDate(exp, actual.datePublished?.toString())
+                assertEquals(e, a, "date_published")
+            }
+        }
         // Intentionally not compared in the first parity pass:
         // - content / word_count → cheerio vs Jsoup serialization drift
-        // - date_published → cleanDatePublished's timezone/format handling has
-        //   gaps vs JS Date's permissive parsing (see commit history)
     }
 
     @Suppress("unused")

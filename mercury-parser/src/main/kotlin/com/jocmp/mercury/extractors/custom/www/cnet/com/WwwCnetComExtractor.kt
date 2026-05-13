@@ -10,8 +10,7 @@ val WwwCnetComExtractor =
         author { selectors("span.author", "a.author") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'America/Los_Angeles'`.
-            // Per-field timezone is not yet plumbed through the DSL.
+            timezone = "America/Los_Angeles"
             selectors("time")
         }
 

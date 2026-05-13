@@ -10,7 +10,7 @@ val WwwSlateComExtractor =
 
         datePublished {
             selectors(".pub-date")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         dek { selectors(".dek") }

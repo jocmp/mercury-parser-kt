@@ -10,8 +10,8 @@ val WwwInfoqComExtractor =
 
         datePublished {
             selectors(".article__readTime.date")
-            // format: 'YYYY年M月D日', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日"
         }
 
         dek { attr("meta[name=\"og:description\"]", "value") }

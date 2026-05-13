@@ -24,7 +24,7 @@ val NewYorkerExtractor =
             attr("meta[name=\"article:published_time\"]", "value")
             selector("time.content-header__publish-date")
             attr("meta[name=\"pubdate\"]", "value")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         dek {

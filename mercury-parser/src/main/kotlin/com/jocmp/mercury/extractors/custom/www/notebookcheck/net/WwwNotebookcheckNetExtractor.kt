@@ -11,7 +11,7 @@ val WwwNotebookcheckNetExtractor =
 
         datePublished {
             attr(".intro-author time", "datetime")
-            // timezone: 'GMT' (per-field timezone option not plumbed through DSL yet)
+            timezone = "GMT"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

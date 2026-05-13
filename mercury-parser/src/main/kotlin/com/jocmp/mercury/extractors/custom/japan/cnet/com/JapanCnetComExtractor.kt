@@ -10,8 +10,8 @@ val JapanCnetComExtractor =
 
         datePublished {
             selectors(".date")
-            // format: 'YYYY年M月D日 HH時mm分', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日 HH時mm分"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

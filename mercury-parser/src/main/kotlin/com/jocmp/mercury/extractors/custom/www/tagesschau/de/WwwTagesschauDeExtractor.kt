@@ -11,7 +11,7 @@ val WwwTagesschauDeExtractor =
         datePublished {
             attr("meta[name=\"date\"]", "value")
             selector(".metatextline")
-            // timezone: 'UTC' (per-field timezone option not plumbed through DSL yet)
+            timezone = "UTC"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

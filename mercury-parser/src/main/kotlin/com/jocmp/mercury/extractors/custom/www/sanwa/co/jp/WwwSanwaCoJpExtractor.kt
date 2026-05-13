@@ -8,8 +8,8 @@ val WwwSanwaCoJpExtractor =
 
         datePublished {
             selectors("dl.date")
-            // format: 'YYYY.M.D', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY.M.D"
         }
 
         dek { attr("meta[name=\"og:description\"]", "value") }

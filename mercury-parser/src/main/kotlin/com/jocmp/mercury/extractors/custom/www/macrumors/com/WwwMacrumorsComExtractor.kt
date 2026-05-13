@@ -10,7 +10,7 @@ val WwwMacrumorsComExtractor =
 
         datePublished {
             attr("time", "datetime")
-            // timezone: 'America/Los_Angeles' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/Los_Angeles"
         }
 
         dek { attr("meta[name=\"description\"]", "value") }

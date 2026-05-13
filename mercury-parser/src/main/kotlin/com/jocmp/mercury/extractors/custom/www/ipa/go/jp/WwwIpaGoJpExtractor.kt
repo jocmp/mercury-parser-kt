@@ -8,8 +8,8 @@ val WwwIpaGoJpExtractor =
 
         datePublished {
             selectors("p.ipar_text_right")
-            // format: 'YYYY年M月D日', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY年M月D日"
         }
 
         content {

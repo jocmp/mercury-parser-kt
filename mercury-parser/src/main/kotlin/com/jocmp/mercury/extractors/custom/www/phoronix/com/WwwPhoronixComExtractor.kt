@@ -11,8 +11,8 @@ val WwwPhoronixComExtractor =
 
         datePublished {
             selectors(".author")
-            // format: 'D MMMM YYYY at hh:mm', timezone: 'America/New_York'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "America/New_York"
+            format = "D MMMM YYYY at hh:mm"
         }
 
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }

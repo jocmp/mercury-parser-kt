@@ -9,8 +9,7 @@ val WwwAolComExtractor =
         author { attr("meta[name=\"author\"]", "value") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'America/New_York'`. Per-field
-            // timezone is not yet plumbed through the DSL.
+            timezone = "America/New_York"
             selectors(".p-article__byline__date")
         }
 

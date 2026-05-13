@@ -10,8 +10,7 @@ val SuperserialeSePlExtractor =
         author { selectors(".article_author:first-of-type") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'Europe/Warsaw'`. Per-field
-            // timezone is not yet plumbed through the DSL.
+            timezone = "Europe/Warsaw"
             selectors("#timezone")
         }
 

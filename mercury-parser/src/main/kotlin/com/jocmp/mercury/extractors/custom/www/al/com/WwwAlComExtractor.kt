@@ -9,8 +9,7 @@ val WwwAlComExtractor =
         author { attr("meta[name=\"article_author\"]", "value") }
 
         datePublished {
-            // Upstream also specifies `timezone: 'EST'`. Per-field timezone is
-            // not yet plumbed through the DSL.
+            timezone = "EST"
             attr("meta[name=\"article_date_original\"]", "value")
         }
 

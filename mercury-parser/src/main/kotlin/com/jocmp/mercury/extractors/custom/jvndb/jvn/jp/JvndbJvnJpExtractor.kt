@@ -8,8 +8,8 @@ val JvndbJvnJpExtractor =
 
         datePublished {
             selectors("div.modifytxt:nth-child(2)")
-            // format: 'YYYY/M/D', timezone: 'Asia/Tokyo'
-            // (per-field format/timezone options not plumbed through DSL yet)
+            timezone = "Asia/Tokyo"
+            format = "YYYY/M/D"
         }
 
         content {

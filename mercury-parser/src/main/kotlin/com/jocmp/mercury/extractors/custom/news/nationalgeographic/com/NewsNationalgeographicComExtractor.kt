@@ -10,9 +10,8 @@ val NewsNationalgeographicComExtractor =
         author { selectors(".byline-component__contributors b span") }
 
         datePublished {
-            // Upstream also specifies `format: 'ddd MMM D HH:mm:ss zz YYYY'`
-            // and `timezone: 'EST'`. Per-field date format/timezone is not yet
-            // plumbed through the DSL (see mercury-deferred-fixes memory).
+            timezone = "EST"
+            format = "ddd MMM D HH:mm:ss zz YYYY"
             attr("meta[name=\"article:published_time\"]", "value")
         }
 

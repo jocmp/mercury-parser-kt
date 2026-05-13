@@ -13,7 +13,7 @@ val BookwalkerJpExtractor =
                 "dl.p-information__data dd:nth-of-type(7)",
                 ".work-info .work-detail:first-of-type .work-detail-contents:last-of-type",
             )
-            // Upstream specifies timezone: 'Asia/Tokyo'. Per-field timezone is not
+            timezone = "Asia/Tokyo"
             // yet plumbed through the DSL → cleanDatePublished, so this date may
             // parse with a different offset than JS Mercury would produce.
         }

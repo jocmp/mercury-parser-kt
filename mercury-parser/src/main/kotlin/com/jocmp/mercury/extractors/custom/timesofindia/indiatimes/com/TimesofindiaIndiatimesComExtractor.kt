@@ -7,9 +7,8 @@ val TimesofindiaIndiatimesComExtractor =
         title { selectors("h1") }
 
         datePublished {
-            // Upstream also specifies `format: 'MMM D, YYYY, HH:mm z'` and
-            // `timezone: 'Asia/Kolkata'`. Per-field date format/timezone is not
-            // yet plumbed through the DSL.
+            timezone = "Asia/Kolkata"
+            format = "MMM D, YYYY, HH:mm z"
             selectors(".byline")
         }
 

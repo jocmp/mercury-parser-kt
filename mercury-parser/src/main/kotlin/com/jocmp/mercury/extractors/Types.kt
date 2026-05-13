@@ -40,6 +40,10 @@ data class FieldSpec(
     // Constant string value (upstream allows e.g. `author: 'TMZ STAFF'`).
     // Bypasses selectors entirely when set.
     val literal: String? = null,
+    // Per-field timezone and format hints for date_published. Mirror upstream's
+    // `timezone: 'Asia/Tokyo'` / `format: 'YYYY年M月D日'` options.
+    val timezone: String? = null,
+    val format: String? = null,
 )
 
 // One custom extractor definition. Any field set to null falls through to

@@ -73,6 +73,8 @@ class FieldBuilder {
     private var literalValue: String? = null
     var defaultCleaner: Boolean = true
     var allowMultiple: Boolean = false
+    var timezone: String? = null
+    var format: String? = null
 
     // Mirrors upstream's constant-valued field (e.g. `author: 'TMZ STAFF'`).
     fun literal(value: String) {
@@ -122,6 +124,8 @@ class FieldBuilder {
             defaultCleaner = defaultCleaner,
             allowMultiple = allowMultiple,
             literal = literalValue,
+            timezone = timezone,
+            format = format,
         )
 }
 

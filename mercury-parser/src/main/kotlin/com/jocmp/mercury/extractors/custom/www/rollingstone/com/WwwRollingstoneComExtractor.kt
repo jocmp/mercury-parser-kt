@@ -11,7 +11,7 @@ val WwwRollingstoneComExtractor =
         datePublished {
             attr("meta[name=\"article:published_time\"]", "value")
             selector("time.content-published-date")
-            // timezone: 'America/New_York' (per-field timezone option not plumbed through DSL yet)
+            timezone = "America/New_York"
         }
 
         dek { selectors("h2.l-article-header__row--lead", ".content-description") }
