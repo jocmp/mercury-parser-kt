@@ -142,6 +142,11 @@ import com.jocmp.mercury.extractors.custom.www.opposingviews.com.WwwOpposingview
 import com.jocmp.mercury.extractors.custom.www.oreilly.co.jp.WwwOreillyCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.ossnews.jp.WwwOssnewsJpExtractor
 import com.jocmp.mercury.extractors.custom.www.phoronix.com.WwwPhoronixComExtractor
+import com.jocmp.mercury.extractors.custom.www.politico.com.PoliticoExtractor
+import com.jocmp.mercury.extractors.custom.www.polygon.com.WwwPolygonComExtractor
+import com.jocmp.mercury.extractors.custom.www.popsugar.com.WwwPopsugarComExtractor
+import com.jocmp.mercury.extractors.custom.www.prospectmagazine.co.uk.WwwProspectmagazineCoUkExtractor
+import com.jocmp.mercury.extractors.custom.www.publickey1.jp.WwwPublickey1JpExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
@@ -298,6 +303,11 @@ object AllExtractors {
             WwwOreillyCoJpExtractor,
             WwwOssnewsJpExtractor,
             WwwPhoronixComExtractor,
+            PoliticoExtractor,
+            WwwPolygonComExtractor,
+            WwwPopsugarComExtractor,
+            WwwProspectmagazineCoUkExtractor,
+            WwwPublickey1JpExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

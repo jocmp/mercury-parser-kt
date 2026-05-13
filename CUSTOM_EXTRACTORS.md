@@ -166,7 +166,6 @@
 - [x] www.nbcnews.com
 - [x] www.ndtv.com
 - [x] www.newyorker.com
-- [ ] www.ninefornews.nl  (skipped: upstream directory is empty)
 - [x] www.notebookcheck.net
 - [x] www.npr.org
 - [x] www.numerama.com
@@ -175,11 +174,11 @@
 - [x] www.oreilly.co.jp
 - [x] www.ossnews.jp
 - [x] www.phoronix.com
-- [ ] www.politico.com
-- [ ] www.polygon.com
-- [ ] www.popsugar.com
-- [ ] www.prospectmagazine.co.uk
-- [ ] www.publickey1.jp
+- [x] www.politico.com
+- [x] www.polygon.com
+- [x] www.popsugar.com
+- [x] www.prospectmagazine.co.uk
+- [x] www.publickey1.jp
 - [ ] www.qbitai.com
 - [ ] www.qdaily.com
 - [ ] www.rawstory.com
