@@ -19,7 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..');
@@ -47,9 +47,9 @@ const only = (() => {
   return idx >= 0 ? args[idx + 1] : null;
 })();
 
-// Mercury ships an ESM build at dist/mercury.esm.js. Fall back to require
-// CJS if needed.
-const mercuryEntry = path.join(MERCURY_DIR, 'dist', 'mercury.esm.js');
+// Mercury's `dist/mercury.esm.js` is the browser bundle (requires window).
+// Use the CJS Node build instead.
+const mercuryEntry = path.join(MERCURY_DIR, 'dist', 'mercury.js');
 if (!fs.existsSync(mercuryEntry)) {
   console.error(
     `Mercury bundle missing at ${mercuryEntry}. Run \`yarn build\` in mercury-parser first.`,
@@ -57,7 +57,17 @@ if (!fs.existsSync(mercuryEntry)) {
   process.exit(3);
 }
 
-const { default: Mercury } = await import(pathToFileURL(mercuryEntry).href);
+// Mercury caches per-instance state between calls (notably some extractor
+// lookups). Load it via createRequire so we can drop the cached module entry
+// between fixtures to keep snapshots deterministic.
+const { createRequire } = await import('node:module');
+const requireCjs = createRequire(import.meta.url);
+function loadMercury() {
+  const cacheKey = requireCjs.resolve(mercuryEntry);
+  delete requireCjs.cache[cacheKey];
+  const mod = requireCjs(mercuryEntry);
+  return mod.default || mod;
+}
 
 const fixturesRoot = path.join(MERCURY_DIR, 'fixtures');
 if (!fs.existsSync(fixturesRoot)) {
@@ -108,6 +118,7 @@ async function runOne(domain, htmlPath, basename) {
   const html = fs.readFileSync(htmlPath, 'utf-8');
   const url = `https://${domain}/`;
   try {
+    const Mercury = loadMercury();
     const result = await Mercury.parse(url, { html, fallback: false });
     const outDir = path.join(SNAPSHOTS_DIR, domain);
     fs.mkdirSync(outDir, { recursive: true });

@@ -1,0 +1,109 @@
+package com.jocmp.mercury.extractors.custom
+
+import com.jocmp.mercury.Mercury
+import com.jocmp.mercury.ParseOptions
+import com.jocmp.mercury.ParseResult
+import com.jocmp.mercury.extractors.Extractors
+import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonNull
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
+import org.junit.jupiter.api.DynamicTest
+import org.junit.jupiter.api.TestFactory
+import java.io.File
+import java.time.Instant
+import java.time.format.DateTimeFormatter
+import kotlin.test.assertEquals
+
+/**
+ * Walks the JS-dumped snapshots under `src/test/resources/snapshots/` and runs
+ * `Mercury.parse` over the matching fixture from `src/test/resources/fixtures/`.
+ * Each snapshot becomes one dynamic test. Domains without a registered custom
+ * extractor are skipped — once Phase 6b ports them the parity test goes live.
+ */
+class SnapshotParityTest {
+    private val json = Json { ignoreUnknownKeys = true }
+
+    @TestFactory
+    fun parity(): List<DynamicTest> {
+        val snapshotsRoot = resourcePath("snapshots") ?: return emptyList()
+        val fixturesRoot = resourcePath("fixtures") ?: return emptyList()
+        val tests = mutableListOf<DynamicTest>()
+
+        snapshotsRoot.listFiles()?.filter { it.isDirectory }?.sortedBy { it.name }?.forEach { domainDir ->
+            val domain = domainDir.name
+            if (!hasRegisteredExtractor(domain)) return@forEach
+            domainDir.listFiles { f -> f.extension == "json" }?.sortedBy { it.name }?.forEach { snapshotFile ->
+                val basename = snapshotFile.nameWithoutExtension
+                val fixtureFile = locateFixture(fixturesRoot, domain, basename) ?: return@forEach
+                tests += DynamicTest.dynamicTest("$domain/$basename") {
+                    val html = fixtureFile.readText()
+                    val expected = json.parseToJsonElement(snapshotFile.readText()).asJsonObject()
+                    val result = runBlocking {
+                        Mercury.parse(
+                            "https://$domain/",
+                            ParseOptions(html = html),
+                        )
+                    }
+                    compareParity(expected, result)
+                }
+            }
+        }
+        return tests
+    }
+
+    private fun hasRegisteredExtractor(domain: String): Boolean = Extractors.get("https://$domain/") != null
+
+    private fun locateFixture(root: File, domain: String, basename: String): File? {
+        if (basename == "default") {
+            val direct = File(root, "$domain.html")
+            if (direct.exists()) return direct
+        }
+        val nested = File(File(root, domain), "$basename.html")
+        if (nested.exists()) return nested
+        return null
+    }
+
+    private fun resourcePath(name: String): File? {
+        val url = javaClass.classLoader.getResource(name) ?: return null
+        return File(url.toURI())
+    }
+
+    private fun JsonElement.asJsonObject(): JsonObject = this as JsonObject
+
+    private fun JsonObject.string(name: String): String? {
+        val v = this[name] ?: return null
+        if (v is JsonNull) return null
+        if (v is JsonPrimitive) return v.contentOrNull
+        return null
+    }
+
+    private fun compareParity(expected: JsonObject, actual: ParseResult) {
+        // Title is the easiest signal of "correct extractor matched". Insist on it.
+        expected.string("title")?.let { assertEquals(it, actual.title, "title") }
+        expected.string("author")?.let { assertEquals(it, actual.author, "author") }
+        expected.string("date_published")?.let { expectedIso ->
+            val actualIso = actual.datePublished?.let { DateTimeFormatter.ISO_INSTANT.format(it) }
+                ?: actual.datePublished?.toString()
+            // Tolerate trailing fractional zeros and Z vs +00:00.
+            assertEquals(
+                normalizeInstantString(expectedIso),
+                actualIso?.let { normalizeInstantString(it) },
+                "date_published",
+            )
+        }
+        expected.string("lead_image_url")?.let { assertEquals(it, actual.leadImageUrl, "lead_image_url") }
+        expected.string("excerpt")?.let { assertEquals(it, actual.excerpt, "excerpt") }
+        expected.string("dek")?.let { assertEquals(it, actual.dek, "dek") }
+        expected.string("direction")?.let { assertEquals(it, actual.direction, "direction") }
+        // Content and word_count are intentionally not compared — minor
+        // whitespace differences between cheerio and Jsoup serialization make
+        // byte-for-byte comparison too brittle for the first pass.
+    }
+
+    private fun normalizeInstantString(s: String): String =
+        runCatching { Instant.parse(s).toString() }.getOrDefault(s)
+}
