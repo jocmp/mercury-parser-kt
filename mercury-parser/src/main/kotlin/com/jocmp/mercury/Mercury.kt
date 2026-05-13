@@ -41,7 +41,13 @@ object Mercury {
         val html = options.html ?: doc.html()
         val metaCache = collectMetaNames(doc)
         val extractor = Extractors.get(url)
-        return RootExtractor.extract(extractor, doc, url, html, metaCache, fallback = options.fallback)
+        val result = RootExtractor.extract(extractor, doc, url, html, metaCache, fallback = options.fallback)
+
+        if (options.fetchAllPages && options.html == null && result.nextPageUrl != null) {
+            return collectAllPages(result, url, extractor, options)
+        }
+
+        return result
     }
 }
 
