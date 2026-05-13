@@ -90,15 +90,18 @@ val UNLIKELY_CANDIDATES_BLACKLIST: List<String> =
         "header",
         "hidden",
         "loader",
-        "login", // Note: This can hit 'blogindex'.
+        // Note: This can hit 'blogindex'.
+        "login",
         "menu",
         "meta",
         "nav",
         "outbrain",
         "pager",
         "pagination",
-        "predicta", // readwriteweb inline ad box
-        "presence_control_external", // lifehacker.com container full of false positives
+        // readwriteweb inline ad box
+        "predicta",
+        // lifehacker.com container full of false positives
+        "presence_control_external",
         "popup",
         "printfriendly",
         "related",
@@ -134,7 +137,8 @@ val UNLIKELY_CANDIDATES_WHITELIST: List<String> =
         "column",
         "content",
         "entry-content-asset",
-        "format", // misuse of form
+        // misuse of form
+        "format",
         "hfeed",
         "hentry",
         "hatom",
@@ -199,7 +203,8 @@ val POSITIVE_SCORE_HINTS: List<String> =
         "post",
         "story",
         "text",
-        "[-_]copy", // usatoday
+        // usatoday
+        "[-_]copy",
         "\\Bcopy",
     )
 
@@ -218,9 +223,11 @@ val NEGATIVE_SCORE_HINTS: List<String> =
         "adbox", "advert", "author", "bio", "bookmark", "bottom", "byline",
         "clear", "com-", "combx", "comment", "comment\\B", "contact", "copy",
         "credit", "crumb", "date", "deck", "excerpt",
-        "featured", // tnr.com has a featured_content which throws us off
+        // tnr.com has a featured_content which throws us off
+        "featured",
         "foot", "footer", "footnote", "graf", "head", "info",
-        "infotext", // newscientist.com copyright
+        // newscientist.com copyright
+        "infotext",
         "instapaper_ignore", "jump", "linebreak", "link", "masthead", "media",
         "meta", "modal",
         // slate.com junk
