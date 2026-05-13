@@ -160,11 +160,11 @@
 - [x] www.miamiherald.com
 - [x] www.moongift.jp
 - [x] www.msn.com
-- [ ] www.msnbc.com
-- [ ] www.n-tv.de
-- [ ] www.nationalgeographic.com
-- [ ] www.nbcnews.com
-- [ ] www.ndtv.com
+- [x] www.msnbc.com
+- [x] www.n-tv.de
+- [x] www.nationalgeographic.com
+- [x] www.nbcnews.com
+- [x] www.ndtv.com
 - [ ] www.newyorker.com
 - [ ] www.ninefornews.nl
 - [ ] www.notebookcheck.net

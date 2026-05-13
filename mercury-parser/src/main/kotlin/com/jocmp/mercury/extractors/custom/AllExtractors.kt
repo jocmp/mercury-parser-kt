@@ -127,6 +127,11 @@ import com.jocmp.mercury.extractors.custom.www.mentalfloss.com.WwwMentalflossCom
 import com.jocmp.mercury.extractors.custom.www.miamiherald.com.WwwMiamiheraldComExtractor
 import com.jocmp.mercury.extractors.custom.www.moongift.jp.WwwMoongiftJpExtractor
 import com.jocmp.mercury.extractors.custom.www.msn.com.MSNExtractor
+import com.jocmp.mercury.extractors.custom.www.msnbc.com.WwwMsnbcComExtractor
+import com.jocmp.mercury.extractors.custom.www.n_tv.de.WwwNtvDeExtractor
+import com.jocmp.mercury.extractors.custom.www.nationalgeographic.com.WwwNationalgeographicComExtractor
+import com.jocmp.mercury.extractors.custom.www.nbcnews.com.WwwNbcnewsComExtractor
+import com.jocmp.mercury.extractors.custom.www.ndtv.com.WwwNdtvComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
@@ -270,6 +275,11 @@ object AllExtractors {
             WwwMiamiheraldComExtractor,
             WwwMoongiftJpExtractor,
             MSNExtractor,
+            WwwMsnbcComExtractor,
+            WwwNtvDeExtractor,
+            WwwNationalgeographicComExtractor,
+            WwwNbcnewsComExtractor,
+            WwwNdtvComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
