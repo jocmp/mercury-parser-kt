@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 79**
+- **Primary extractors registered: 84**
 - **Additional domains via supportedDomains: ~29** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1)
-- **Effective domain coverage: ~108**
+- **Effective domain coverage: ~113**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -88,7 +88,12 @@
 - [x] twitter.com
 - [x] uproxx.com
 - [x] wccftech.com
+- [x] weekly.ascii.jp
+- [x] wikipedia.org
 - [x] wired.jp
+- [x] www.1pezeshk.com
+- [x] www.abendblatt.de
+- [x] www.al.com
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -100,17 +105,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (120 — primary domains only; some are deferred per above)
+## Todo (115 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] weekly.ascii.jp
-- [ ] wikipedia.org
-- [ ] www.1pezeshk.com
-- [ ] www.abendblatt.de
-- [ ] www.al.com
 - [ ] www.americanow.com
 - [ ] www.androidauthority.com
 - [ ] www.androidcentral.com

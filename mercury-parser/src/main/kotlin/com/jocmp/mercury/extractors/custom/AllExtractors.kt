@@ -69,7 +69,12 @@ import com.jocmp.mercury.extractors.custom.tldr.tech.TldrTechExtractor
 import com.jocmp.mercury.extractors.custom.twitter.com.TwitterComExtractor
 import com.jocmp.mercury.extractors.custom.uproxx.com.UproxxComExtractor
 import com.jocmp.mercury.extractors.custom.wccftech.com.WccftechComExtractor
+import com.jocmp.mercury.extractors.custom.weekly.ascii.jp.WeeklyAsciiJpExtractor
+import com.jocmp.mercury.extractors.custom.wikipedia.org.WikipediaOrgExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
+import com.jocmp.mercury.extractors.custom.www._1pezeshk.com.Www1pezeshkComExtractor
+import com.jocmp.mercury.extractors.custom.www.abendblatt.de.WwwAbendblattDeExtractor
+import com.jocmp.mercury.extractors.custom.www.al.com.WwwAlComExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
@@ -161,7 +166,12 @@ object AllExtractors {
             UproxxComExtractor,
             WashingtonPostExtractor,
             WccftechComExtractor,
+            WeeklyAsciiJpExtractor,
             WikiaExtractor,
+            WikipediaOrgExtractor,
+            Www1pezeshkComExtractor,
+            WwwAbendblattDeExtractor,
+            WwwAlComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
