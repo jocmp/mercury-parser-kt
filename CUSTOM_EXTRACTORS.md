@@ -204,11 +204,11 @@
 - [x] www.transfermarkt.de
 - [x] www.usmagazine.com
 - [x] www.versants.com
-- [ ] www.videogameschronicle.com
-- [ ] www.vortez.net
-- [ ] www.vox.com
-- [ ] www.westernjournalism.com
-- [ ] www.yahoo.com
+- [x] www.videogameschronicle.com
+- [x] www.vortez.net
+- [x] www.vox.com
+- [x] www.westernjournalism.com
+- [x] www.yahoo.com
 - [ ] www.yomiuri.co.jp
 - [ ] www.youtube.com
 

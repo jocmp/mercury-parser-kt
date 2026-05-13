@@ -176,8 +176,13 @@ import com.jocmp.mercury.extractors.custom.www.today.com.WwwTodayComExtractor
 import com.jocmp.mercury.extractors.custom.www.transfermarkt.de.WwwTransfermarktDeExtractor
 import com.jocmp.mercury.extractors.custom.www.usmagazine.com.WwwUsmagazineComExtractor
 import com.jocmp.mercury.extractors.custom.www.versants.com.WwwVersantsComExtractor
+import com.jocmp.mercury.extractors.custom.www.videogameschronicle.com.WwwVideogameschronicleComExtractor
+import com.jocmp.mercury.extractors.custom.www.vortez.net.WwwVortezNetExtractor
+import com.jocmp.mercury.extractors.custom.www.vox.com.WwwVoxComExtractor
 import com.jocmp.mercury.extractors.custom.www.washingtonpost.com.WashingtonPostExtractor
+import com.jocmp.mercury.extractors.custom.www.westernjournalism.com.WwwWesternjournalismComExtractor
 import com.jocmp.mercury.extractors.custom.www.wired.com.WiredExtractor
+import com.jocmp.mercury.extractors.custom.www.yahoo.com.YahooExtractor
 
 /**
  * Central listing of every custom extractor. Each ported site adds itself
@@ -358,6 +363,11 @@ object AllExtractors {
             WwwTransfermarktDeExtractor,
             WwwUsmagazineComExtractor,
             WwwVersantsComExtractor,
+            WwwVideogameschronicleComExtractor,
+            WwwVortezNetExtractor,
+            WwwVoxComExtractor,
+            WwwWesternjournalismComExtractor,
+            YahooExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
