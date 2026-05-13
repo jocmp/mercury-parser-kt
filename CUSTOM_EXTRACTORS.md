@@ -140,11 +140,11 @@
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
-- [ ] www.huffingtonpost.com
-- [ ] www.ilfattoquotidiano.it
-- [ ] www.infoq.com
-- [ ] www.inquisitr.com
-- [ ] www.investmentexecutive.com
+- [x] www.huffingtonpost.com
+- [x] www.ilfattoquotidiano.it
+- [x] www.infoq.com
+- [x] www.inquisitr.com
+- [x] www.investmentexecutive.com
 - [ ] www.ipa.go.jp
 - [ ] www.itmedia.co.jp
 - [ ] www.jnsa.org

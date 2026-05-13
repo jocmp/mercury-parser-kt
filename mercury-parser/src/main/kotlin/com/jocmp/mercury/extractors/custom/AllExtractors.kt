@@ -107,6 +107,11 @@ import com.jocmp.mercury.extractors.custom.www.gizmodo.jp.WwwGizmodoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.gruene.de.WwwGrueneDeExtractor
 import com.jocmp.mercury.extractors.custom.www.hardwarezone.com.sg.WwwHardwarezoneComSgExtractor
 import com.jocmp.mercury.extractors.custom.www.heise.de.WwwHeiseDeExtractor
+import com.jocmp.mercury.extractors.custom.www.huffingtonpost.com.WwwHuffingtonpostComExtractor
+import com.jocmp.mercury.extractors.custom.www.ilfattoquotidiano.it.WwwIlfattoquotidianoItExtractor
+import com.jocmp.mercury.extractors.custom.www.infoq.com.WwwInfoqComExtractor
+import com.jocmp.mercury.extractors.custom.www.inquisitr.com.WwwInquisitrComExtractor
+import com.jocmp.mercury.extractors.custom.www.investmentexecutive.com.WwwInvestmentexecutiveComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
@@ -232,6 +237,11 @@ object AllExtractors {
             WwwGrueneDeExtractor,
             WwwHardwarezoneComSgExtractor,
             WwwHeiseDeExtractor,
+            WwwHuffingtonpostComExtractor,
+            WwwIlfattoquotidianoItExtractor,
+            WwwInfoqComExtractor,
+            WwwInquisitrComExtractor,
+            WwwInvestmentexecutiveComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
