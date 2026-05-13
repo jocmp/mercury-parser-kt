@@ -44,6 +44,11 @@ import com.jocmp.mercury.extractors.custom.nymag.com.NYMagExtractor
 import com.jocmp.mercury.extractors.custom.obamawhitehouse.archives.gov.ObamawhitehouseArchivesGovExtractor
 import com.jocmp.mercury.extractors.custom.observer.com.ObserverComExtractor
 import com.jocmp.mercury.extractors.custom.orf.at.OrfAtExtractor
+import com.jocmp.mercury.extractors.custom.otrs.com.OtrsComExtractor
+import com.jocmp.mercury.extractors.custom.pagesix.com.PagesixComExtractor
+import com.jocmp.mercury.extractors.custom.pastebin.com.PastebinComExtractor
+import com.jocmp.mercury.extractors.custom.people.com.PeopleComExtractor
+import com.jocmp.mercury.extractors.custom.phpspot.org.PhpspotOrgExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -107,6 +112,11 @@ object AllExtractors {
             ObamawhitehouseArchivesGovExtractor,
             ObserverComExtractor,
             OrfAtExtractor,
+            OtrsComExtractor,
+            PagesixComExtractor,
+            PastebinComExtractor,
+            PeopleComExtractor,
+            PhpspotOrgExtractor,
             TheAtlanticExtractor,
             TheGuardianExtractor,
             TwoFortySevenSportsComExtractor,

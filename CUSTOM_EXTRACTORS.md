@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 54**
-- **Additional domains via supportedDomains: ~28** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1)
-- **Effective domain coverage: ~82**
+- **Primary extractors registered: 59**
+- **Additional domains via supportedDomains: ~29** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1)
+- **Effective domain coverage: ~88**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -16,7 +16,7 @@
 - **blisterreview.com, factorio.com**: 2-element compound content selectors `[['a', 'b']]` not yet supported by DSL
 - **genius.com**: 3-tuple attribute extraction with JSON-parsing transform — needs `Selector` post-transform fn
 - **gr.euronews.com**: needs `www.euronews.com` first; will fold into its supportedDomains
-- **bookwalker.jp, japan.cnet.com, jvndb.jvn.jp, gothamist.com, www.se.pl, fortune.com** ported but their `date_published` `timezone`/`format` per-field options aren't plumbed through the DSL yet — see `~/.claude/projects/-Users-jocmp-dev-jocmp-ReadabilityKt/memory/mercury_deferred_fixes.md`
+- **bookwalker.jp, japan.cnet.com, jvndb.jvn.jp, gothamist.com, www.se.pl, fortune.com, news.nationalgeographic.com, pastebin.com, phpspot.org** ported but their `date_published` `timezone`/`format` per-field options aren't plumbed through the DSL yet — see `~/.claude/projects/-Users-jocmp-dev-jocmp-ReadabilityKt/memory/mercury_deferred_fixes.md`
 
 ## Ported (44 primary)
 
@@ -63,6 +63,11 @@
 - [x] obamawhitehouse.archives.gov (+ 1 supportedDomain: whitehouse.gov)
 - [x] observer.com
 - [x] orf.at
+- [x] otrs.com
+- [x] pagesix.com (+ 1 supportedDomain: nypost.com)
+- [x] pastebin.com
+- [x] people.com
+- [x] phpspot.org
 - [x] wired.jp
 - [x] www.bloomberg.com
 - [x] www.cnn.com
@@ -75,17 +80,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (145 — primary domains only; some are deferred per above)
+## Todo (140 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] otrs.com
-- [ ] pagesix.com
-- [ ] pastebin.com
-- [ ] people.com
-- [ ] phpspot.org
 - [ ] pitchfork.com
 - [ ] polskisamorzad.se.pl
 - [ ] qz.com
