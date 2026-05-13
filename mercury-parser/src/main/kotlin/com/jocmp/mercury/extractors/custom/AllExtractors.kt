@@ -49,6 +49,11 @@ import com.jocmp.mercury.extractors.custom.pagesix.com.PagesixComExtractor
 import com.jocmp.mercury.extractors.custom.pastebin.com.PastebinComExtractor
 import com.jocmp.mercury.extractors.custom.people.com.PeopleComExtractor
 import com.jocmp.mercury.extractors.custom.phpspot.org.PhpspotOrgExtractor
+import com.jocmp.mercury.extractors.custom.pitchfork.com.PitchforkComExtractor
+import com.jocmp.mercury.extractors.custom.polskisamorzad.se.pl.PolskisamorzadSePlExtractor
+import com.jocmp.mercury.extractors.custom.qz.com.QzComExtractor
+import com.jocmp.mercury.extractors.custom.scan.netsecurity.ne.jp.ScanNetsecurityNeJpExtractor
+import com.jocmp.mercury.extractors.custom.sciencefly.com.ScienceflyComExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
 import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
@@ -117,6 +122,11 @@ object AllExtractors {
             PastebinComExtractor,
             PeopleComExtractor,
             PhpspotOrgExtractor,
+            PitchforkComExtractor,
+            PolskisamorzadSePlExtractor,
+            QzComExtractor,
+            ScanNetsecurityNeJpExtractor,
+            ScienceflyComExtractor,
             TheAtlanticExtractor,
             TheGuardianExtractor,
             TwoFortySevenSportsComExtractor,

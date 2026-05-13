@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 59**
+- **Primary extractors registered: 64**
 - **Additional domains via supportedDomains: ~29** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1)
-- **Effective domain coverage: ~88**
+- **Effective domain coverage: ~93**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -68,6 +68,11 @@
 - [x] pastebin.com
 - [x] people.com
 - [x] phpspot.org
+- [x] pitchfork.com
+- [x] polskisamorzad.se.pl
+- [x] qz.com
+- [x] scan.netsecurity.ne.jp
+- [x] sciencefly.com
 - [x] wired.jp
 - [x] www.bloomberg.com
 - [x] www.cnn.com
@@ -80,17 +85,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (140 — primary domains only; some are deferred per above)
+## Todo (135 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] pitchfork.com
-- [ ] polskisamorzad.se.pl
-- [ ] qz.com
-- [ ] scan.netsecurity.ne.jp
-- [ ] sciencefly.com
 - [ ] sect.iij.ad.jp
 - [ ] sg.news.yahoo.com
 - [ ] superseriale.se.pl
