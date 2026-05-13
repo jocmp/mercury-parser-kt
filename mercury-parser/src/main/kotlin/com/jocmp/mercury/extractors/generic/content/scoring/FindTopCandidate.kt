@@ -26,10 +26,7 @@ fun findTopCandidate(doc: Doc): Selection {
 
     // If we don't have a candidate, return the body
     // or whatever the first element is
-    val resolved =
-        candidate
-            ?: doc("body").takeIf { it.length > 0 }
-            ?: doc("*").first()
+    val resolved = candidate ?: return doc("body").takeIf { it.length > 0 } ?: doc("*").first()
 
     return mergeSiblings(resolved, topScore, doc)
 }

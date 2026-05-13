@@ -40,6 +40,8 @@ class Selection internal constructor(
 
     fun html(): String = elements.html()
 
+    fun outerHtml(): String = elements.joinToString("") { it.outerHtml() }
+
     fun attr(name: String): String? = elements.firstOrNull()?.attr(name)?.ifEmpty { null }
 
     fun attr(

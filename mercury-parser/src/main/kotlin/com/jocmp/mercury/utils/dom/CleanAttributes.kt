@@ -27,6 +27,9 @@ fun cleanAttributes(
     // Grabbing the parent because at this point
     // $article will be wrapped in a div which will
     // have a score set on it.
-    val target = if (article.parent().length > 0) article.parent() else article
+    val parent = article.parent()
+    val parentTag = parent.elements.firstOrNull()?.tagName()?.lowercase()
+    val parentIsSyntheticWrapper = parent.length > 0 && (parentTag == "body" || parentTag == "html")
+    val target = if (parent.length > 0 && !parentIsSyntheticWrapper) parent else article
     return removeAllButWhitelist(target, doc)
 }
