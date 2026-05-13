@@ -163,8 +163,13 @@ import com.jocmp.mercury.extractors.custom.www.si.com.WwwSiComExtractor
 import com.jocmp.mercury.extractors.custom.www.slate.com.WwwSlateComExtractor
 import com.jocmp.mercury.extractors.custom.www.spektrum.de.SpektrumExtractor
 import com.jocmp.mercury.extractors.custom.www.spiegel.de.WwwSpiegelDeExtractor
+import com.jocmp.mercury.extractors.custom.www.tagesschau.de.WwwTagesschauDeExtractor
+import com.jocmp.mercury.extractors.custom.www.techpowerup.com.WwwTechpowerupComExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
+import com.jocmp.mercury.extractors.custom.www.thedrive.com.WwwThedriveComExtractor
 import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtractor
+import com.jocmp.mercury.extractors.custom.www.thepennyhoarder.com.WwwThepennyhoarderComExtractor
+import com.jocmp.mercury.extractors.custom.www.thepoliticalinsider.com.WwwThepoliticalinsiderComExtractor
 import com.jocmp.mercury.extractors.custom.www.theverge.com.WwwThevergeComExtractor
 import com.jocmp.mercury.extractors.custom.www.washingtonpost.com.WashingtonPostExtractor
 import com.jocmp.mercury.extractors.custom.www.wired.com.WiredExtractor
@@ -338,6 +343,11 @@ object AllExtractors {
             WwwSlateComExtractor,
             SpektrumExtractor,
             WwwSpiegelDeExtractor,
+            WwwTagesschauDeExtractor,
+            WwwTechpowerupComExtractor,
+            WwwThedriveComExtractor,
+            WwwThepennyhoarderComExtractor,
+            WwwThepoliticalinsiderComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

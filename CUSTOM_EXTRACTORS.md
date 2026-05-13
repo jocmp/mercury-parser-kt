@@ -194,11 +194,11 @@
 - [x] www.slate.com
 - [x] www.spektrum.de
 - [x] www.spiegel.de
-- [ ] www.tagesschau.de
-- [ ] www.techpowerup.com
-- [ ] www.thedrive.com
-- [ ] www.thepennyhoarder.com
-- [ ] www.thepoliticalinsider.com
+- [x] www.tagesschau.de
+- [x] www.techpowerup.com
+- [x] www.thedrive.com
+- [x] www.thepennyhoarder.com
+- [x] www.thepoliticalinsider.com
 - [ ] www.tmz.com
 - [ ] www.today.com
 - [ ] www.transfermarkt.de
