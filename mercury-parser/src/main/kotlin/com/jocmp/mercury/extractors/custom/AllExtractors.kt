@@ -183,6 +183,8 @@ import com.jocmp.mercury.extractors.custom.www.washingtonpost.com.WashingtonPost
 import com.jocmp.mercury.extractors.custom.www.westernjournalism.com.WwwWesternjournalismComExtractor
 import com.jocmp.mercury.extractors.custom.www.wired.com.WiredExtractor
 import com.jocmp.mercury.extractors.custom.www.yahoo.com.YahooExtractor
+import com.jocmp.mercury.extractors.custom.www.yomiuri.co.jp.WwwYomiuriCoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.youtube.com.WwwYoutubeComExtractor
 
 /**
  * Central listing of every custom extractor. Each ported site adds itself
@@ -368,6 +370,8 @@ object AllExtractors {
             WwwVoxComExtractor,
             WwwWesternjournalismComExtractor,
             YahooExtractor,
+            WwwYomiuriCoJpExtractor,
+            WwwYoutubeComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

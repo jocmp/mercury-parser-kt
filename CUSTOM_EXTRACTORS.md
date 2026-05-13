@@ -209,8 +209,8 @@
 - [x] www.vox.com
 - [x] www.westernjournalism.com
 - [x] www.yahoo.com
-- [ ] www.yomiuri.co.jp
-- [ ] www.youtube.com
+- [x] www.yomiuri.co.jp
+- [x] www.youtube.com
 
 ## How to continue (read this first in a fresh session)
 
