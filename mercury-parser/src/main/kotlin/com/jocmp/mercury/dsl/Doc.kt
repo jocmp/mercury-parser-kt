@@ -5,14 +5,13 @@ import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 
 class Doc internal constructor(val document: Document) {
+    init {
+        document.outputSettings().prettyPrint(false)
+    }
+
     operator fun invoke(selector: String): Selection = Selection(this, document.select(selector))
 
     fun root(): Selection = Selection(this, document.children())
-
-    fun load(
-        html: String,
-        baseUri: String? = null,
-    ): Doc = Doc(Jsoup.parseBodyFragment(html, baseUri ?: ""))
 
     fun html(): String = document.outerHtml()
 
