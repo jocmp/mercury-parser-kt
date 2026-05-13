@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 109**
+- **Primary extractors registered: 114**
 - **Additional domains via supportedDomains: ~31** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1, euronews 1)
-- **Effective domain coverage: ~140**
+- **Effective domain coverage: ~145**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -119,6 +119,11 @@
 - [x] www.flatpanelshd.com
 - [x] www.fool.com
 - [x] www.fortinet.com
+- [x] www.futura-sciences.com
+- [x] www.gizmodo.jp
+- [x] www.gruene.de
+- [x] www.hardwarezone.com.sg
+- [x] www.heise.de
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -130,16 +135,11 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (89 — primary domains only; some are deferred per above)
+## Todo (84 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
-- [ ] www.futura-sciences.com
-- [ ] www.gizmodo.jp
-- [ ] www.gruene.de
-- [ ] www.hardwarezone.com.sg
-- [ ] www.heise.de
 - [ ] www.huffingtonpost.com
 - [ ] www.ilfattoquotidiano.it
 - [ ] www.infoq.com

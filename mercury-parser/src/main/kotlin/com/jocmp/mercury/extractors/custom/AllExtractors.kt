@@ -102,6 +102,11 @@ import com.jocmp.mercury.extractors.custom.www.fastcompany.com.WwwFastcompanyCom
 import com.jocmp.mercury.extractors.custom.www.flatpanelshd.com.WwwFlatpanelshdComExtractor
 import com.jocmp.mercury.extractors.custom.www.fool.com.WwwFoolComExtractor
 import com.jocmp.mercury.extractors.custom.www.fortinet.com.WwwFortinetComExtractor
+import com.jocmp.mercury.extractors.custom.www.futura_sciences.com.WwwFuturaSciencesComExtractor
+import com.jocmp.mercury.extractors.custom.www.gizmodo.jp.WwwGizmodoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.gruene.de.WwwGrueneDeExtractor
+import com.jocmp.mercury.extractors.custom.www.hardwarezone.com.sg.WwwHardwarezoneComSgExtractor
+import com.jocmp.mercury.extractors.custom.www.heise.de.WwwHeiseDeExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
@@ -222,6 +227,11 @@ object AllExtractors {
             WwwFlatpanelshdComExtractor,
             WwwFoolComExtractor,
             WwwFortinetComExtractor,
+            WwwFuturaSciencesComExtractor,
+            WwwGizmodoJpExtractor,
+            WwwGrueneDeExtractor,
+            WwwHardwarezoneComSgExtractor,
+            WwwHeiseDeExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
