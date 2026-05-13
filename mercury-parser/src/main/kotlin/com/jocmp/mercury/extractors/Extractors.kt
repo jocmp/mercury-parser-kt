@@ -1,5 +1,6 @@
 package com.jocmp.mercury.extractors
 
+import com.jocmp.mercury.extractors.custom.AllExtractors
 import com.jocmp.mercury.resource.utils.baseDomain
 import java.net.URI
 
@@ -7,7 +8,7 @@ import java.net.URI
 object Extractors {
     private val byDomain: Map<String, CustomExtractor> by lazy {
         val map = mutableMapOf<String, CustomExtractor>()
-        com.jocmp.mercury.extractors.custom.AllExtractors.all.forEach { add(map, it) }
+        AllExtractors.all.forEach { add(map, it) }
         runtimeRegistered.forEach { add(map, it) }
         map
     }

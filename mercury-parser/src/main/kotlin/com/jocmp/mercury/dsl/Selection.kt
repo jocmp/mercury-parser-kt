@@ -59,6 +59,45 @@ class Selection internal constructor(
 
     fun parent(): Selection = doc.wrap(elements.mapNotNull { it.parent() }.let(::Elements))
 
+    /** Find the nearest ancestor matching [selector], like cheerio's `$node.parent(selector)`. */
+    fun parent(selector: String): Selection {
+        val matches = Elements()
+        elements.forEach { el ->
+            var p = el.parent()
+            while (p != null) {
+                if (p.`is`(selector)) {
+                    matches.add(p)
+                    break
+                }
+                p = p.parent()
+            }
+        }
+        return doc.wrap(matches)
+    }
+
+    fun addClass(classes: String): Selection =
+        apply {
+            classes.split(Regex("""\s+""")).filter { it.isNotEmpty() }.forEach { c ->
+                elements.forEach { it.addClass(c) }
+            }
+        }
+
+    fun replaceWith(html: String): Selection =
+        apply {
+            elements.forEach { el ->
+                val parsed = org.jsoup.parser.Parser.parseBodyFragment(html, el.ownerDocument()?.baseUri() ?: "")
+                val children = parsed.body().children().toList()
+                if (children.isNotEmpty()) {
+                    el.replaceWith(children.first())
+                    var prev = children.first()
+                    for (i in 1 until children.size) {
+                        prev.after(children[i])
+                        prev = children[i]
+                    }
+                }
+            }
+        }
+
     fun remove(): Selection = apply { elements.remove() }
 
     fun each(block: (index: Int, element: Element) -> Unit): Selection {
