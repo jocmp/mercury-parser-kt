@@ -12,7 +12,7 @@ A Kotlin port of [Mercury Parser](https://github.com/jocmp/mercury-parser). Extr
 Gradle:
 ```kotlin
 dependencies {
-    implementation("com.jocmp:mercury-parser-kt:0.1.0")
+    implementation("com.jocmp:mercury-parser:0.1.0")
 }
 ```
 

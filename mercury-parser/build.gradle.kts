@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm")
+    kotlin("plugin.serialization") version "2.1.0"
     `java-library`
     id("com.vanniktech.maven.publish") version "0.30.0"
 }
@@ -12,6 +13,7 @@ dependencies {
     api("org.jsoup:jsoup:1.18.3")
     api("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
@@ -26,10 +28,10 @@ mavenPublishing {
     publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL, true)
     signAllPublications()
 
-    coordinates(project.group.toString(), "mercury-parser-kt", project.version.toString())
+    coordinates(project.group.toString(), "mercury-parser", project.version.toString())
 
     pom {
-        name.set("mercury-parser-kt")
+        name.set("mercury-parser")
         description.set("A Kotlin port of Mercury Parser. Extracts the meaningful content from a web page.")
         url.set("https://github.com/jocmp/mercury-parser-kt")
         inceptionYear.set("2026")

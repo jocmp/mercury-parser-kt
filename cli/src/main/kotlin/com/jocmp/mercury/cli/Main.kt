@@ -24,13 +24,14 @@ fun main(args: Array<String>) {
     val url = parsed.url ?: run { fail("--url is required") }
     val html = parsed.htmlFile?.let { File(it).readText() }
 
-    val options = ParseOptions(
-        html = html,
-        fetchAllPages = parsed.allPages,
-        fallback = parsed.fallback,
-        contentType = parsed.format,
-        headers = parsed.headers,
-    )
+    val options =
+        ParseOptions(
+            html = html,
+            fetchAllPages = parsed.allPages,
+            fallback = parsed.fallback,
+            contentType = parsed.format,
+            headers = parsed.headers,
+        )
 
     val result = runBlocking { Mercury.parse(url, options) }
     if (result.error) {
@@ -60,7 +61,10 @@ private fun parseArgs(args: Array<String>): ParsedArgs {
 
     while (i < args.size) {
         when (val a = args[i]) {
-            "--help", "-h" -> { print(USAGE); exitProcess(0) }
+            "--help", "-h" -> {
+                print(USAGE)
+                exitProcess(0)
+            }
             "--url" -> url = args.getOrNull(++i) ?: fail("--url requires a value")
             "--html" -> htmlFile = args.getOrNull(++i) ?: fail("--html requires a value")
             "--format" -> format = parseFormat(args.getOrNull(++i) ?: fail("--format requires a value"))
@@ -78,12 +82,13 @@ private fun parseArgs(args: Array<String>): ParsedArgs {
     return ParsedArgs(url, htmlFile, format, headers, fallback, allPages)
 }
 
-private fun parseFormat(raw: String): ContentType = when (raw.lowercase()) {
-    "html" -> ContentType.HTML
-    "markdown" -> ContentType.MARKDOWN
-    "text" -> ContentType.TEXT
-    else -> fail("--format must be one of: html, markdown, text")
-}
+private fun parseFormat(raw: String): ContentType =
+    when (raw.lowercase()) {
+        "html" -> ContentType.HTML
+        "markdown" -> ContentType.MARKDOWN
+        "text" -> ContentType.TEXT
+        else -> fail("--format must be one of: html, markdown, text")
+    }
 
 private fun fail(msg: String): Nothing {
     System.err.println(msg)
