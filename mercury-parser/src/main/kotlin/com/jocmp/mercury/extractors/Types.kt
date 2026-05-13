@@ -4,9 +4,14 @@ import com.jocmp.mercury.dsl.Doc
 import com.jocmp.mercury.dsl.Selection
 
 // A single selector entry. `attr` is non-null when the upstream tuple form
-// `[selector, attribute]` is used to pull a value off an attribute rather
-// than reading the element's text/html.
-data class Selector(val css: String, val attr: String? = null)
+// `[selector, attribute]` is used to pull a value off an attribute. `compound`
+// is non-empty for content selectors of the form `[['a', 'b']]` — all parts
+// must match in the document, and the union of their elements is used.
+data class Selector(
+    val css: String,
+    val attr: String? = null,
+    val compound: List<String> = emptyList(),
+)
 
 // Mirrors upstream's transforms map values:
 //   - string → rename matched elements to that tag

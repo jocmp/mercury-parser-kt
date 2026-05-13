@@ -98,6 +98,14 @@ class FieldBuilder {
         selectorList.add(Selector(css, attribute))
     }
 
+    // Compound selector — mirrors upstream `[['selectorA', 'selectorB']]` for
+    // content. All parts must match in the document; their union (joined with
+    // `,`) is used as the matching set. Order matters for upstream parity.
+    fun compound(vararg parts: String) {
+        require(parts.isNotEmpty()) { "compound() needs at least one selector" }
+        selectorList.add(Selector(css = parts.joinToString(","), compound = parts.toList()))
+    }
+
     fun clean(vararg css: String) {
         cleanList.addAll(css)
     }

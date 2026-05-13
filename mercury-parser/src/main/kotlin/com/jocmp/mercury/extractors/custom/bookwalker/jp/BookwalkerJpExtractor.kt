@@ -21,11 +21,8 @@ val BookwalkerJpExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream's second selector is a 2-element compound array
-            // ['div.main-info', 'div.main-cover-inner'] (both must match,
-            // results concatenated). Compound selectors are not yet supported
-            // by the Kotlin DSL — only the first scalar selector is honored.
-            selectors("div.p-main__information")
+            selector("div.p-main__information")
+            compound("div.main-info", "div.main-cover-inner")
 
             defaultCleaner = false
 

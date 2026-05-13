@@ -16,9 +16,8 @@ val WwwVoxComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes compound selector `['figure.e-image--hero', '.c-entry-content']`
-            // which the DSL doesn't yet support; scalar fallback used.
-            selectors(".c-entry-content")
+            compound("figure.e-image--hero", ".c-entry-content")
+            selector(".c-entry-content")
 
             transform("figure .e-image__image noscript") { node, _ ->
                 val imgHtml = node.html()

@@ -16,12 +16,8 @@ val WwwEonlineComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream wraps each selector in a 1-element compound array — the
-            // scalar form is equivalent.
-            selectors(
-                ".article-detail__main-content section",
-                ".post-content section, .post-content div.post-content__image",
-            )
+            compound(".article-detail__main-content section")
+            compound(".post-content section, .post-content div.post-content__image")
 
             transform("div.post-content__image", renameTo = "figure")
             transform("div.post-content__image .image__credits", renameTo = "figcaption")

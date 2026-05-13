@@ -19,9 +19,8 @@ val WwwSiComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream's second content selector is a compound `['p', '.marquee_large_2x',
-            // '.component.image']` which the DSL doesn't yet support; scalar fallback used.
-            selectors(".m-detail--body")
+            selector(".m-detail--body")
+            compound("p", ".marquee_large_2x", ".component.image")
 
             transform("noscript") { node, _ ->
                 val el = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange

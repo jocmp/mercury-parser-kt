@@ -69,17 +69,23 @@ private fun findMatchingSelector(
     allowMultiple: Boolean,
 ): Selector? =
     selectors.find { selector ->
-        if (selector.attr != null) {
-            val match = doc(selector.css)
-            if (extractHtml) {
-                match.length > 0
-            } else {
-                (allowMultiple || match.length == 1) &&
-                    match.attr(selector.attr)?.trim()?.isNotEmpty() == true
+        when {
+            selector.compound.isNotEmpty() ->
+                // All parts must match — mirrors upstream's reduce(&&).
+                selector.compound.all { doc(it).length > 0 }
+            selector.attr != null -> {
+                val match = doc(selector.css)
+                if (extractHtml) {
+                    match.length > 0
+                } else {
+                    (allowMultiple || match.length == 1) &&
+                        match.attr(selector.attr)?.trim()?.isNotEmpty() == true
+                }
             }
-        } else {
-            val match = doc(selector.css)
-            (allowMultiple || match.length == 1) && match.text().trim().isNotEmpty()
+            else -> {
+                val match = doc(selector.css)
+                (allowMultiple || match.length == 1) && match.text().trim().isNotEmpty()
+            }
         }
     }
 

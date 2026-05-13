@@ -138,8 +138,8 @@
 
 ## Todo (84 — primary domains only; some are deferred per above)
 
-- [ ] blisterreview.com
-- [ ] factorio.com
+- [x] blisterreview.com
+- [x] factorio.com
 - [ ] genius.com
 - [x] www.huffingtonpost.com
 - [x] www.ilfattoquotidiano.it

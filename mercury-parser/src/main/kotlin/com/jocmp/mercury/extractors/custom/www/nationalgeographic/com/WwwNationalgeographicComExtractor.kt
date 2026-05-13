@@ -16,9 +16,9 @@ val WwwNationalgeographicComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes the compound selector `['.parsys.content', '.__image-lead__']`
-            // which the DSL doesn't yet support; the scalar fallbacks cover the rest.
-            selectors("section.Article__Content", ".content")
+            selector("section.Article__Content")
+            compound(".parsys.content", ".__image-lead__")
+            selector(".content")
 
             transform(".parsys.content") { node, _ ->
                 val parent = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange

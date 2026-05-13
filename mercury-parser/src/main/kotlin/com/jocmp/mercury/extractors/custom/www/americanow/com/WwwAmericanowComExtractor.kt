@@ -16,10 +16,8 @@ val WwwAmericanowComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 3-element compound array
-            // ['.article-content', '.image', '.body']. Compound selectors are not
-            // yet supported by the Kotlin DSL — falling through to scalar `.body`.
-            selectors(".body")
+            compound(".article-content", ".image", ".body")
+            selector(".body")
 
             clean(".article-video-wrapper", ".show-for-small-only")
         }

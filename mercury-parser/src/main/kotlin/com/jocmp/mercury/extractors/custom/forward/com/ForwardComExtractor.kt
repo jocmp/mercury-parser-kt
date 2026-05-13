@@ -20,10 +20,8 @@ val ForwardComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream second selector is a 2-element compound array
-            // ['.post-item-media-wrap', '.post-item p']. Compound selectors are not
-            // yet supported by the Kotlin DSL — only the first scalar is honored.
-            selectors(".content-container article")
+            selector(".content-container article")
+            compound(".post-item-media-wrap", ".post-item p")
 
             // Is there anything in the content you selected that needs transformed
             // before it's consumable content? E.g., unusual lazy loaded images

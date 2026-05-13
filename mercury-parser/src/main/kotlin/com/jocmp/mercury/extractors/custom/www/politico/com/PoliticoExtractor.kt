@@ -24,9 +24,9 @@ val PoliticoExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream's first content selector is `['.story-text']` (1-element compound);
-            // treated as scalar here.
-            selectors(".story-text", ".story-main-content", ".story-core")
+            compound(".story-text")
+            selector(".story-main-content")
+            selector(".story-core")
             clean("figcaption", ".story-meta", ".ad")
         }
     }

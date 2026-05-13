@@ -21,9 +21,9 @@ val WwwLinkedinComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream content selectors include the compound `['header figure', '.prose']`
-            // which the DSL doesn't yet support; the scalar fallbacks cover the main cases.
-            selectors(".article-content__body", ".prose")
+            selector(".article-content__body")
+            compound("header figure", ".prose")
+            selector(".prose")
             clean(".entity-image")
         }
     }

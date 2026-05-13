@@ -12,8 +12,7 @@ val MaTtiasBeExtractor =
         datePublished { attr("meta[name=\"article:published_time\"]", "value") }
 
         content {
-            // Upstream: [['.content']] (single-element compound → scalar)
-            selectors(".content")
+            compound(".content")
 
             // Is there anything in the content you selected that needs transformed
             // before it's consumable content? E.g., unusual lazy loaded images

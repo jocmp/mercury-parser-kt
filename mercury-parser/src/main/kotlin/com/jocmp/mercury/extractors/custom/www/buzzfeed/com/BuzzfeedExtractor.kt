@@ -22,11 +22,8 @@ val BuzzfeedExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 2-element compound array
-            // ['div[class^="featureimage_featureImageWrapper"]', '.js-subbuzz-wrapper'].
-            // Compound selectors are not yet supported by the Kotlin DSL — falling
-            // through to the scalar `.js-subbuzz-wrapper`.
-            selectors(".js-subbuzz-wrapper")
+            compound("div[class^=\"featureimage_featureImageWrapper\"]", ".js-subbuzz-wrapper")
+            compound(".js-subbuzz-wrapper")
 
             defaultCleaner = false
 

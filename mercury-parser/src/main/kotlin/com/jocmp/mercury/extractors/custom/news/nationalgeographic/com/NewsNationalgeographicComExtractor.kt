@@ -20,10 +20,8 @@ val NewsNationalgeographicComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 2-element compound array
-            // ['.parsys.content', '.__image-lead__']. Compound selectors are not
-            // yet supported by the Kotlin DSL — falling through to the scalar `.content`.
-            selectors(".content")
+            compound(".parsys.content", ".__image-lead__")
+            selector(".content")
 
             transform(".parsys.content") { node, _ ->
                 val el = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange

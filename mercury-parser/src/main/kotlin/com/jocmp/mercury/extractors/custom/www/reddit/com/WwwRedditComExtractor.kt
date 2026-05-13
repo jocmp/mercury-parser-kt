@@ -27,10 +27,14 @@ val WwwRedditComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream's content selectors include several 1- and 2-element compound
-            // selectors which the DSL doesn't yet support; the scalar fallback is the
-            // last entry.
-            selectors("div[data-test-id=\"post-content\"]")
+            compound("div[data-test-id=\"post-content\"] p") // text post
+            compound(
+                "div[data-test-id=\"post-content\"] a[target=\"_blank\"]:not([data-click-id=\"timestamp\"])",
+                "div[data-test-id=\"post-content\"] div[data-click-id=\"media\"]",
+            ) // external link with media preview
+            compound("div[data-test-id=\"post-content\"] div[data-click-id=\"media\"]") // embedded media
+            compound("div[data-test-id=\"post-content\"] a") // external link
+            selector("div[data-test-id=\"post-content\"]")
 
             transform("div[role=\"img\"]") { node, _ ->
                 val el = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange

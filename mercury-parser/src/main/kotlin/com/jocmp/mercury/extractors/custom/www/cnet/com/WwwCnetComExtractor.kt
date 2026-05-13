@@ -19,11 +19,8 @@ val WwwCnetComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 2-element compound array
-            // ['img.__image-lead__', '.article-main-body']. Compound selectors
-            // are not yet supported by the Kotlin DSL — falling through to the
-            // scalar `.article-main-body`.
-            selectors(".article-main-body")
+            compound("img.__image-lead__", ".article-main-body")
+            selector(".article-main-body")
 
             transform("figure.image") { node, _ ->
                 val el = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange

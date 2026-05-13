@@ -17,9 +17,9 @@ val WwwRefinery29ComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes compound selector `['.full-width-opener', '.article-content']`
-            // which the DSL doesn't yet support; scalar fallbacks cover the rest.
-            selectors(".article-content", ".body")
+            compound(".full-width-opener", ".article-content")
+            selector(".article-content")
+            selector(".body")
 
             transform("div.loading noscript") { node, _ ->
                 val imgHtml = node.html()

@@ -9,6 +9,7 @@ import com.jocmp.mercury.extractors.custom.abcnews.go.com.AbcnewsGoComExtractor
 import com.jocmp.mercury.extractors.custom.arstechnica.com.ArstechnicaComExtractor
 import com.jocmp.mercury.extractors.custom.balloon_juice.com.BalloonJuiceComExtractor
 import com.jocmp.mercury.extractors.custom.biorxiv.org.BiorxivOrgExtractor
+import com.jocmp.mercury.extractors.custom.blisterreview.com.BlisterreviewComExtractor
 import com.jocmp.mercury.extractors.custom.blogspot.com.BloggerExtractor
 import com.jocmp.mercury.extractors.custom.bookwalker.jp.BookwalkerJpExtractor
 import com.jocmp.mercury.extractors.custom.bsky.app.BskyAppExtractor
@@ -19,6 +20,7 @@ import com.jocmp.mercury.extractors.custom.deadline.com.DeadlineComExtractor
 import com.jocmp.mercury.extractors.custom.deadspin.com.DeadspinExtractor
 import com.jocmp.mercury.extractors.custom.economictimes.indiatimes.com.EconomictimesIndiatimesComExtractor
 import com.jocmp.mercury.extractors.custom.epaper.zeit.de.EpaperZeitDeExtractor
+import com.jocmp.mercury.extractors.custom.factorio.com.FactorioComExtractor
 import com.jocmp.mercury.extractors.custom.fandom.wikia.com.WikiaExtractor
 import com.jocmp.mercury.extractors.custom.fortune.com.FortuneComExtractor
 import com.jocmp.mercury.extractors.custom.forward.com.ForwardComExtractor
@@ -198,6 +200,7 @@ object AllExtractors {
             ArstechnicaComExtractor,
             BalloonJuiceComExtractor,
             BiorxivOrgExtractor,
+            BlisterreviewComExtractor,
             BloggerExtractor,
             BloombergExtractor,
             BookwalkerJpExtractor,
@@ -209,6 +212,7 @@ object AllExtractors {
             DeadspinExtractor,
             EconomictimesIndiatimesComExtractor,
             EpaperZeitDeExtractor,
+            FactorioComExtractor,
             FortuneComExtractor,
             ForwardComExtractor,
             GetnewsJpExtractor,

@@ -21,12 +21,9 @@ val WwwYoutubeComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream's third content selector is a compound `['#player-api', '#description']`
-            // which the DSL doesn't yet support; scalar fallbacks cover the rest.
-            selectors(
-                "#player-container-outer",
-                "ytd-expandable-video-description-body-renderer #description",
-            )
+            selector("#player-container-outer")
+            selector("ytd-expandable-video-description-body-renderer #description")
+            compound("#player-api", "#description")
             defaultCleaner = false
 
             transform("#player-api") { node, doc ->

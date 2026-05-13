@@ -15,10 +15,7 @@ val NewrepublicComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream wraps the selector in a 1-element compound array
-            // [['div.article-body']]. The DSL doesn't carry compound selectors
-            // yet; the scalar form is equivalent here since the array is length 1.
-            selectors("div.article-body")
+            compound("div.article-body")
 
             clean("aside")
         }

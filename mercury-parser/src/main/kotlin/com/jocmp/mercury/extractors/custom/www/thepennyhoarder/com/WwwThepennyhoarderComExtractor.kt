@@ -13,8 +13,8 @@ val WwwThepennyhoarderComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes compound selector `['.post-img', '.post-text']`
-            // which the DSL doesn't yet support; scalar fallbacks cover the rest.
-            selectors(".post-text", ".single-post-content-inner")
+            compound(".post-img", ".post-text")
+            selector(".post-text")
+            selector(".single-post-content-inner")
         }
     }

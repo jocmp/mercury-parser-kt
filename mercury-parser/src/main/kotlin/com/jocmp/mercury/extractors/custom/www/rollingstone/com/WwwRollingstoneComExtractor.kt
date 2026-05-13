@@ -19,9 +19,9 @@ val WwwRollingstoneComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes compound selector `['.lead-container', '.article-content']`
-            // which the DSL doesn't yet support; scalar fallbacks cover the rest.
-            selectors(".l-article-content", ".article-content")
+            selector(".l-article-content")
+            compound(".lead-container", ".article-content")
+            selector(".article-content")
             clean(".c-related-links-wrapper", ".module-related")
         }
     }

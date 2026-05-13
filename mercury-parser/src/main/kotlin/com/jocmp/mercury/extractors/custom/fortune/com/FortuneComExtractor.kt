@@ -16,10 +16,8 @@ val FortuneComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 2-element compound array ['picture', 'article.row']
-            // (both must match, results concatenated). Compound selectors are not yet
-            // supported by the Kotlin DSL — falling through to the scalar 'article.row'.
-            selectors("article.row")
+            compound("picture", "article.row")
+            selector("article.row")
 
             // Is there anything in the content you selected that needs transformed
             // before it's consumable content? E.g., unusual lazy loaded images

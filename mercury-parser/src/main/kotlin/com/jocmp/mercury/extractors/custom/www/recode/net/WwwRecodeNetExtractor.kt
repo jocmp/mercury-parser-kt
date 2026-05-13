@@ -15,8 +15,7 @@ val WwwRecodeNetExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream includes compound selector `['figure.e-image--hero', '.c-entry-content']`
-            // which the DSL doesn't yet support; the scalar fallback covers the rest.
-            selectors(".c-entry-content")
+            compound("figure.e-image--hero", ".c-entry-content")
+            selector(".c-entry-content")
         }
     }

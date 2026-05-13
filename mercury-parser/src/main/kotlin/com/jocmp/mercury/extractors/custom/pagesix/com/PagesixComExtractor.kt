@@ -17,10 +17,8 @@ val PagesixComExtractor =
         leadImageUrl { attr("meta[name=\"og:image\"]", "value") }
 
         content {
-            // Upstream first selector is a 2-element compound array
-            // ['#featured-image-wrapper', '.entry-content']. Compound selectors are
-            // not yet supported by the Kotlin DSL — falling through to scalar `.entry-content`.
-            selectors(".entry-content")
+            compound("#featured-image-wrapper", ".entry-content")
+            selector(".entry-content")
 
             transform("#featured-image-wrapper", renameTo = "figure")
             transform(".wp-caption-text", renameTo = "figcaption")

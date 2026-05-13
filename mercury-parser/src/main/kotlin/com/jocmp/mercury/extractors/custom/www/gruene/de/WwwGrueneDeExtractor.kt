@@ -9,12 +9,7 @@ val WwwGrueneDeExtractor =
         leadImageUrl { attr("meta[property=\"og:image\"]", "content") }
 
         content {
-            // Upstream's only selector is a 4-element compound array
-            // ['section header', 'section h2', 'section p', 'section ol'].
-            // Compound selectors are not yet supported by the Kotlin DSL —
-            // falling through to the scalar `section` (commented-out alternative
-            // in the upstream source).
-            selectors("section")
+            compound("section header", "section h2", "section p", "section ol")
 
             clean("figcaption", "p[class]")
         }
