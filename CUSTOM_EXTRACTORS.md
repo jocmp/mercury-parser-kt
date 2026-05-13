@@ -1,63 +1,83 @@
 # Custom extractor port progress
 
-199 upstream extractors total. Kept alphabetical; mark `[x]` when ported and
-registered in `AllExtractors.kt`. Authoritative list:
+199 upstream extractors total. Authoritative list:
 `ls ~/dev/jocmp/mercury-parser/src/extractors/custom | grep -v -E '^(index\.js|README\.md)$' | sort`
 
 ## Status
 
-- Ported: 13
-- Todo: 186
+- **Primary extractors registered: 44**
+- **Additional domains via supportedDomains: ~27** (deadspin 13, gothamist 5, www.se.pl 9)
+- **Effective domain coverage: ~71**
+- **Tests: 211 passing**
 
-## All (alphabetical)
+## Deferred (need DSL/cleaner extensions)
 
-- [ ] 247sports.com
-- [ ] 9to5google.com
-- [ ] 9to5linux.com
-- [ ] 9to5mac.com
+- **bialystok.se.pl, lodz.se.pl, lublin.se.pl, polityka.se.pl, portalobronny.se.pl, sport.se.pl, superbiz.se.pl, szczecin.se.pl, wroclaw.se.pl**: covered via `WwwSePlExtractor.supportedDomains` (treat as ported, no separate file)
+- **blisterreview.com, factorio.com**: 2-element compound content selectors `[['a', 'b']]` not yet supported by DSL
+- **genius.com**: 3-tuple attribute extraction with JSON-parsing transform — needs `Selector` post-transform fn
+- **gr.euronews.com**: needs `www.euronews.com` first; will fold into its supportedDomains
+- **bookwalker.jp, japan.cnet.com, jvndb.jvn.jp, gothamist.com, www.se.pl, fortune.com** ported but their `date_published` `timezone`/`format` per-field options aren't plumbed through the DSL yet — see `~/.claude/projects/-Users-jocmp-dev-jocmp-ReadabilityKt/memory/mercury_deferred_fixes.md`
+
+## Ported (44 primary)
+
+- [x] 247sports.com
+- [x] 9to5google.com
+- [x] 9to5linux.com
+- [x] 9to5mac.com
 - [x] abcnews.go.com
 - [x] arstechnica.com
-- [ ] balloon-juice.com
-- [ ] bialystok.se.pl
-- [ ] biorxiv.org
+- [x] balloon-juice.com
+- [x] biorxiv.org
+- [x] blogspot.com
+- [x] bookwalker.jp
+- [x] bsky.app
+- [x] buzzap.jp
+- [x] chicagoyimby.com
+- [x] clinicaltrials.gov
+- [x] deadline.com
+- [x] deadspin.com (+ 13 supportedDomains: jezebel, lifehacker, kotaku, gizmodo, jalopnik, kinja, avclub, clickhole, splinternews, theonion, theroot, thetakeout, theinventory)
+- [x] economictimes.indiatimes.com
+- [x] epaper.zeit.de
+- [x] fandom.wikia.com
+- [x] fortune.com
+- [x] forward.com
+- [x] getnews.jp
+- [x] github.com
+- [x] gonintendo.com
+- [x] gothamist.com (+ 5 supportedDomains: chicagoist, laist, sfist, shanghaiist, dcist)
+- [x] hellogiggles.com
+- [x] ici.radio-canada.ca
+- [x] japan.cnet.com
+- [x] japan.zdnet.com
+- [x] jvndb.jvn.jp
+- [x] ma.ttias.be
+- [x] money.cnn.com
+- [x] nymag.com
+- [x] wired.jp
+- [x] www.bloomberg.com
+- [x] www.cnn.com
+- [x] www.jalopnik.com
+- [x] www.nytimes.com
+- [x] www.se.pl (+ 9 supportedDomains: bialystok, lodz, lublin, polityka, portalobronny, sport, superbiz, szczecin, wroclaw)
+- [x] www.theatlantic.com
+- [x] www.theguardian.com
+- [x] www.theverge.com
+- [x] www.washingtonpost.com
+- [x] www.wired.com
+
+## Todo (155 — primary domains only; some are deferred per above)
+
 - [ ] blisterreview.com
-- [ ] blogspot.com
-- [ ] bookwalker.jp
-- [ ] bsky.app
-- [ ] buzzap.jp
-- [ ] chicagoyimby.com
-- [ ] clinicaltrials.gov
-- [ ] deadline.com
-- [ ] deadspin.com
-- [ ] economictimes.indiatimes.com
-- [ ] epaper.zeit.de
 - [ ] factorio.com
-- [ ] fandom.wikia.com
-- [ ] fortune.com
-- [ ] forward.com
 - [ ] genius.com
-- [ ] getnews.jp
-- [ ] github.com
-- [ ] gonintendo.com
-- [ ] gothamist.com
 - [ ] gr.euronews.com
-- [ ] hellogiggles.com
-- [ ] ici.radio-canada.ca
-- [ ] japan.cnet.com
-- [ ] japan.zdnet.com
-- [ ] jvndb.jvn.jp
-- [ ] lodz.se.pl
-- [ ] lublin.se.pl
-- [ ] ma.ttias.be
 - [ ] mashable.com
 - [ ] medium.com
 - [ ] mobilesyrup.com
-- [x] money.cnn.com
 - [ ] newrepublic.com
 - [ ] news.mynavi.jp
 - [ ] news.nationalgeographic.com
 - [ ] news.pts.org.tw
-- [x] nymag.com
 - [ ] obamawhitehouse.archives.gov
 - [ ] observer.com
 - [ ] orf.at
@@ -67,18 +87,13 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] people.com
 - [ ] phpspot.org
 - [ ] pitchfork.com
-- [ ] polityka.se.pl
 - [ ] polskisamorzad.se.pl
-- [ ] portalobronny.se.pl
 - [ ] qz.com
 - [ ] scan.netsecurity.ne.jp
 - [ ] sciencefly.com
 - [ ] sect.iij.ad.jp
 - [ ] sg.news.yahoo.com
-- [ ] sport.se.pl
-- [ ] superbiz.se.pl
 - [ ] superseriale.se.pl
-- [ ] szczecin.se.pl
 - [ ] takagi-hiromitsu.jp
 - [ ] tarnkappe.info
 - [ ] techcrunch.com
@@ -93,8 +108,6 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] wccftech.com
 - [ ] weekly.ascii.jp
 - [ ] wikipedia.org
-- [x] wired.jp
-- [ ] wroclaw.se.pl
 - [ ] www.1pezeshk.com
 - [ ] www.abendblatt.de
 - [ ] www.al.com
@@ -105,7 +118,6 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.apartmenttherapy.com
 - [ ] www.asahi.com
 - [ ] www.blick.de
-- [x] www.bloomberg.com
 - [ ] www.broadwayworld.com
 - [ ] www.bustle.com
 - [ ] www.buzzfeed.com
@@ -115,7 +127,6 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.chicagotribune.com
 - [ ] www.cnbc.com
 - [ ] www.cnet.com
-- [x] www.cnn.com
 - [ ] www.dmagazine.com
 - [ ] www.elecom.co.jp
 - [ ] www.engadget.com
@@ -137,7 +148,6 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.investmentexecutive.com
 - [ ] www.ipa.go.jp
 - [ ] www.itmedia.co.jp
-- [ ] www.jalopnik.com
 - [ ] www.jnsa.org
 - [ ] www.ladbible.com
 - [ ] www.latimes.com
@@ -162,7 +172,6 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.npr.org
 - [ ] www.numerama.com
 - [ ] www.nydailynews.com
-- [x] www.nytimes.com
 - [ ] www.opposingviews.com
 - [ ] www.oreilly.co.jp
 - [ ] www.ossnews.jp
@@ -183,19 +192,15 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.rollingstone.com
 - [ ] www.sanwa.co.jp
 - [ ] www.sbnation.com
-- [ ] www.se.pl
 - [ ] www.si.com
 - [ ] www.slate.com
 - [ ] www.spektrum.de
 - [ ] www.spiegel.de
 - [ ] www.tagesschau.de
 - [ ] www.techpowerup.com
-- [x] www.theatlantic.com
 - [ ] www.thedrive.com
-- [x] www.theguardian.com
 - [ ] www.thepennyhoarder.com
 - [ ] www.thepoliticalinsider.com
-- [x] www.theverge.com
 - [ ] www.tmz.com
 - [ ] www.today.com
 - [ ] www.transfermarkt.de
@@ -204,9 +209,41 @@ registered in `AllExtractors.kt`. Authoritative list:
 - [ ] www.videogameschronicle.com
 - [ ] www.vortez.net
 - [ ] www.vox.com
-- [x] www.washingtonpost.com
 - [ ] www.westernjournalism.com
-- [x] www.wired.com
 - [ ] www.yahoo.com
 - [ ] www.yomiuri.co.jp
 - [ ] www.youtube.com
+
+## How to continue (read this first in a fresh session)
+
+1. **Read reference extractors** to absorb the DSL shape:
+   - Simple selectors + clean: `mercury-parser/src/main/kotlin/com/jocmp/mercury/extractors/custom/arstechnica/com/ArstechnicaComExtractor.kt`
+   - Function transforms: `.../nymag/com/NYMagExtractor.kt`
+   - Long clean list + attribute selectors: `.../www/nytimes/com/NYTimesExtractor.kt`
+   - replaceWith(html) inside transform: `.../balloon_juice/com/BalloonJuiceComExtractor.kt`
+   - supportedDomains pattern: `.../www/se/pl/WwwSePlExtractor.kt`
+
+2. **DSL is at** `mercury-parser/src/main/kotlin/com/jocmp/mercury/extractors/Dsl.kt`. `extractor { }`, `title { }`, `selectors(...)`, `attr(...)`, `clean(...)`, `transform(...)` are all there.
+
+3. **Selection helpers** at `mercury-parser/src/main/kotlin/com/jocmp/mercury/dsl/Selection.kt`: `attr`, `removeAttr`, `addClass`, `parent(selector)`, `after(html)`, `replaceWith(html)`, `find`, `each`, `text`, `html`, `outerHtml`. Add more when an extractor needs something new — earlier rounds extended it for bsky/balloon-juice/ma.ttias.be.
+
+4. **Per extractor**:
+   - Read upstream JS at `~/dev/jocmp/mercury-parser/src/extractors/custom/<domain>/index.js` — source of truth
+   - Port to `mercury-parser-kt/mercury-parser/src/main/kotlin/com/jocmp/mercury/extractors/custom/<host-as-package>/<Name>Extractor.kt` (dots → slashes; numeric/hyphen-leading hosts get `@file:Suppress("ktlint:standard:package-name")` at top of file)
+   - Add import + entry (alphabetically) to `AllExtractors.kt`
+   - Mark `[x]` in this file
+   - `./gradlew test` should still pass. New snapshot parity tests get auto-discovered.
+
+5. **Don't invent** selectors, regexes, transform logic, or comments. Every detail comes from upstream JS. Add notes when something is deferred (e.g., per-field timezone, compound selectors).
+
+6. **Pattern spotting**:
+   - `{ ...OtherExtractor, domain: 'foo' }` (spread composer) → don't port a new file; add `'foo'` to `OtherExtractor.supportedDomains`. List: `grep -l '\.\.\.' ~/dev/jocmp/mercury-parser/src/extractors/custom/*/index.js`
+   - `[selector, attr]` tuple → `attr(selector, attr)` in the DSL
+   - `[['a', 'b']]` compound selector → defer, drop a note, use the scalar fallback
+   - `defaultCleaner: false` → `defaultCleaner = false` in the field block
+
+7. **Run cycle** per batch: `make format && make lint && make test`. All three green. Commit with a short message naming the batch.
+
+8. **Deferred parity fields** (don't try to "fix" parity test failures here — the test intentionally skips them; see memory file):
+   - `date_published` — needs per-field timezone/format plumbed through DSL
+   - `content` / `word_count` — needs cheerio↔jsoup test-side normalizer; library stays Jsoup-correct
