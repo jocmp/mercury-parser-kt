@@ -117,6 +117,11 @@ import com.jocmp.mercury.extractors.custom.www.itmedia.co.jp.WwwItmediaCoJpExtra
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.ladbible.com.WwwLadbibleComExtractor
 import com.jocmp.mercury.extractors.custom.www.latimes.com.WwwLatimesComExtractor
+import com.jocmp.mercury.extractors.custom.www.lebensmittelwarnung.de.WwwLebensmittelwarnungDeExtractor
+import com.jocmp.mercury.extractors.custom.www.lemonde.fr.WwwLemondeFrExtractor
+import com.jocmp.mercury.extractors.custom.www.lifehacker.jp.WwwLifehackerJpExtractor
+import com.jocmp.mercury.extractors.custom.www.linkedin.com.WwwLinkedinComExtractor
+import com.jocmp.mercury.extractors.custom.www.littlethings.com.LittleThingsExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
@@ -250,6 +255,11 @@ object AllExtractors {
             WwwItmediaCoJpExtractor,
             WwwLadbibleComExtractor,
             WwwLatimesComExtractor,
+            WwwLebensmittelwarnungDeExtractor,
+            WwwLemondeFrExtractor,
+            WwwLifehackerJpExtractor,
+            WwwLinkedinComExtractor,
+            LittleThingsExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

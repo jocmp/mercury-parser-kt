@@ -150,11 +150,11 @@
 - [ ] www.jnsa.org  (deferred: title contains `<br>`; Jsoup `.text()` collapses to space, JS cheerio preserves `\n` — library-level parity gap)
 - [x] www.ladbible.com
 - [x] www.latimes.com
-- [ ] www.lebensmittelwarnung.de
-- [ ] www.lemonde.fr
-- [ ] www.lifehacker.jp
-- [ ] www.linkedin.com
-- [ ] www.littlethings.com
+- [x] www.lebensmittelwarnung.de
+- [x] www.lemonde.fr
+- [x] www.lifehacker.jp
+- [x] www.linkedin.com
+- [x] www.littlethings.com
 - [ ] www.macrumors.com
 - [ ] www.mentalfloss.com
 - [ ] www.miamiherald.com
