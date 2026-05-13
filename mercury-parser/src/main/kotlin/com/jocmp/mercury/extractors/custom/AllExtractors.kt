@@ -86,6 +86,11 @@ import com.jocmp.mercury.extractors.custom.www.bloomberg.com.BloombergExtractor
 import com.jocmp.mercury.extractors.custom.www.broadwayworld.com.BroadwayWorldExtractor
 import com.jocmp.mercury.extractors.custom.www.bustle.com.WwwBustleComExtractor
 import com.jocmp.mercury.extractors.custom.www.buzzfeed.com.BuzzfeedExtractor
+import com.jocmp.mercury.extractors.custom.www.cbc.ca.WwwCbcCaExtractor
+import com.jocmp.mercury.extractors.custom.www.cbssports.com.WwwCbssportsComExtractor
+import com.jocmp.mercury.extractors.custom.www.channelnewsasia.com.WwwChannelnewsasiaComExtractor
+import com.jocmp.mercury.extractors.custom.www.chicagotribune.com.WwwChicagotribuneComExtractor
+import com.jocmp.mercury.extractors.custom.www.cnbc.com.WwwCnbcComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
@@ -192,6 +197,11 @@ object AllExtractors {
             WwwAsahiComExtractor,
             WwwBlickDeExtractor,
             WwwBustleComExtractor,
+            WwwCbcCaExtractor,
+            WwwCbssportsComExtractor,
+            WwwChannelnewsasiaComExtractor,
+            WwwChicagotribuneComExtractor,
+            WwwCnbcComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

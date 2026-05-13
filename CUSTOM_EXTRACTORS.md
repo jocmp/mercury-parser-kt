@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 94**
+- **Primary extractors registered: 99**
 - **Additional domains via supportedDomains: ~30** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1)
-- **Effective domain coverage: ~124**
+- **Effective domain coverage: ~129**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -104,6 +104,11 @@
 - [x] www.broadwayworld.com
 - [x] www.bustle.com
 - [x] www.buzzfeed.com (+ 1 supportedDomain: www.buzzfeednews.com)
+- [x] www.cbc.ca
+- [x] www.cbssports.com
+- [x] www.channelnewsasia.com
+- [x] www.chicagotribune.com
+- [x] www.cnbc.com
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -115,17 +120,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (105 — primary domains only; some are deferred per above)
+## Todo (100 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] www.cbc.ca
-- [ ] www.cbssports.com
-- [ ] www.channelnewsasia.com
-- [ ] www.chicagotribune.com
-- [ ] www.cnbc.com
 - [ ] www.cnet.com
 - [ ] www.dmagazine.com
 - [ ] www.elecom.co.jp
