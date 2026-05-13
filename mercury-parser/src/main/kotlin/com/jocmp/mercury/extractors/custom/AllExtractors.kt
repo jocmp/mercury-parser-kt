@@ -20,6 +20,13 @@ import com.jocmp.mercury.extractors.custom.deadspin.com.DeadspinExtractor
 import com.jocmp.mercury.extractors.custom.economictimes.indiatimes.com.EconomictimesIndiatimesComExtractor
 import com.jocmp.mercury.extractors.custom.epaper.zeit.de.EpaperZeitDeExtractor
 import com.jocmp.mercury.extractors.custom.fandom.wikia.com.WikiaExtractor
+import com.jocmp.mercury.extractors.custom.fortune.com.FortuneComExtractor
+import com.jocmp.mercury.extractors.custom.forward.com.ForwardComExtractor
+import com.jocmp.mercury.extractors.custom.getnews.jp.GetnewsJpExtractor
+import com.jocmp.mercury.extractors.custom.github.com.GithubComExtractor
+import com.jocmp.mercury.extractors.custom.gonintendo.com.GonintendoComExtractor
+import com.jocmp.mercury.extractors.custom.gothamist.com.GothamistComExtractor
+import com.jocmp.mercury.extractors.custom.hellogiggles.com.HellogigglesComExtractor
 import com.jocmp.mercury.extractors.custom.money.cnn.com.MoneyCnnComExtractor
 import com.jocmp.mercury.extractors.custom.nymag.com.NYMagExtractor
 import com.jocmp.mercury.extractors.custom.wired.jp.WiredJpExtractor
@@ -57,6 +64,13 @@ object AllExtractors {
             DeadspinExtractor,
             EconomictimesIndiatimesComExtractor,
             EpaperZeitDeExtractor,
+            FortuneComExtractor,
+            ForwardComExtractor,
+            GetnewsJpExtractor,
+            GithubComExtractor,
+            GonintendoComExtractor,
+            GothamistComExtractor,
+            HellogigglesComExtractor,
             MoneyCnnComExtractor,
             NineToFiveGoogleComExtractor,
             NineToFiveLinuxComExtractor,
