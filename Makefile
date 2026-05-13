@@ -3,7 +3,7 @@ CLI_BIN := cli/build/install/mercury/bin/mercury
 
 .DEFAULT_GOAL := build
 
-.PHONY: build test lint format check cli clean dist parse help
+.PHONY: build test lint format check cli clean dist parse help deps local-deps changelog
 
 build: $(CLI_BIN)
 
@@ -34,6 +34,15 @@ dist:
 clean:
 	$(GRADLE) clean
 
+deps: ## Install bumpver
+	pip install bumpver==2024.1130
+
+local-deps: deps
+	cargo install git-cliff
+
+changelog:
+	git cliff > CHANGELOG.md
+
 help:
 	@echo "Targets:"
 	@echo "  build    - build the CLI (default)"
@@ -45,3 +54,5 @@ help:
 	@echo "  parse    - run parser: make parse URL=https://... [HTML=file.html] [FORMAT=html]"
 	@echo "  dist     - build distributable tar/zip"
 	@echo "  clean    - clean build outputs"
+	@echo "  deps     - install bumpver"
+	@echo "  changelog - generate CHANGELOG.md via git-cliff"
