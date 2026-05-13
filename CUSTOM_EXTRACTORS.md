@@ -184,11 +184,11 @@
 - [x] www.rawstory.com
 - [x] www.rbbtoday.com
 - [x] www.recode.net
-- [ ] www.reddit.com
-- [ ] www.refinery29.com
-- [ ] www.reuters.com
-- [ ] www.rollingstone.com
-- [ ] www.sanwa.co.jp
+- [x] www.reddit.com
+- [x] www.refinery29.com
+- [x] www.reuters.com
+- [x] www.rollingstone.com
+- [x] www.sanwa.co.jp
 - [ ] www.sbnation.com
 - [ ] www.si.com
 - [ ] www.slate.com
