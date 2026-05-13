@@ -1,6 +1,8 @@
 package com.jocmp.mercury
 
-import com.jocmp.mercury.extractors.generic.GenericExtractor
+import com.jocmp.mercury.dsl.Doc
+import com.jocmp.mercury.extractors.Extractors
+import com.jocmp.mercury.extractors.RootExtractor
 import com.jocmp.mercury.resource.Resource
 import com.jocmp.mercury.utils.validateUrl
 import java.net.URI
@@ -18,22 +20,12 @@ object Mercury {
             try {
                 URI.create(url)
             } catch (_: Throwable) {
-                return ParseResult(
-                    url = url,
-                    error = true,
-                    message = "The url parameter passed does not look like a valid URL. Please check your URL and try again.",
-                )
+                return invalidUrl(url)
             }
 
-        if (!validateUrl(parsedUrl)) {
-            return ParseResult(
-                url = url,
-                error = true,
-                message = "The url parameter passed does not look like a valid URL. Please check your URL and try again.",
-            )
-        }
+        if (!validateUrl(parsedUrl)) return invalidUrl(url)
 
-        val doc =
+        val doc: Doc =
             try {
                 Resource.create(
                     url = url,
@@ -46,6 +38,18 @@ object Mercury {
                 return ParseResult(url = url, error = true, message = e.message)
             }
 
-        return GenericExtractor.extract(html = options.html ?: doc.html(), docIn = doc, url = url)
+        val html = options.html ?: doc.html()
+        val metaCache = collectMetaNames(doc)
+        val extractor = Extractors.get(url)
+        return RootExtractor.extract(extractor, doc, url, html, metaCache)
     }
 }
+
+private fun invalidUrl(url: String): ParseResult =
+    ParseResult(
+        url = url,
+        error = true,
+        message = "The url parameter passed does not look like a valid URL. Please check your URL and try again.",
+    )
+
+private fun collectMetaNames(doc: Doc): List<String> = doc("meta[name]").elements.mapNotNull { it.attr("name").ifEmpty { null } }
