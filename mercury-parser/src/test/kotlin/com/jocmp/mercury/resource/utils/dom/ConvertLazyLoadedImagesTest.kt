@@ -29,9 +29,10 @@ class ConvertLazyLoadedImagesTest {
 
     @Test
     fun `moves image source candidates containing query strings to srcset if placed in another attribute`() {
-        val doc = Doc.load(
-            "<img data-srcset=\"http://example.com/foo.jpg?w=400 2x, http://example.com/foo.jpg?w=600 3x\">",
-        )
+        val doc =
+            Doc.load(
+                "<img data-srcset=\"http://example.com/foo.jpg?w=400 2x, http://example.com/foo.jpg?w=600 3x\">",
+            )
         val result = convertLazyLoadedImages(doc)("body").html()
 
         assertEquals(
@@ -43,9 +44,10 @@ class ConvertLazyLoadedImagesTest {
 
     @Test
     fun `properly handles src and srcset attributes`() {
-        val doc = Doc.load(
-            "<img data-src=\"http://example.com/foo.jpg\" data-srcset=\"http://example.com/foo.jpg 2x\">",
-        )
+        val doc =
+            Doc.load(
+                "<img data-src=\"http://example.com/foo.jpg\" data-srcset=\"http://example.com/foo.jpg 2x\">",
+            )
         val result = convertLazyLoadedImages(doc)("body").html()
 
         assertEquals(
@@ -83,10 +85,11 @@ class ConvertLazyLoadedImagesTest {
 
     @Test
     fun `does not replace an img src with srcset value`() {
-        val doc = Doc.load(
-            "<img src=\"http://example.com/foo.jpg\" " +
-                "srcset=\"http://example.com/foo2x.jpg 2x, http://example.com/foo.jpg\">",
-        )
+        val doc =
+            Doc.load(
+                "<img src=\"http://example.com/foo.jpg\" " +
+                    "srcset=\"http://example.com/foo2x.jpg 2x, http://example.com/foo.jpg\">",
+            )
         val result = convertLazyLoadedImages(doc)("body").html()
 
         assertEquals(
