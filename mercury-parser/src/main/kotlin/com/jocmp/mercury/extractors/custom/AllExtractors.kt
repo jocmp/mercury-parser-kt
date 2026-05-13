@@ -97,6 +97,11 @@ import com.jocmp.mercury.extractors.custom.www.dmagazine.com.WwwDmagazineComExtr
 import com.jocmp.mercury.extractors.custom.www.elecom.co.jp.WwwElecomCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.engadget.com.WwwEngadgetComExtractor
 import com.jocmp.mercury.extractors.custom.www.eonline.com.WwwEonlineComExtractor
+import com.jocmp.mercury.extractors.custom.www.euronews.com.WwwEuronewsComExtractor
+import com.jocmp.mercury.extractors.custom.www.fastcompany.com.WwwFastcompanyComExtractor
+import com.jocmp.mercury.extractors.custom.www.flatpanelshd.com.WwwFlatpanelshdComExtractor
+import com.jocmp.mercury.extractors.custom.www.fool.com.WwwFoolComExtractor
+import com.jocmp.mercury.extractors.custom.www.fortinet.com.WwwFortinetComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
@@ -212,6 +217,11 @@ object AllExtractors {
             WwwElecomCoJpExtractor,
             WwwEngadgetComExtractor,
             WwwEonlineComExtractor,
+            WwwEuronewsComExtractor,
+            WwwFastcompanyComExtractor,
+            WwwFlatpanelshdComExtractor,
+            WwwFoolComExtractor,
+            WwwFortinetComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 104**
-- **Additional domains via supportedDomains: ~30** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1)
-- **Effective domain coverage: ~134**
+- **Primary extractors registered: 109**
+- **Additional domains via supportedDomains: ~31** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1, euronews 1)
+- **Effective domain coverage: ~140**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -15,7 +15,7 @@
 - **bialystok.se.pl, lodz.se.pl, lublin.se.pl, polityka.se.pl, portalobronny.se.pl, sport.se.pl, superbiz.se.pl, szczecin.se.pl, wroclaw.se.pl**: covered via `WwwSePlExtractor.supportedDomains` (treat as ported, no separate file)
 - **blisterreview.com, factorio.com**: 2-element compound content selectors `[['a', 'b']]` not yet supported by DSL
 - **genius.com**: 3-tuple attribute extraction with JSON-parsing transform — needs `Selector` post-transform fn
-- **gr.euronews.com**: needs `www.euronews.com` first; will fold into its supportedDomains
+- **gr.euronews.com**: covered via `WwwEuronewsComExtractor.supportedDomains` (treat as ported, no separate file)
 - **bookwalker.jp, japan.cnet.com, jvndb.jvn.jp, gothamist.com, www.se.pl, fortune.com, news.nationalgeographic.com, pastebin.com, phpspot.org** ported but their `date_published` `timezone`/`format` per-field options aren't plumbed through the DSL yet — see `~/.claude/projects/-Users-jocmp-dev-jocmp-ReadabilityKt/memory/mercury_deferred_fixes.md`
 
 ## Ported (44 primary)
@@ -114,6 +114,11 @@
 - [x] www.elecom.co.jp
 - [x] www.engadget.com
 - [x] www.eonline.com
+- [x] www.euronews.com (+ 1 supportedDomain: gr.euronews.com)
+- [x] www.fastcompany.com
+- [x] www.flatpanelshd.com
+- [x] www.fool.com
+- [x] www.fortinet.com
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -125,17 +130,11 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (95 — primary domains only; some are deferred per above)
+## Todo (89 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
-- [ ] gr.euronews.com
-- [ ] www.euronews.com
-- [ ] www.fastcompany.com
-- [ ] www.flatpanelshd.com
-- [ ] www.fool.com
-- [ ] www.fortinet.com
 - [ ] www.futura-sciences.com
 - [ ] www.gizmodo.jp
 - [ ] www.gruene.de
