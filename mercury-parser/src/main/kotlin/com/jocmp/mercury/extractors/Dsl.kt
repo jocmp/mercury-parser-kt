@@ -70,8 +70,14 @@ class FieldBuilder {
     private val selectorList = mutableListOf<Selector>()
     private val cleanList = mutableListOf<String>()
     private val transformsMap = mutableMapOf<String, Transform>()
+    private var literalValue: String? = null
     var defaultCleaner: Boolean = true
     var allowMultiple: Boolean = false
+
+    // Mirrors upstream's constant-valued field (e.g. `author: 'TMZ STAFF'`).
+    fun literal(value: String) {
+        literalValue = value
+    }
 
     // Plain CSS selectors.
     fun selectors(vararg css: String) {
@@ -115,6 +121,7 @@ class FieldBuilder {
             transforms = transformsMap.toMap(),
             defaultCleaner = defaultCleaner,
             allowMultiple = allowMultiple,
+            literal = literalValue,
         )
 }
 

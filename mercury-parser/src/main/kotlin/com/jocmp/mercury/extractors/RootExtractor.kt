@@ -94,6 +94,7 @@ internal fun selectField(
     excerpt: String? = null,
 ): String? {
     if (extractionOpts == null) return null
+    if (extractionOpts.literal != null) return extractionOpts.literal
     val overrideAllowMultiple = type == "lead_image_url" || extractionOpts.allowMultiple
 
     val matching =

@@ -199,11 +199,11 @@
 - [x] www.thedrive.com
 - [x] www.thepennyhoarder.com
 - [x] www.thepoliticalinsider.com
-- [ ] www.tmz.com
-- [ ] www.today.com
-- [ ] www.transfermarkt.de
-- [ ] www.usmagazine.com
-- [ ] www.versants.com
+- [x] www.tmz.com
+- [x] www.today.com
+- [x] www.transfermarkt.de
+- [x] www.usmagazine.com
+- [x] www.versants.com
 - [ ] www.videogameschronicle.com
 - [ ] www.vortez.net
 - [ ] www.vox.com

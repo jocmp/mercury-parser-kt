@@ -37,6 +37,9 @@ data class FieldSpec(
     val transforms: Map<String, Transform> = emptyMap(),
     val defaultCleaner: Boolean = true,
     val allowMultiple: Boolean = false,
+    // Constant string value (upstream allows e.g. `author: 'TMZ STAFF'`).
+    // Bypasses selectors entirely when set.
+    val literal: String? = null,
 )
 
 // One custom extractor definition. Any field set to null falls through to

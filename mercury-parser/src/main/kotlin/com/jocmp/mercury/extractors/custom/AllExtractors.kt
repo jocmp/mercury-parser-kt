@@ -171,6 +171,11 @@ import com.jocmp.mercury.extractors.custom.www.theguardian.com.TheGuardianExtrac
 import com.jocmp.mercury.extractors.custom.www.thepennyhoarder.com.WwwThepennyhoarderComExtractor
 import com.jocmp.mercury.extractors.custom.www.thepoliticalinsider.com.WwwThepoliticalinsiderComExtractor
 import com.jocmp.mercury.extractors.custom.www.theverge.com.WwwThevergeComExtractor
+import com.jocmp.mercury.extractors.custom.www.tmz.com.WwwTmzComExtractor
+import com.jocmp.mercury.extractors.custom.www.today.com.WwwTodayComExtractor
+import com.jocmp.mercury.extractors.custom.www.transfermarkt.de.WwwTransfermarktDeExtractor
+import com.jocmp.mercury.extractors.custom.www.usmagazine.com.WwwUsmagazineComExtractor
+import com.jocmp.mercury.extractors.custom.www.versants.com.WwwVersantsComExtractor
 import com.jocmp.mercury.extractors.custom.www.washingtonpost.com.WashingtonPostExtractor
 import com.jocmp.mercury.extractors.custom.www.wired.com.WiredExtractor
 
@@ -348,6 +353,11 @@ object AllExtractors {
             WwwThedriveComExtractor,
             WwwThepennyhoarderComExtractor,
             WwwThepoliticalinsiderComExtractor,
+            WwwTmzComExtractor,
+            WwwTodayComExtractor,
+            WwwTransfermarktDeExtractor,
+            WwwUsmagazineComExtractor,
+            WwwVersantsComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,
