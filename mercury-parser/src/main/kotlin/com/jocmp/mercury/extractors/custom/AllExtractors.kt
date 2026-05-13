@@ -91,7 +91,12 @@ import com.jocmp.mercury.extractors.custom.www.cbssports.com.WwwCbssportsComExtr
 import com.jocmp.mercury.extractors.custom.www.channelnewsasia.com.WwwChannelnewsasiaComExtractor
 import com.jocmp.mercury.extractors.custom.www.chicagotribune.com.WwwChicagotribuneComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnbc.com.WwwCnbcComExtractor
+import com.jocmp.mercury.extractors.custom.www.cnet.com.WwwCnetComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
+import com.jocmp.mercury.extractors.custom.www.dmagazine.com.WwwDmagazineComExtractor
+import com.jocmp.mercury.extractors.custom.www.elecom.co.jp.WwwElecomCoJpExtractor
+import com.jocmp.mercury.extractors.custom.www.engadget.com.WwwEngadgetComExtractor
+import com.jocmp.mercury.extractors.custom.www.eonline.com.WwwEonlineComExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
@@ -202,6 +207,11 @@ object AllExtractors {
             WwwChannelnewsasiaComExtractor,
             WwwChicagotribuneComExtractor,
             WwwCnbcComExtractor,
+            WwwCnetComExtractor,
+            WwwDmagazineComExtractor,
+            WwwElecomCoJpExtractor,
+            WwwEngadgetComExtractor,
+            WwwEonlineComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

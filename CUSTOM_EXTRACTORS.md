@@ -5,9 +5,9 @@
 
 ## Status
 
-- **Primary extractors registered: 99**
+- **Primary extractors registered: 104**
 - **Additional domains via supportedDomains: ~30** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1)
-- **Effective domain coverage: ~129**
+- **Effective domain coverage: ~134**
 - **Tests: 211 passing**
 
 ## Deferred (need DSL/cleaner extensions)
@@ -109,6 +109,11 @@
 - [x] www.channelnewsasia.com
 - [x] www.chicagotribune.com
 - [x] www.cnbc.com
+- [x] www.cnet.com
+- [x] www.dmagazine.com
+- [x] www.elecom.co.jp
+- [x] www.engadget.com
+- [x] www.eonline.com
 - [x] www.bloomberg.com
 - [x] www.cnn.com
 - [x] www.jalopnik.com
@@ -120,17 +125,12 @@
 - [x] www.washingtonpost.com
 - [x] www.wired.com
 
-## Todo (100 — primary domains only; some are deferred per above)
+## Todo (95 — primary domains only; some are deferred per above)
 
 - [ ] blisterreview.com
 - [ ] factorio.com
 - [ ] genius.com
 - [ ] gr.euronews.com
-- [ ] www.cnet.com
-- [ ] www.dmagazine.com
-- [ ] www.elecom.co.jp
-- [ ] www.engadget.com
-- [ ] www.eonline.com
 - [ ] www.euronews.com
 - [ ] www.fastcompany.com
 - [ ] www.flatpanelshd.com
