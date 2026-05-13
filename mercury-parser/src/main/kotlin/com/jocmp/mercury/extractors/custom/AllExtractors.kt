@@ -132,6 +132,10 @@ import com.jocmp.mercury.extractors.custom.www.n_tv.de.WwwNtvDeExtractor
 import com.jocmp.mercury.extractors.custom.www.nationalgeographic.com.WwwNationalgeographicComExtractor
 import com.jocmp.mercury.extractors.custom.www.nbcnews.com.WwwNbcnewsComExtractor
 import com.jocmp.mercury.extractors.custom.www.ndtv.com.WwwNdtvComExtractor
+import com.jocmp.mercury.extractors.custom.www.newyorker.com.NewYorkerExtractor
+import com.jocmp.mercury.extractors.custom.www.notebookcheck.net.WwwNotebookcheckNetExtractor
+import com.jocmp.mercury.extractors.custom.www.npr.org.WwwNprOrgExtractor
+import com.jocmp.mercury.extractors.custom.www.numerama.com.WwwNumeramaComExtractor
 import com.jocmp.mercury.extractors.custom.www.nytimes.com.NYTimesExtractor
 import com.jocmp.mercury.extractors.custom.www.se.pl.WwwSePlExtractor
 import com.jocmp.mercury.extractors.custom.www.theatlantic.com.TheAtlanticExtractor
@@ -280,6 +284,10 @@ object AllExtractors {
             WwwNationalgeographicComExtractor,
             WwwNbcnewsComExtractor,
             WwwNdtvComExtractor,
+            NewYorkerExtractor,
+            WwwNotebookcheckNetExtractor,
+            WwwNprOrgExtractor,
+            WwwNumeramaComExtractor,
             WwwSePlExtractor,
             WiredExtractor,
             WiredJpExtractor,

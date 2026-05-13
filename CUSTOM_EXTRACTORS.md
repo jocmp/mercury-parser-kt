@@ -165,11 +165,11 @@
 - [x] www.nationalgeographic.com
 - [x] www.nbcnews.com
 - [x] www.ndtv.com
-- [ ] www.newyorker.com
-- [ ] www.ninefornews.nl
-- [ ] www.notebookcheck.net
-- [ ] www.npr.org
-- [ ] www.numerama.com
+- [x] www.newyorker.com
+- [ ] www.ninefornews.nl  (skipped: upstream directory is empty)
+- [x] www.notebookcheck.net
+- [x] www.npr.org
+- [x] www.numerama.com
 - [ ] www.nydailynews.com
 - [ ] www.opposingviews.com
 - [ ] www.oreilly.co.jp
