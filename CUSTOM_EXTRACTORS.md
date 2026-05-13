@@ -5,18 +5,15 @@
 
 ## Status
 
-- **Primary extractors registered: 114**
+- **Primary extractors registered: 118** (all upstream extractors ported)
 - **Additional domains via supportedDomains: ~31** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1, euronews 1)
-- **Effective domain coverage: ~145**
-- **Tests: 211 passing**
+- **Effective domain coverage: ~149**
+- **Tests: 355 passing**
 
-## Deferred (need DSL/cleaner extensions)
+## Deferred
 
 - **bialystok.se.pl, lodz.se.pl, lublin.se.pl, polityka.se.pl, portalobronny.se.pl, sport.se.pl, superbiz.se.pl, szczecin.se.pl, wroclaw.se.pl**: covered via `WwwSePlExtractor.supportedDomains` (treat as ported, no separate file)
-- **blisterreview.com, factorio.com**: 2-element compound content selectors `[['a', 'b']]` not yet supported by DSL
-- **genius.com**: 3-tuple attribute extraction with JSON-parsing transform — needs `Selector` post-transform fn
 - **gr.euronews.com**: covered via `WwwEuronewsComExtractor.supportedDomains` (treat as ported, no separate file)
-- ~~per-field `timezone` / `format` plumbed through the DSL~~ — done.
 - **www.nbcnews.com, www.reddit.com, weekly.ascii.jp, www.channelnewsasia.com**: `date_published` parity skipped — see comment in `SnapshotParityTest.compareParity`. cheerio/dayjs vs jsoup/Java edges not worth library-level workarounds.
 
 ## Ported (44 primary)
@@ -140,7 +137,7 @@
 
 - [x] blisterreview.com
 - [x] factorio.com
-- [ ] genius.com
+- [x] genius.com
 - [x] www.huffingtonpost.com
 - [x] www.ilfattoquotidiano.it
 - [x] www.infoq.com
@@ -148,7 +145,7 @@
 - [x] www.investmentexecutive.com
 - [x] www.ipa.go.jp
 - [x] www.itmedia.co.jp
-- [ ] www.jnsa.org  (deferred: title contains `<br>`; Jsoup `.text()` collapses to space, JS cheerio preserves `\n` — library-level parity gap)
+- [x] www.jnsa.org
 - [x] www.ladbible.com
 - [x] www.latimes.com
 - [x] www.lebensmittelwarnung.de

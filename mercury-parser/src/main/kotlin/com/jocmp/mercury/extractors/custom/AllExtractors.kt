@@ -24,6 +24,7 @@ import com.jocmp.mercury.extractors.custom.factorio.com.FactorioComExtractor
 import com.jocmp.mercury.extractors.custom.fandom.wikia.com.WikiaExtractor
 import com.jocmp.mercury.extractors.custom.fortune.com.FortuneComExtractor
 import com.jocmp.mercury.extractors.custom.forward.com.ForwardComExtractor
+import com.jocmp.mercury.extractors.custom.genius.com.GeniusComExtractor
 import com.jocmp.mercury.extractors.custom.getnews.jp.GetnewsJpExtractor
 import com.jocmp.mercury.extractors.custom.github.com.GithubComExtractor
 import com.jocmp.mercury.extractors.custom.gonintendo.com.GonintendoComExtractor
@@ -117,6 +118,7 @@ import com.jocmp.mercury.extractors.custom.www.investmentexecutive.com.WwwInvest
 import com.jocmp.mercury.extractors.custom.www.ipa.go.jp.WwwIpaGoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.itmedia.co.jp.WwwItmediaCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
+import com.jocmp.mercury.extractors.custom.www.jnsa.org.WwwJnsaOrgExtractor
 import com.jocmp.mercury.extractors.custom.www.ladbible.com.WwwLadbibleComExtractor
 import com.jocmp.mercury.extractors.custom.www.latimes.com.WwwLatimesComExtractor
 import com.jocmp.mercury.extractors.custom.www.lebensmittelwarnung.de.WwwLebensmittelwarnungDeExtractor
@@ -215,6 +217,7 @@ object AllExtractors {
             FactorioComExtractor,
             FortuneComExtractor,
             ForwardComExtractor,
+            GeniusComExtractor,
             GetnewsJpExtractor,
             GithubComExtractor,
             GonintendoComExtractor,
@@ -313,6 +316,7 @@ object AllExtractors {
             WwwInvestmentexecutiveComExtractor,
             WwwIpaGoJpExtractor,
             WwwItmediaCoJpExtractor,
+            WwwJnsaOrgExtractor,
             WwwLadbibleComExtractor,
             WwwLatimesComExtractor,
             WwwLebensmittelwarnungDeExtractor,

@@ -17,13 +17,15 @@ class Selection internal constructor(
 
     // Cheerio's .text() concatenates descendant text nodes with no separator (unlike
     // Jsoup's text() which inserts spaces between block elements). Faithful port matters
-    // for linkDensity/text-length comparisons.
+    // for linkDensity/text-length comparisons. CRLF in the source HTML is normalized
+    // to LF so downstream "collapse 2+ whitespace" rules don't treat the two-char
+    // line ending as needing collapse.
     fun text(): String =
         buildString {
             elements.forEach { el ->
                 collectText(el, this)
             }
-        }
+        }.replace("\r\n", "\n")
 
     private fun collectText(
         el: Element,

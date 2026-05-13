@@ -140,11 +140,17 @@ internal fun selectField(
 
     val match = doc(matching.css)
     val cleaned = transformAndClean(match)
-    val raw: String? =
+    val attrValue: String? =
         if (matching.attr != null) {
             cleaned.attr(matching.attr)?.trim()
         } else {
             cleaned.text().trim().takeIf { it.isNotEmpty() }
+        }
+    val raw: String? =
+        if (matching.transformValue != null && attrValue != null) {
+            matching.transformValue.invoke(attrValue)?.trim()?.takeIf { it.isNotEmpty() }
+        } else {
+            attrValue
         }
 
     if (raw == null) return null

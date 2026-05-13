@@ -7,10 +7,13 @@ import com.jocmp.mercury.dsl.Selection
 // `[selector, attribute]` is used to pull a value off an attribute. `compound`
 // is non-empty for content selectors of the form `[['a', 'b']]` — all parts
 // must match in the document, and the union of their elements is used.
+// `transformValue` mirrors upstream's 3-tuple `[selector, attr, fn]` — the
+// extracted attribute value is fed through `fn` (e.g. JSON-parsed for genius.com).
 data class Selector(
     val css: String,
     val attr: String? = null,
     val compound: List<String> = emptyList(),
+    val transformValue: ((String) -> String?)? = null,
 )
 
 // Mirrors upstream's transforms map values:

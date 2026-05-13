@@ -98,6 +98,16 @@ class FieldBuilder {
         selectorList.add(Selector(css, attribute))
     }
 
+    // Attribute extraction + post-transform. Mirrors the upstream 3-tuple
+    // `[selector, attribute, fn]` (genius.com parses the attr as JSON).
+    fun attr(
+        css: String,
+        attribute: String,
+        transformValue: (String) -> String?,
+    ) {
+        selectorList.add(Selector(css, attribute, transformValue = transformValue))
+    }
+
     // Compound selector — mirrors upstream `[['selectorA', 'selectorB']]` for
     // content. All parts must match in the document; their union (joined with
     // `,`) is used as the matching set. Order matters for upstream parity.
