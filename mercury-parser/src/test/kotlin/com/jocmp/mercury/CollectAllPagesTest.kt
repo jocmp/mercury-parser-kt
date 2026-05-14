@@ -87,7 +87,10 @@ class CollectAllPagesTest {
             collectAllPages(initial, url, EXTRACTOR, ParseOptions())
         }
 
-    private fun pageResponse(body: String, nextHref: String?): MockResponse {
+    private fun pageResponse(
+        body: String,
+        nextHref: String?,
+    ): MockResponse {
         val nextLink =
             nextHref?.let { """<a class="next" href="$it">Next</a>""" }.orEmpty()
         val html =
