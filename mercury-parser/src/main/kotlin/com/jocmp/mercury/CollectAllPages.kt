@@ -27,9 +27,10 @@ internal suspend fun collectAllPages(
         val pageResult = parsePage(nextUrl, extractor, options) ?: break
 
         rendered += 1
-        current = current.copy(
-            content = mergeContent(current.content, pageResult.content, rendered),
-        )
+        current =
+            current.copy(
+                content = mergeContent(current.content, pageResult.content, rendered),
+            )
         nextUrl = pageResult.nextPageUrl?.takeIf { removeAnchor(it) !in seen }
     }
 
