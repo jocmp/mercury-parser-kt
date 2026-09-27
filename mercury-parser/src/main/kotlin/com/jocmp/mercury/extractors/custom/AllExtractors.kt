@@ -96,6 +96,7 @@ import com.jocmp.mercury.extractors.custom.www.chicagotribune.com.WwwChicagotrib
 import com.jocmp.mercury.extractors.custom.www.cnbc.com.WwwCnbcComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnet.com.WwwCnetComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
+import com.jocmp.mercury.extractors.custom.www.digitalfoundry.net.WwwDigitalfoundryNetExtractor
 import com.jocmp.mercury.extractors.custom.www.dmagazine.com.WwwDmagazineComExtractor
 import com.jocmp.mercury.extractors.custom.www.elecom.co.jp.WwwElecomCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.engadget.com.WwwEngadgetComExtractor
@@ -295,6 +296,7 @@ object AllExtractors {
             WwwChicagotribuneComExtractor,
             WwwCnbcComExtractor,
             WwwCnetComExtractor,
+            WwwDigitalfoundryNetExtractor,
             WwwDmagazineComExtractor,
             WwwElecomCoJpExtractor,
             WwwEngadgetComExtractor,

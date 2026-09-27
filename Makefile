@@ -3,7 +3,7 @@ CLI_BIN := cli/build/install/mercury/bin/mercury
 
 .DEFAULT_GOAL := build
 
-.PHONY: build test lint format check cli clean dist parse help deps local-deps changelog
+.PHONY: build test lint format check cli clean dist parse help deps local-deps changelog $(CLI_BIN)
 
 build: $(CLI_BIN)
 

@@ -108,6 +108,7 @@
 - [x] www.chicagotribune.com
 - [x] www.cnbc.com
 - [x] www.cnet.com
+- [x] www.digitalfoundry.net
 - [x] www.dmagazine.com
 - [x] www.elecom.co.jp
 - [x] www.engadget.com
