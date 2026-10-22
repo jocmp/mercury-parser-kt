@@ -1,0 +1,13 @@
+{
+  "name": "mercury-bench-bundle",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bundle": "node build.mjs",
+    "check": "node check.mjs"
+  },
+  "devDependencies": {
+    "core-js": "3.45.1",
+    "esbuild": "0.25.10"
+  }
+}

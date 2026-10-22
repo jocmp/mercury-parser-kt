@@ -1,0 +1,7 @@
+.gradle/
+build/
+local.properties
+js/node_modules/
+app/src/main/assets/mercury.bundle.js
+app/src/androidTest/assets/
+results/
