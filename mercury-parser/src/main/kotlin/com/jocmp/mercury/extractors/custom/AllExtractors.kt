@@ -6,6 +6,8 @@ import com.jocmp.mercury.extractors.custom._9to5google.com.NineToFiveGoogleComEx
 import com.jocmp.mercury.extractors.custom._9to5linux.com.NineToFiveLinuxComExtractor
 import com.jocmp.mercury.extractors.custom._9to5mac.com.NineToFiveMacComExtractor
 import com.jocmp.mercury.extractors.custom.abcnews.go.com.AbcnewsGoComExtractor
+import com.jocmp.mercury.extractors.custom.actualidad.rt.com.ActualidadRtComExtractor
+import com.jocmp.mercury.extractors.custom.actualites.logic_immo.com.ActualitesLogicImmoComExtractor
 import com.jocmp.mercury.extractors.custom.arstechnica.com.ArstechnicaComExtractor
 import com.jocmp.mercury.extractors.custom.balloon_juice.com.BalloonJuiceComExtractor
 import com.jocmp.mercury.extractors.custom.biorxiv.org.BiorxivOrgExtractor
@@ -19,6 +21,7 @@ import com.jocmp.mercury.extractors.custom.clinicaltrials.gov.ClinicaltrialsGovE
 import com.jocmp.mercury.extractors.custom.deadline.com.DeadlineComExtractor
 import com.jocmp.mercury.extractors.custom.deadspin.com.DeadspinExtractor
 import com.jocmp.mercury.extractors.custom.economictimes.indiatimes.com.EconomictimesIndiatimesComExtractor
+import com.jocmp.mercury.extractors.custom.edito.meilleursagents.com.EditoMeilleursagentsComExtractor
 import com.jocmp.mercury.extractors.custom.epaper.zeit.de.EpaperZeitDeExtractor
 import com.jocmp.mercury.extractors.custom.factorio.com.FactorioComExtractor
 import com.jocmp.mercury.extractors.custom.fandom.wikia.com.WikiaExtractor
@@ -37,6 +40,7 @@ import com.jocmp.mercury.extractors.custom.jvndb.jvn.jp.JvndbJvnJpExtractor
 import com.jocmp.mercury.extractors.custom.ma.ttias.be.MaTtiasBeExtractor
 import com.jocmp.mercury.extractors.custom.mashable.com.MashableComExtractor
 import com.jocmp.mercury.extractors.custom.medium.com.MediumComExtractor
+import com.jocmp.mercury.extractors.custom.metsul.com.MetsulComExtractor
 import com.jocmp.mercury.extractors.custom.mobilesyrup.com.MobilesyrupComExtractor
 import com.jocmp.mercury.extractors.custom.money.cnn.com.MoneyCnnComExtractor
 import com.jocmp.mercury.extractors.custom.newrepublic.com.NewrepublicComExtractor
@@ -59,6 +63,7 @@ import com.jocmp.mercury.extractors.custom.scan.netsecurity.ne.jp.ScanNetsecurit
 import com.jocmp.mercury.extractors.custom.sciencefly.com.ScienceflyComExtractor
 import com.jocmp.mercury.extractors.custom.sect.iij.ad.jp.SectIijAdJpExtractor
 import com.jocmp.mercury.extractors.custom.sg.news.yahoo.com.SgNewsYahooComExtractor
+import com.jocmp.mercury.extractors.custom.substack.com.SubstackComExtractor
 import com.jocmp.mercury.extractors.custom.superseriale.se.pl.SuperserialeSePlExtractor
 import com.jocmp.mercury.extractors.custom.takagi_hiromitsu.jp.TakagiHiromitsuJpExtractor
 import com.jocmp.mercury.extractors.custom.tarnkappe.info.TarnkappeInfoExtractor
@@ -81,6 +86,7 @@ import com.jocmp.mercury.extractors.custom.www.al.com.WwwAlComExtractor
 import com.jocmp.mercury.extractors.custom.www.americanow.com.WwwAmericanowComExtractor
 import com.jocmp.mercury.extractors.custom.www.androidauthority.com.WwwAndroidauthorityComExtractor
 import com.jocmp.mercury.extractors.custom.www.androidcentral.com.WwwAndroidcentralComExtractor
+import com.jocmp.mercury.extractors.custom.www.animenewsnetwork.com.WwwAnimenewsnetworkComExtractor
 import com.jocmp.mercury.extractors.custom.www.aol.com.WwwAolComExtractor
 import com.jocmp.mercury.extractors.custom.www.apartmenttherapy.com.ApartmentTherapyExtractor
 import com.jocmp.mercury.extractors.custom.www.asahi.com.WwwAsahiComExtractor
@@ -98,6 +104,7 @@ import com.jocmp.mercury.extractors.custom.www.cnet.com.WwwCnetComExtractor
 import com.jocmp.mercury.extractors.custom.www.cnn.com.WwwCnnComExtractor
 import com.jocmp.mercury.extractors.custom.www.digitalfoundry.net.WwwDigitalfoundryNetExtractor
 import com.jocmp.mercury.extractors.custom.www.dmagazine.com.WwwDmagazineComExtractor
+import com.jocmp.mercury.extractors.custom.www.dw.com.WwwDwComExtractor
 import com.jocmp.mercury.extractors.custom.www.elecom.co.jp.WwwElecomCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.engadget.com.WwwEngadgetComExtractor
 import com.jocmp.mercury.extractors.custom.www.eonline.com.WwwEonlineComExtractor
@@ -106,6 +113,7 @@ import com.jocmp.mercury.extractors.custom.www.fastcompany.com.WwwFastcompanyCom
 import com.jocmp.mercury.extractors.custom.www.flatpanelshd.com.WwwFlatpanelshdComExtractor
 import com.jocmp.mercury.extractors.custom.www.fool.com.WwwFoolComExtractor
 import com.jocmp.mercury.extractors.custom.www.fortinet.com.WwwFortinetComExtractor
+import com.jocmp.mercury.extractors.custom.www.frandroid.com.WwwFrandroidComExtractor
 import com.jocmp.mercury.extractors.custom.www.futura_sciences.com.WwwFuturaSciencesComExtractor
 import com.jocmp.mercury.extractors.custom.www.gizmodo.jp.WwwGizmodoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.gruene.de.WwwGrueneDeExtractor
@@ -120,6 +128,7 @@ import com.jocmp.mercury.extractors.custom.www.ipa.go.jp.WwwIpaGoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.itmedia.co.jp.WwwItmediaCoJpExtractor
 import com.jocmp.mercury.extractors.custom.www.jalopnik.com.WwwJalopnikComExtractor
 import com.jocmp.mercury.extractors.custom.www.jnsa.org.WwwJnsaOrgExtractor
+import com.jocmp.mercury.extractors.custom.www.journaldelagence.com.WwwJournaldelagenceComExtractor
 import com.jocmp.mercury.extractors.custom.www.ladbible.com.WwwLadbibleComExtractor
 import com.jocmp.mercury.extractors.custom.www.latimes.com.WwwLatimesComExtractor
 import com.jocmp.mercury.extractors.custom.www.lebensmittelwarnung.de.WwwLebensmittelwarnungDeExtractor
@@ -131,6 +140,7 @@ import com.jocmp.mercury.extractors.custom.www.macrumors.com.WwwMacrumorsComExtr
 import com.jocmp.mercury.extractors.custom.www.mentalfloss.com.WwwMentalflossComExtractor
 import com.jocmp.mercury.extractors.custom.www.miamiherald.com.WwwMiamiheraldComExtractor
 import com.jocmp.mercury.extractors.custom.www.moongift.jp.WwwMoongiftJpExtractor
+import com.jocmp.mercury.extractors.custom.www.motorsport.com.WwwMotorsportComExtractor
 import com.jocmp.mercury.extractors.custom.www.msn.com.MSNExtractor
 import com.jocmp.mercury.extractors.custom.www.msnbc.com.WwwMsnbcComExtractor
 import com.jocmp.mercury.extractors.custom.www.n_tv.de.WwwNtvDeExtractor
@@ -200,6 +210,8 @@ object AllExtractors {
     val all: List<CustomExtractor> =
         listOf(
             AbcnewsGoComExtractor,
+            ActualidadRtComExtractor,
+            ActualitesLogicImmoComExtractor,
             ArstechnicaComExtractor,
             BalloonJuiceComExtractor,
             BiorxivOrgExtractor,
@@ -214,6 +226,7 @@ object AllExtractors {
             DeadlineComExtractor,
             DeadspinExtractor,
             EconomictimesIndiatimesComExtractor,
+            EditoMeilleursagentsComExtractor,
             EpaperZeitDeExtractor,
             FactorioComExtractor,
             FortuneComExtractor,
@@ -231,6 +244,7 @@ object AllExtractors {
             MaTtiasBeExtractor,
             MashableComExtractor,
             MediumComExtractor,
+            MetsulComExtractor,
             MobilesyrupComExtractor,
             MoneyCnnComExtractor,
             NewrepublicComExtractor,
@@ -257,6 +271,7 @@ object AllExtractors {
             ScienceflyComExtractor,
             SectIijAdJpExtractor,
             SgNewsYahooComExtractor,
+            SubstackComExtractor,
             SuperserialeSePlExtractor,
             TakagiHiromitsuJpExtractor,
             TarnkappeInfoExtractor,
@@ -286,6 +301,7 @@ object AllExtractors {
             WwwAmericanowComExtractor,
             WwwAndroidauthorityComExtractor,
             WwwAndroidcentralComExtractor,
+            WwwAnimenewsnetworkComExtractor,
             WwwAolComExtractor,
             WwwAsahiComExtractor,
             WwwBlickDeExtractor,
@@ -298,6 +314,7 @@ object AllExtractors {
             WwwCnetComExtractor,
             WwwDigitalfoundryNetExtractor,
             WwwDmagazineComExtractor,
+            WwwDwComExtractor,
             WwwElecomCoJpExtractor,
             WwwEngadgetComExtractor,
             WwwEonlineComExtractor,
@@ -306,6 +323,7 @@ object AllExtractors {
             WwwFlatpanelshdComExtractor,
             WwwFoolComExtractor,
             WwwFortinetComExtractor,
+            WwwFrandroidComExtractor,
             WwwFuturaSciencesComExtractor,
             WwwGizmodoJpExtractor,
             WwwGrueneDeExtractor,
@@ -319,6 +337,7 @@ object AllExtractors {
             WwwIpaGoJpExtractor,
             WwwItmediaCoJpExtractor,
             WwwJnsaOrgExtractor,
+            WwwJournaldelagenceComExtractor,
             WwwLadbibleComExtractor,
             WwwLatimesComExtractor,
             WwwLebensmittelwarnungDeExtractor,
@@ -331,6 +350,7 @@ object AllExtractors {
             WwwMiamiheraldComExtractor,
             WwwMoongiftJpExtractor,
             MSNExtractor,
+            WwwMotorsportComExtractor,
             WwwMsnbcComExtractor,
             WwwNtvDeExtractor,
             WwwNationalgeographicComExtractor,

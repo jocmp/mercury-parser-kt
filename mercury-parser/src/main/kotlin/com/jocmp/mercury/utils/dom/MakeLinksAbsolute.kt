@@ -19,12 +19,12 @@ private fun absolutize(
     rootUrl: String,
     attr: String,
 ) {
-    val baseUrl = doc("base").attr("href")
+    val baseUrl = resolve(rootUrl, doc("base").attr("href") ?: rootUrl)
 
     doc("[$attr]").each { _, node ->
         val attrs = getAttrs(node)
         val url = attrs[attr] ?: return@each
-        val absoluteUrl = resolve(baseUrl ?: rootUrl, url)
+        val absoluteUrl = resolve(baseUrl, url)
         setAttr(node, attr, absoluteUrl)
     }
 }

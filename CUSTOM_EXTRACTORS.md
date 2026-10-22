@@ -1,14 +1,14 @@
 # Custom extractor port progress
 
-199 upstream extractors total. Authoritative list:
+210 upstream extractors total. Authoritative list:
 `ls ~/dev/jocmp/mercury-parser/src/extractors/custom | grep -v -E '^(index\.js|README\.md)$' | sort`
 
 ## Status
 
-- **Primary extractors registered: 118** (all upstream extractors ported)
+- **Primary extractors registered: 128** (all upstream extractors ported)
 - **Additional domains via supportedDomains: ~31** (deadspin 13, gothamist 5, www.se.pl 9, obamawhitehouse 1, pagesix 1, buzzfeed 1, euronews 1)
 - **Effective domain coverage: ~149**
-- **Tests: 355 passing**
+- **Tests: 375 passing**
 
 ## Deferred
 
@@ -23,6 +23,8 @@
 - [x] 9to5linux.com
 - [x] 9to5mac.com
 - [x] abcnews.go.com
+- [x] actualidad.rt.com
+- [x] actualites.logic-immo.com
 - [x] arstechnica.com
 - [x] balloon-juice.com
 - [x] biorxiv.org
@@ -35,6 +37,7 @@
 - [x] deadline.com
 - [x] deadspin.com (+ 13 supportedDomains: jezebel, lifehacker, kotaku, gizmodo, jalopnik, kinja, avclub, clickhole, splinternews, theonion, theroot, thetakeout, theinventory)
 - [x] economictimes.indiatimes.com
+- [x] edito.meilleursagents.com
 - [x] epaper.zeit.de
 - [x] fandom.wikia.com
 - [x] fortune.com
@@ -51,6 +54,7 @@
 - [x] ma.ttias.be
 - [x] mashable.com
 - [x] medium.com
+- [x] metsul.com
 - [x] mobilesyrup.com
 - [x] money.cnn.com
 - [x] newrepublic.com
@@ -73,6 +77,7 @@
 - [x] sciencefly.com
 - [x] sect.iij.ad.jp
 - [x] sg.news.yahoo.com
+- [x] substack.com
 - [x] superseriale.se.pl
 - [x] takagi-hiromitsu.jp
 - [x] tarnkappe.info
@@ -95,10 +100,12 @@
 - [x] www.americanow.com
 - [x] www.androidauthority.com
 - [x] www.androidcentral.com
+- [x] www.animenewsnetwork.com
 - [x] www.aol.com
 - [x] www.apartmenttherapy.com
 - [x] www.asahi.com
 - [x] www.blick.de
+- [x] www.bloomberg.com
 - [x] www.broadwayworld.com
 - [x] www.bustle.com
 - [x] www.buzzfeed.com (+ 1 supportedDomain: www.buzzfeednews.com)
@@ -108,8 +115,10 @@
 - [x] www.chicagotribune.com
 - [x] www.cnbc.com
 - [x] www.cnet.com
+- [x] www.cnn.com
 - [x] www.digitalfoundry.net
 - [x] www.dmagazine.com
+- [x] www.dw.com
 - [x] www.elecom.co.jp
 - [x] www.engadget.com
 - [x] www.eonline.com
@@ -118,14 +127,15 @@
 - [x] www.flatpanelshd.com
 - [x] www.fool.com
 - [x] www.fortinet.com
+- [x] www.frandroid.com
 - [x] www.futura-sciences.com
 - [x] www.gizmodo.jp
 - [x] www.gruene.de
 - [x] www.hardwarezone.com.sg
 - [x] www.heise.de
-- [x] www.bloomberg.com
-- [x] www.cnn.com
 - [x] www.jalopnik.com
+- [x] www.journaldelagence.com
+- [x] www.motorsport.com
 - [x] www.nytimes.com
 - [x] www.se.pl (+ 9 supportedDomains: bialystok, lodz, lublin, polityka, portalobronny, sport, superbiz, szczecin, wroclaw)
 - [x] www.theatlantic.com
