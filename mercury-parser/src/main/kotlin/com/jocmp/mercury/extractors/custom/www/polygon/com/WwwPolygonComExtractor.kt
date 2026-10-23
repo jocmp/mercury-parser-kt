@@ -30,6 +30,7 @@ val WwwPolygonComExtractor =
                 val src = (srcset.ifEmpty { "" }).split(",").firstOrNull()?.trim().orEmpty()
                 if (src.isNotEmpty()) {
                     val parent = el.parent() ?: return@transform TransformResult.NoChange
+                    if (parent.parent() == null) return@transform TransformResult.NoChange
                     val figure =
                         org.jsoup.parser.Parser
                             .parseBodyFragment(
