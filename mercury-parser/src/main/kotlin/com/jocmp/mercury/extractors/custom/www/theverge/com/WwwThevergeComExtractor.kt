@@ -38,7 +38,7 @@ val WwwThevergeComExtractor =
 
                 if (!src.isNullOrEmpty()) {
                     val parent = node.elements.firstOrNull()?.parent()
-                    if (parent != null) {
+                    if (parent?.parent() != null) {
                         val replacement =
                             Jsoup
                                 .parseBodyFragment(
