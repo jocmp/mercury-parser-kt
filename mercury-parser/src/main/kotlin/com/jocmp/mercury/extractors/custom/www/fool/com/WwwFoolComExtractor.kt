@@ -28,6 +28,7 @@ val WwwFoolComExtractor =
                 val el = node.elements.firstOrNull() ?: return@transform TransformResult.NoChange
                 val src = el.attr("src")
                 val parent = el.parent() ?: return@transform TransformResult.NoChange
+                if (parent.parent() == null) return@transform TransformResult.NoChange
                 parent.replaceWith(
                     org.jsoup.parser.Parser
                         .parseBodyFragment("<figure><img src=\"$src\"/></figure>", parent.ownerDocument()?.baseUri() ?: "")
